@@ -1,14 +1,10 @@
 [
   {
-    "objectID": "posts/00. Intro.html",
-    "href": "posts/00. Intro.html",
-    "title": "00. Intro",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BRIDGE",
     "section": "",
-    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
-    "crumbs": [
-      "Posts",
-      "00. Intro"
-    ]
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -21,10 +17,14 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BRIDGE",
+    "objectID": "posts/00. Intro.html",
+    "href": "posts/00. Intro.html",
+    "title": "00. Intro",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "crumbs": [
+      "Posts",
+      "00. Intro"
+    ]
   }
 ]
