@@ -230,6 +230,7 @@ window.Quarto = {
   <li><a href="#step4.-검정통계량값-비교" id="toc-step4.-검정통계량값-비교" class="nav-link" data-scroll-target="#step4.-검정통계량값-비교">step4. 검정통계량값 비교</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#질문드릴거.." id="toc-질문드릴거.." class="nav-link" data-scroll-target="#질문드릴거..">질문드릴거..</a></li>
   </ul>
 </nav>
     </div>
@@ -269,6 +270,10 @@ window.Quarto = {
 
 <section id="들어가기전" class="level1">
 <h1>들어가기전…</h1>
+<details>
+<summary>
+열기
+</summary>
 <section id="염기-서열base-sequence" class="level2">
 <h2 class="anchored" data-anchor-id="염기-서열base-sequence"><code>0</code> 염기 서열(base sequence)</h2>
 <ul>
@@ -321,20 +326,33 @@ window.Quarto = {
 <p>MAP가 0.1%인 변이는 “이 변이가 질병과 관련이 있습니다!”라고 통계적으로 증명하는 것은 불가능함. 표본이 너무 적어서 검정력이 극도로 낮기 때문.</p>
 </blockquote>
 <ul>
-<li><p>사례1: Missing heritability &gt; 쌍둥이 연구 등에서 질병이 유전력은 높게 추정되는데, GWAS로 찾아낸 공통변이들이 설명하는 비율은 훨씬 낮음. &gt; &gt; 예를 들어, 유전력이 80%로 추정되어도 GWAS로 찾은 변이들이 설명하는 건 10%에 불과할 수 있으며, 그 나머지는? 이라는 물음에 답 중 하나가 <code>희귀변이에 있다</code>라는 가설이 있음.</p></li>
-<li><p>해결책: 희귀변이를 개별적으로 검정하는 대신, 하나의 유전자(또는 유전체 영역)안에 있는 희귀변이 여러 개를 함께 모아서 검정하는 접근법이 제안되었으며, 이것이 SKAT 논문의 출발점임.</p></li>
+<li>사례1: Missing heritability
+<ul>
+<li>쌍둥이 연구 등에서 질병이 유전력은 높게 추정되는데, GWAS로 찾아낸 공통변이들이 설명하는 비율은 훨씬 낮음.</li>
+<li>예를 들어, 유전력이 80%로 추정되어도 GWAS로 찾은 변이들이 설명하는 건 10%에 불과할 수 있으며, 그 나머지는? 이라는 물음에 답 중 하나가 <code>희귀변이에 있다</code>라는 가설이 있음.</li>
+</ul></li>
 </ul>
+<p><br></p>
+<ul>
+<li>해결책: 희귀변이를 개별적으로 검정하는 대신, 하나의 유전자(또는 유전체 영역)안에 있는 희귀변이 여러 개를 함께 모아서 검정하는 접근법이 제안되었으며, 이것이 SKAT 논문의 출발점임.</li>
+</ul>
+</section></details>
 <hr>
 </section>
-</section>
+
 <section id="astract" class="level1">
 <h1>Astract</h1>
+<details>
+<summary>
+열기
+</summary>
 <p><code>1</code> 시퀀싱 연구가 발달하고 있는 과정에서, 이전에는 발견하지 못했던 <code>Rare Variant</code>가 복잡한 질병(당뇨, 심장병)과 어떤 관려이 있는지 찾는 연구가 활발해지고 있음.</p>
 <p><code>2</code> 기존 방식(<code>Single-Marker association analysis</code>)은 Variant를 하나씩 따로 검사하는 방식이었으며, 희귀변이는 너무 적은 표본으로 인해 통계력 검정력이 극도록 낮아 분석이 불가능함.</p>
 <p><code>3</code> 그래서 여러 변이를 동시에 고려하면서, 유연하고 빠르게 검정하는 <code>SKAT</code>를 제안함.</p>
 <p><code>4</code> ’변이의 효과가 없다 = 공변량’는 기본 모형(Null Model)을 한번만 계산하면, p-value 값을 빠르게 계산할 수 있음.(이 부분 무슨 소리인지….)</p>
 <p><code>5</code> 실제로 1,000명의 전체 유전체 영역을 분석하는데, 노트북에서 7시간 밖에 안걸렸다고 함….</p>
 <p><span class="math inline">\(\divideontimes\)</span> SKAT: Sequence kernel Association Test</p>
+</details>
 <hr>
 </section>
 <section id="burden-test-vs-skat" class="level1">
@@ -502,16 +520,19 @@ window.Quarto = {
 <p><code>3</code> 그렇다고 SKAT가 무조건 좋은 방법이냐? 그건 아님.</p>
 <ul>
 <li><p>앞선 예시처럼 모든 변이가 같은 방향으로 특정 질환에 영향을 미칠 떄는 burdent test가 더 검정력이 높아짐.</p></li>
-<li><p>또한, 반응벼수가 이분형으로 표현되고 표본의 수가 적을 때는 보수적으로 작용한다??(이거는 잘 모르겠음.)</p></li>
-<li><p>여튼 첫번째 변이가 많고 같은방향이면 Burden test가 SKAT보다 검정력이 더강함.</p></li>
-<li><p>또한 사전에 유전구조가 모두 같은 방향인지, 섞여 있는지 알 수가 없음.</p></li>
-<li><p>이것이 SKAT-O의 동기가 됨.(<code>SKAT-O = SKAT + Burden Test</code>를 최적 비율로 섞은 것임)</p></li>
+<li><p>또한, 반응변수가 이분형으로 표현되고 표본의 수가 적을 때는 보수적으로 작용한다??(이거는 잘 모르겠음.)</p></li>
 </ul>
+<hr>
+</section>
+</section>
+</section>
+</section>
+<section id="질문드릴거.." class="level1">
+<h1>질문드릴거..</h1>
+<p><code>1</code> 논문을 읽을 때 어떤 순서로 읽어야할지….</p>
+<p><code>2</code> 논문에 나오는 도메인 용어들 참고할만한거…</p>
 
 
-</section>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
