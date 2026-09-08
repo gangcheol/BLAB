@@ -1,10 +1,22 @@
 [
   {
+    "objectID": "posts/01wk/01. Review.html",
+    "href": "posts/01wk/01. Review.html",
+    "title": "01. Review",
+    "section": "",
+    "text": "들어가기전…\n0 염기 서열(base sequence)\n\nDNA를 이루는 “글자”들이 나열된 순서를 말함.\nDNA는 단 4가지 종류의 염기(Nuclebase)로 이루어짐.\n\nA(Adenine, 아데닌)\nT(Thymine, 티민)\nG(Guanine, 구아닌)\nC(Cytosine, 시토신)\n\n\n1 유전변이(Genetic Variant)\n\n사람마다 DNA 염기서열이 조금씩 다르며, 이 차이를 변이(variant)라고 함.\n가장 흔한 형태는 SNP(Single Nucleotide Polymorphism)로, DNP 염기 하나가 다른 염기로 바뀐 것을 말함.\n\n2 MAP(Minor Allele Frequency, Minor 대립유전자 빈도)\n\n어떤 변이 자리에서, 덜 흔한 쪽 대립유전자가 집단에서 발견되는 비율",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "BRIDGE",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 4, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
