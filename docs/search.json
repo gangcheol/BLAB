@@ -4,7 +4,91 @@
     "href": "posts/01wk/01. Review.html",
     "title": "01. Review",
     "section": "",
-    "text": "들어가기전…\n0 염기 서열(base sequence)\n\nDNA를 이루는 “글자”들이 나열된 순서를 말함.\nDNA는 단 4가지 종류의 염기(Nuclebase)로 이루어짐.\n\nA(Adenine, 아데닌)\nT(Thymine, 티민)\nG(Guanine, 구아닌)\nC(Cytosine, 시토신)\n\n\n1 유전변이(Genetic Variant)\n\n사람마다 DNA 염기서열이 조금씩 다르며, 이 차이를 변이(variant)라고 함.\n가장 흔한 형태는 SNP(Single Nucleotide Polymorphism)로, DNP 염기 하나가 다른 염기로 바뀐 것을 말함.\n\n2 MAP(Minor Allele Frequency, Minor 대립유전자 빈도)\n\n어떤 변이 자리에서, 덜 흔한 쪽 대립유전자가 집단에서 발견되는 비율",
+    "text": "DNA를 이루는 “글자”들이 나열된 순서를 말함.\nDNA는 단 4가지 종류의 염기(Nuclebase)로 이루어져 있으며, 인간의 경우 아래 4종류의 염기 32억개가 나열된 하나의 완전한 유전체라고 할 수 있음.\n\nA(Adenine, 아데닌)\nT(Thymine, 티민)\nG(Guanine, 구아닌)\nC(Cytosine, 시토신)\n\n\n\n\n\n\n사람의 DNA 32억 자리 중 대다수 자리는 거의 모든 사람이 같은 글자를 가지며, 일부 자리에서 다른 글자가 들어가 있는 경우가 있음.\n이 차이를 유전변이라고 부름.\n위의 경우, 세 번째 글자가 G \\(\\to\\) T로 바뀐 것이며, 금번 논문에서 가장 많이 다루는 유형임.\n\n대부분의 사람: ...ATGCGT...\n유전변이가 발생한 사람: ...ATTCGT...\n\n\n\n\n\n\n나열된 염기 서열 \\(i\\)번쨰 자리에서, 덜 흔한 쪽 유전자가 집단에서 발견되는 비율\n\n\nexample\n만약 어떤 연구를 위해 우리가 표본 100명을 관찰했고, 관찰된 염기서열들의 \\(i\\)번쨰 자리에서 “100명 중 2명만 T를 가지고 있다면 MAP는 2%”\n\n\n\n\n\n희귀변이(Rare Variant): MAP가 1% ~ 5% 미만\n공통변이(Common Variant): MAP가 5% 이상\n\n\n\n\n\n수십만 개의 공통 변이를 대상으로, “이 변이를 가진 사람이 질병에 더 잘 걸리는가?”를 개별적으로 검정하는 연구 방법\n한계: 희귀변이는 검정할 수 없다.\n\n\nMAP가 0.1%인 변이는 “이 변이가 질병과 관련이 있습니다!”라고 통계적으로 증명하는 것은 불가능함. 표본이 너무 적어서 검정력이 극도로 낮기 때문.\n\n\n사례1: Missing heritability &gt; 쌍둥이 연구 등에서 질병이 유전력은 높게 추정되는데, GWAS로 찾아낸 공통변이들이 설명하는 비율은 훨씬 낮음. &gt; &gt; 예를 들어, 유전력이 80%로 추정되어도 GWAS로 찾은 변이들이 설명하는 건 10%에 불과할 수 있으며, 그 나머지는? 이라는 물음에 답 중 하나가 희귀변이에 있다라는 가설이 있음.\n해결책: 희귀변이를 개별적으로 검정하는 대신, 하나의 유전자(또는 유전체 영역)안에 있는 희귀변이 여러 개를 함께 모아서 검정하는 접근법이 제안되었으며, 이것이 SKAT 논문의 출발점임.",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#염기-서열base-sequence",
+    "href": "posts/01wk/01. Review.html#염기-서열base-sequence",
+    "title": "01. Review",
+    "section": "",
+    "text": "DNA를 이루는 “글자”들이 나열된 순서를 말함.\nDNA는 단 4가지 종류의 염기(Nuclebase)로 이루어져 있으며, 인간의 경우 아래 4종류의 염기 32억개가 나열된 하나의 완전한 유전체라고 할 수 있음.\n\nA(Adenine, 아데닌)\nT(Thymine, 티민)\nG(Guanine, 구아닌)\nC(Cytosine, 시토신)",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#유전변이genetic-variant",
+    "href": "posts/01wk/01. Review.html#유전변이genetic-variant",
+    "title": "01. Review",
+    "section": "",
+    "text": "사람의 DNA 32억 자리 중 대다수 자리는 거의 모든 사람이 같은 글자를 가지며, 일부 자리에서 다른 글자가 들어가 있는 경우가 있음.\n이 차이를 유전변이라고 부름.\n위의 경우, 세 번째 글자가 G \\(\\to\\) T로 바뀐 것이며, 금번 논문에서 가장 많이 다루는 유형임.\n\n대부분의 사람: ...ATGCGT...\n유전변이가 발생한 사람: ...ATTCGT...",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#mapminor-allele-frequency-minor-대립유전자-빈도",
+    "href": "posts/01wk/01. Review.html#mapminor-allele-frequency-minor-대립유전자-빈도",
+    "title": "01. Review",
+    "section": "",
+    "text": "나열된 염기 서열 \\(i\\)번쨰 자리에서, 덜 흔한 쪽 유전자가 집단에서 발견되는 비율\n\n\nexample\n만약 어떤 연구를 위해 우리가 표본 100명을 관찰했고, 관찰된 염기서열들의 \\(i\\)번쨰 자리에서 “100명 중 2명만 T를 가지고 있다면 MAP는 2%”",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#공통변이-vs-희귀변이",
+    "href": "posts/01wk/01. Review.html#공통변이-vs-희귀변이",
+    "title": "01. Review",
+    "section": "",
+    "text": "희귀변이(Rare Variant): MAP가 1% ~ 5% 미만\n공통변이(Common Variant): MAP가 5% 이상",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#gwasgenome-wide-association-study",
+    "href": "posts/01wk/01. Review.html#gwasgenome-wide-association-study",
+    "title": "01. Review",
+    "section": "",
+    "text": "수십만 개의 공통 변이를 대상으로, “이 변이를 가진 사람이 질병에 더 잘 걸리는가?”를 개별적으로 검정하는 연구 방법\n한계: 희귀변이는 검정할 수 없다.\n\n\nMAP가 0.1%인 변이는 “이 변이가 질병과 관련이 있습니다!”라고 통계적으로 증명하는 것은 불가능함. 표본이 너무 적어서 검정력이 극도로 낮기 때문.\n\n\n사례1: Missing heritability &gt; 쌍둥이 연구 등에서 질병이 유전력은 높게 추정되는데, GWAS로 찾아낸 공통변이들이 설명하는 비율은 훨씬 낮음. &gt; &gt; 예를 들어, 유전력이 80%로 추정되어도 GWAS로 찾은 변이들이 설명하는 건 10%에 불과할 수 있으며, 그 나머지는? 이라는 물음에 답 중 하나가 희귀변이에 있다라는 가설이 있음.\n해결책: 희귀변이를 개별적으로 검정하는 대신, 하나의 유전자(또는 유전체 영역)안에 있는 희귀변이 여러 개를 함께 모아서 검정하는 접근법이 제안되었으며, 이것이 SKAT 논문의 출발점임.",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#요약-비교",
+    "href": "posts/01wk/01. Review.html#요약-비교",
+    "title": "01. Review",
+    "section": "요약 비교",
+    "text": "요약 비교\n1 공통점: 앞에서 언급한 단일 변이 검정의 문제점인 회귀변이에서의 낮은 검정력을 해결하기 위해 제안된 방법임.\n2 차이점\n\nBurden test: 모든 변이의 효과 \\(\\beta_j\\)가 같은 방향(+ or -)이라고 가정. \\(\\to\\) 검정통계량 값 상쇄\nSKAT: \\(\\beta_j\\)를 같은 방향이라고 가정하지 않음 \\(\\to\\) 검정통계량 값 상쇄 x",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/01. Review.html#수식을-통한-비교-분석",
+    "href": "posts/01wk/01. Review.html#수식을-통한-비교-분석",
+    "title": "01. Review",
+    "section": "수식을 통한 비교 분석",
+    "text": "수식을 통한 비교 분석\n\nstep1. 두 방법 모두 아래 선형 모형에서 출발\n\\[H_0: \\boldsymbol{\\beta} = 0\\,\\,(\\beta_1 = \\beta_2 = \\dots \\beta_p =0) \\quad \\text{vs} \\quad H_1: \\boldsymbol{\\beta} \\neq 0\\]\n\n가설은 다중회귀분석 모형 가정과 유사함.\n\n\\[y_i = \\alpha_0 + \\boldsymbol{\\alpha^{\\prime}}\\mathbf{X}_i+\\boldsymbol{\\beta^{\\prime}}\\mathbf{G}_i + \\varepsilon_i\\]\n\n\\(y_i\\): \\(i\\)번째 개인의 표현형(반응변수라고 생각, Phenotypes)\n\\(\\alpha_0\\): 절편(intercept)\n\\(\\boldsymbol{\\alpha}\\): 공변량 \\(\\mathbf{X_i}\\)(나이\\(\\cdot\\)성별)의 효과 계수 벡터-고정 효과\n\\(\\boldsymbol{\\beta}\\): \\(p\\)개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 \\(\\to\\) 검정대상\n\\(\\mathbf{G}_{ij}\\): \\(i\\)번째 사람이 \\(j\\)번째 자리에서 몇 개의 Minor allele를 가졌는지(0,1,2)\n\n각 변이 자리마다 염색체 2개가 있고, 개수를 아래와 같이 count\n\n\n\n\n\n염색체1\n염색체2\nMinor allele 수(\\(\\boldsymbol{G}_{ij}\\))\n\n\n\n\nMajor\nMajor\n0\n\n\nMajor\nMinor\n1\n\n\nMinor\nMajor\n1\n\n\nMinor\nMinor\n2\n\n\n\n\n\\(\\varepsilon\\): 오차항\n\n\n\nstep2. 핵심 분기점\n\nBurden test\n\\(\\beta_j\\)를 하나의 공통 고정값으로 묶음.\n\\[H_0: \\beta_1 = \\beta_2 = \\dots \\beta_p = \\beta_{\\text{common}} = 0\\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\n\nSKAT\n\\(\\beta_j\\)를 평균 0을 가지는 임의 변수로 취급 \\(\\to\\,\\, \\beta_j \\sim(0, \\tau w_j)\\)\n\\[H_0: \\tau = 0(\\beta = 0 \\text{와 동치}) \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\n\\(\\tau\\): 분산성분(Variance component)\n\n영역 전체에 미치는 효과 총량\n\n\\(w_j\\): \\(j\\)번째 변이에 대한 사전 가중치.\n\n논문에서는 일반적인 희귀변이 분석에서 MAP 영역(1~5%)을 완전히 배제하지 않는 적당한 타협점으로 사전 가중치 값을 아래값으로 제시함\n\n\n\\[\\sqrt{w_j} = \\text{Beta}(MAP_j;\\, 1, 25)\\]\n\n\n\n\nstep3. SKAT의 검정통계량\n\n\\(\\beta_j\\)를 평균 0을 가지는 임의 변수로 취급 \\(\\to\\,\\, \\beta_j \\sim(0, \\tau w_j)\\)\n\n\\[H_0: \\tau = 0(\\beta = 0 \\text{와 동치}) \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\\[Q_{stat} = (\\mathbf{y} - \\hat{\\boldsymbol{\\mu}}_0)'\\,\\mathbf{K}\\,(\\mathbf{y} - \\hat{\\boldsymbol{\\mu}}_0)\\]\n\n\\(\\hat{\\boldsymbol{\\mu}}_0\\): 귀무가설 하의 예측 표현형 벡터. \\(y\\)를 공변량 \\(\\mathbf{X}\\)에만 회귀하여 얻은, 유전자형 \\(\\mathbf{G}\\)을 제외하고 공변량만으로 설명 가능한 \\(y\\)의 기댓값\n\n\\[y_i = \\alpha_0 + \\boldsymbol{\\alpha^{\\prime}}\\mathbf{X}_i+\\boldsymbol{\\beta^{\\prime}}\\mathbf{G}_i + \\varepsilon_i\\]\n\\[\\boldsymbol{\\hat{Y}}=\\boldsymbol{\\hat{\\mu}} = \\hat{\\alpha}_0 + \\hat{\\boldsymbol{\\alpha}}\\mathbf{X}\\]\n\n\\(\\mathbf{K} = \\mathbf{GW G^{\\prime}}\\): 커널행렬, \\(\\mathbf{W} = \\text{diag}(w_1,\\dots, w_p)\\)\n\\(K_{i,i^{\\prime}}\\): 가중치(\\(w_j\\))를 활용해 두 사람 \\(i, i^{\\prime}\\)의 유전적 유사도\n\n\\[K_{i,i^{\\prime}} = \\sum_{j=1}^{p} w_j G_{ij}G_{i^{\\prime}j}\\]\n\n검정통계량의 다른 표현: 개별 score statistic의 가중합\n\n\\[Q_{stat} = \\sum_{j=1}^{p} w_j S_{j}^{p}\\]\n\n\\(S_j\\)는 \\(j\\)번째 변이만 개별적으로 검정했을 때의 score statistice임.\n\n\\[S_j = \\mathbf{g}^{\\prime}_j(\\mathbf{y}-\\hat{\\mu}_0)\\]\n\\[\\mathbf{g}_{j} = [G_{1j},G_{2j},\\dots,G_{nj}]^{\\prime}\\]\n\n\n\nstep4. 검정통계량값 비교\n\nBurden test: \\(Q_{B} = \\left ( \\sum_{j=1}^{p} w_j S_j\\right)^2\\)\nSKAT: \\(Q_{S} = \\sum_{j=1}^{p} w_j S^2_j\\)\n\n\n예시1\n3개 변이, 모든 \\(w_j=1\\)로 가정\n\n\n\n\n\n\n\n\n\n시나리오\n\\(S_1,S_2,S_3\\)\n\\(Q_B = \\left (\\sum S_j\\right )^2\\)\n\\(Q_S= \\sum S_j^2\\)\n\n\n\n\n같은 방향(+ + +)\n+3, +2, +1\n36\n14\n\n\n방향 섞임(+ - +)\n+3, -2, +1\n4\n14\n\n\n\n1 시사점1: Burden test의 우월성은 조건부이다.\n\n위처럼 모든 변이가 같은 방향을 가질 때에는 압도적으로 큰 통계량값을 가지지만, 같은 방향이라는 전제가 깨지는 순간 \\(36 \\to 4\\)로 급감한 것을 볼 수 있음.\n\n2 시사점2: 반면에 SKAT는 방향과 무관하게 안정적임.\n3 그렇다고 SKAT가 무조건 좋은 방법이냐? 그건 아님.\n\n앞선 예시처럼 모든 변이가 같은 방향으로 특정 질환에 영향을 미칠 떄는 burdent test가 더 검정력이 높아짐.\n또한, 반응벼수가 이분형으로 표현되고 표본의 수가 적을 때는 보수적으로 작용한다??(이거는 잘 모르겠음.)\n여튼 첫번째 변이가 많고 같은방향이면 Burden test가 SKAT보다 검정력이 더강함.\n또한 사전에 유전구조가 모두 같은 방향인지, 섞여 있는지 알 수가 없음.\n이것이 SKAT-O의 동기가 됨.(SKAT-O = SKAT + Burden Test를 최적 비율로 섞은 것임)",
     "crumbs": [
       "Posts",
       "01wk",

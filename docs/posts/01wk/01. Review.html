@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -181,7 +210,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#들어가기전" id="toc-들어가기전" class="nav-link active" data-scroll-target="#들어가기전">들어가기전…</a></li>
+  <li><a href="#들어가기전" id="toc-들어가기전" class="nav-link active" data-scroll-target="#들어가기전">들어가기전…</a>
+  <ul class="collapse">
+  <li><a href="#염기-서열base-sequence" id="toc-염기-서열base-sequence" class="nav-link" data-scroll-target="#염기-서열base-sequence"><code>0</code> 염기 서열(base sequence)</a></li>
+  <li><a href="#유전변이genetic-variant" id="toc-유전변이genetic-variant" class="nav-link" data-scroll-target="#유전변이genetic-variant"><code>1</code> 유전변이(Genetic Variant)</a></li>
+  <li><a href="#mapminor-allele-frequency-minor-대립유전자-빈도" id="toc-mapminor-allele-frequency-minor-대립유전자-빈도" class="nav-link" data-scroll-target="#mapminor-allele-frequency-minor-대립유전자-빈도"><code>2</code> MAP(Minor Allele Frequency, Minor 대립유전자 빈도)</a></li>
+  <li><a href="#공통변이-vs-희귀변이" id="toc-공통변이-vs-희귀변이" class="nav-link" data-scroll-target="#공통변이-vs-희귀변이"><code>3</code> 공통변이 vs 희귀변이</a></li>
+  <li><a href="#gwasgenome-wide-association-study" id="toc-gwasgenome-wide-association-study" class="nav-link" data-scroll-target="#gwasgenome-wide-association-study"><code>4</code> GWAS(Genome-Wide Association Study)</a></li>
+  </ul></li>
+  <li><a href="#astract" id="toc-astract" class="nav-link" data-scroll-target="#astract">Astract</a></li>
+  <li><a href="#burden-test-vs-skat" id="toc-burden-test-vs-skat" class="nav-link" data-scroll-target="#burden-test-vs-skat">Burden Test vs SKAT</a>
+  <ul class="collapse">
+  <li><a href="#요약-비교" id="toc-요약-비교" class="nav-link" data-scroll-target="#요약-비교">요약 비교</a></li>
+  <li><a href="#수식을-통한-비교-분석" id="toc-수식을-통한-비교-분석" class="nav-link" data-scroll-target="#수식을-통한-비교-분석">수식을 통한 비교 분석</a>
+  <ul class="collapse">
+  <li><a href="#step1.-두-방법-모두-아래-선형-모형에서-출발" id="toc-step1.-두-방법-모두-아래-선형-모형에서-출발" class="nav-link" data-scroll-target="#step1.-두-방법-모두-아래-선형-모형에서-출발">step1. 두 방법 모두 아래 선형 모형에서 출발</a></li>
+  <li><a href="#step2.-핵심-분기점" id="toc-step2.-핵심-분기점" class="nav-link" data-scroll-target="#step2.-핵심-분기점">step2. 핵심 분기점</a></li>
+  <li><a href="#step3.-skat의-검정통계량" id="toc-step3.-skat의-검정통계량" class="nav-link" data-scroll-target="#step3.-skat의-검정통계량">step3. SKAT의 검정통계량</a></li>
+  <li><a href="#step4.-검정통계량값-비교" id="toc-step4.-검정통계량값-비교" class="nav-link" data-scroll-target="#step4.-검정통계량값-비교">step4. 검정통계량값 비교</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -221,10 +269,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="들어가기전" class="level1">
 <h1>들어가기전…</h1>
-<p><code>0</code> 염기 서열(base sequence)</p>
+<section id="염기-서열base-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="염기-서열base-sequence"><code>0</code> 염기 서열(base sequence)</h2>
 <ul>
 <li><p>DNA를 이루는 “글자”들이 나열된 순서를 말함.</p></li>
-<li><p>DNA는 단 4가지 종류의 염기(Nuclebase)로 이루어짐.</p>
+<li><p>DNA는 단 4가지 종류의 염기(Nuclebase)로 이루어져 있으며, 인간의 경우 아래 4종류의 염기 32억개가 나열된 하나의 완전한 유전체라고 할 수 있음.</p>
 <ul>
 <li>A(Adenine, 아데닌)</li>
 <li>T(Thymine, 티민)</li>
@@ -232,17 +281,237 @@ ul.task-list li input[type="checkbox"] {
 <li>C(Cytosine, 시토신)</li>
 </ul></li>
 </ul>
-<p><code>1</code> 유전변이(Genetic Variant)</p>
+</section>
+<section id="유전변이genetic-variant" class="level2">
+<h2 class="anchored" data-anchor-id="유전변이genetic-variant"><code>1</code> 유전변이(Genetic Variant)</h2>
 <ul>
-<li><p>사람마다 DNA 염기서열이 조금씩 다르며, 이 차이를 <code>변이(variant)</code>라고 함.</p></li>
-<li><p>가장 흔한 형태는 <code>SNP</code>(Single Nucleotide Polymorphism)로, DNP 염기 하나가 다른 염기로 바뀐 것을 말함.</p></li>
+<li><p>사람의 DNA 32억 자리 중 대다수 자리는 거의 모든 사람이 같은 글자를 가지며, 일부 자리에서 다른 글자가 들어가 있는 경우가 있음.</p></li>
+<li><p>이 차이를 <code>유전변이</code>라고 부름.</p></li>
+<li><p>위의 경우, 세 번째 글자가 G <span class="math inline">\(\to\)</span> T로 바뀐 것이며, 금번 논문에서 가장 많이 다루는 유형임.</p>
+<ul>
+<li><p>대부분의 사람: <code>...ATGCGT...</code></p></li>
+<li><p>유전변이가 발생한 사람: <code>...ATTCGT...</code></p></li>
+</ul></li>
 </ul>
-<p><code>2</code> MAP(Minor Allele Frequency, Minor 대립유전자 빈도)</p>
+</section>
+<section id="mapminor-allele-frequency-minor-대립유전자-빈도" class="level2">
+<h2 class="anchored" data-anchor-id="mapminor-allele-frequency-minor-대립유전자-빈도"><code>2</code> MAP(Minor Allele Frequency, Minor 대립유전자 빈도)</h2>
 <ul>
-<li>어떤 변이 자리에서, <code>덜 흔한 쪽</code> 대립유전자가 집단에서 발견되는 비율</li>
+<li>나열된 염기 서열 <span class="math inline">\(i\)</span>번쨰 자리에서, <code>덜 흔한 쪽</code> 유전자가 집단에서 발견되는 비율</li>
+</ul>
+<blockquote class="blockquote">
+<p>example</p>
+<p>만약 어떤 연구를 위해 우리가 표본 100명을 관찰했고, 관찰된 염기서열들의 <span class="math inline">\(i\)</span>번쨰 자리에서 “100명 중 2명만 T를 가지고 있다면 MAP는 <code>2%</code>”</p>
+</blockquote>
+</section>
+<section id="공통변이-vs-희귀변이" class="level2">
+<h2 class="anchored" data-anchor-id="공통변이-vs-희귀변이"><code>3</code> 공통변이 vs 희귀변이</h2>
+<ul>
+<li><p>희귀변이(Rare Variant): MAP가 1% ~ 5% 미만</p></li>
+<li><p>공통변이(Common Variant): MAP가 5% 이상</p></li>
+</ul>
+</section>
+<section id="gwasgenome-wide-association-study" class="level2">
+<h2 class="anchored" data-anchor-id="gwasgenome-wide-association-study"><code>4</code> GWAS(Genome-Wide Association Study)</h2>
+<ul>
+<li><p>수십만 개의 공통 변이를 대상으로, “이 변이를 가진 사람이 질병에 더 잘 걸리는가?”를 개별적으로 검정하는 연구 방법</p></li>
+<li><p>한계: 희귀변이는 검정할 수 없다.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>MAP가 0.1%인 변이는 “이 변이가 질병과 관련이 있습니다!”라고 통계적으로 증명하는 것은 불가능함. 표본이 너무 적어서 검정력이 극도로 낮기 때문.</p>
+</blockquote>
+<ul>
+<li><p>사례1: Missing heritability &gt; 쌍둥이 연구 등에서 질병이 유전력은 높게 추정되는데, GWAS로 찾아낸 공통변이들이 설명하는 비율은 훨씬 낮음. &gt; &gt; 예를 들어, 유전력이 80%로 추정되어도 GWAS로 찾은 변이들이 설명하는 건 10%에 불과할 수 있으며, 그 나머지는? 이라는 물음에 답 중 하나가 <code>희귀변이에 있다</code>라는 가설이 있음.</p></li>
+<li><p>해결책: 희귀변이를 개별적으로 검정하는 대신, 하나의 유전자(또는 유전체 영역)안에 있는 희귀변이 여러 개를 함께 모아서 검정하는 접근법이 제안되었으며, 이것이 SKAT 논문의 출발점임.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="astract" class="level1">
+<h1>Astract</h1>
+<p><code>1</code> 시퀀싱 연구가 발달하고 있는 과정에서, 이전에는 발견하지 못했던 <code>Rare Variant</code>가 복잡한 질병(당뇨, 심장병)과 어떤 관려이 있는지 찾는 연구가 활발해지고 있음.</p>
+<p><code>2</code> 기존 방식(<code>Single-Marker association analysis</code>)은 Variant를 하나씩 따로 검사하는 방식이었으며, 희귀변이는 너무 적은 표본으로 인해 통계력 검정력이 극도록 낮아 분석이 불가능함.</p>
+<p><code>3</code> 그래서 여러 변이를 동시에 고려하면서, 유연하고 빠르게 검정하는 <code>SKAT</code>를 제안함.</p>
+<p><code>4</code> ’변이의 효과가 없다 = 공변량’는 기본 모형(Null Model)을 한번만 계산하면, p-value 값을 빠르게 계산할 수 있음.(이 부분 무슨 소리인지….)</p>
+<p><code>5</code> 실제로 1,000명의 전체 유전체 영역을 분석하는데, 노트북에서 7시간 밖에 안걸렸다고 함….</p>
+<p><span class="math inline">\(\divideontimes\)</span> SKAT: Sequence kernel Association Test</p>
+<hr>
+</section>
+<section id="burden-test-vs-skat" class="level1">
+<h1>Burden Test vs SKAT</h1>
+<section id="요약-비교" class="level2">
+<h2 class="anchored" data-anchor-id="요약-비교">요약 비교</h2>
+<p><code>1</code> 공통점: 앞에서 언급한 단일 변이 검정의 문제점인 회귀변이에서의 낮은 검정력을 해결하기 위해 제안된 방법임.</p>
+<p><code>2</code> 차이점</p>
+<ul>
+<li><p>Burden test: 모든 변이의 효과 <span class="math inline">\(\beta_j\)</span>가 같은 방향(<code>+ or -</code>)이라고 가정. <span class="math inline">\(\to\)</span> 검정통계량 값 상쇄</p></li>
+<li><p>SKAT: <span class="math inline">\(\beta_j\)</span>를 같은 방향이라고 가정하지 않음 <span class="math inline">\(\to\)</span> 검정통계량 값 상쇄 x</p></li>
+</ul>
+</section>
+<section id="수식을-통한-비교-분석" class="level2">
+<h2 class="anchored" data-anchor-id="수식을-통한-비교-분석">수식을 통한 비교 분석</h2>
+<section id="step1.-두-방법-모두-아래-선형-모형에서-출발" class="level3">
+<h3 class="anchored" data-anchor-id="step1.-두-방법-모두-아래-선형-모형에서-출발">step1. 두 방법 모두 아래 선형 모형에서 출발</h3>
+<p><span class="math display">\[H_0: \boldsymbol{\beta} = 0\,\,(\beta_1 = \beta_2 = \dots \beta_p =0) \quad \text{vs} \quad H_1: \boldsymbol{\beta} \neq 0\]</span></p>
+<ul>
+<li>가설은 다중회귀분석 모형 가정과 유사함.</li>
+</ul>
+<p><span class="math display">\[y_i = \alpha_0 + \boldsymbol{\alpha^{\prime}}\mathbf{X}_i+\boldsymbol{\beta^{\prime}}\mathbf{G}_i + \varepsilon_i\]</span></p>
+<ul>
+<li><p><span class="math inline">\(y_i\)</span>: <span class="math inline">\(i\)</span>번째 개인의 표현형(반응변수라고 생각, Phenotypes)</p></li>
+<li><p><span class="math inline">\(\alpha_0\)</span>: 절편(intercept)</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\alpha}\)</span>: 공변량 <span class="math inline">\(\mathbf{X_i}\)</span>(나이<span class="math inline">\(\cdot\)</span>성별)의 효과 계수 벡터-고정 효과</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\beta}\)</span>: <span class="math inline">\(p\)</span>개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 <span class="math inline">\(\to\)</span> 검정대상</p></li>
+<li><p><span class="math inline">\(\mathbf{G}_{ij}\)</span>: <span class="math inline">\(i\)</span>번째 사람이 <span class="math inline">\(j\)</span>번째 자리에서 몇 개의 Minor allele를 가졌는지<code>(0,1,2)</code></p>
+<ul>
+<li>각 변이 자리마다 염색체 2개가 있고, 개수를 아래와 같이 count</li>
+</ul></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">염색체1</th>
+<th style="text-align: center;">염색체2</th>
+<th style="text-align: center;">Minor allele 수(<span class="math inline">\(\boldsymbol{G}_{ij}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="math inline">\(\varepsilon\)</span>: 오차항</li>
+</ul>
+</section>
+<section id="step2.-핵심-분기점" class="level3">
+<h3 class="anchored" data-anchor-id="step2.-핵심-분기점">step2. 핵심 분기점</h3>
+<section id="burden-test" class="level4">
+<h4 class="anchored" data-anchor-id="burden-test">Burden test</h4>
+<p><span class="math inline">\(\beta_j\)</span>를 하나의 공통 고정값으로 묶음.</p>
+<p><span class="math display">\[H_0: \beta_1 = \beta_2 = \dots \beta_p = \beta_{\text{common}} = 0\quad \text{vs} \quad H_1: \text{not } H_0\]</span></p>
+</section>
+<section id="skat" class="level4">
+<h4 class="anchored" data-anchor-id="skat">SKAT</h4>
+<p><span class="math inline">\(\beta_j\)</span>를 평균 0을 가지는 임의 변수로 취급 <span class="math inline">\(\to\,\, \beta_j \sim(0, \tau w_j)\)</span></p>
+<p><span class="math display">\[H_0: \tau = 0(\beta = 0 \text{와 동치}) \quad \text{vs} \quad H_1: \text{not } H_0\]</span></p>
+<ul>
+<li><span class="math inline">\(\tau\)</span>: 분산성분(Variance component)
+<ul>
+<li>영역 전체에 미치는 효과 <code>총량</code></li>
+</ul></li>
+<li><span class="math inline">\(w_j\)</span>: <span class="math inline">\(j\)</span>번째 변이에 대한 사전 가중치.
+<ul>
+<li>논문에서는 일반적인 희귀변이 분석에서 MAP 영역(1~5%)을 완전히 배제하지 않는 적당한 타협점으로 사전 가중치 값을 아래값으로 제시함</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\sqrt{w_j} = \text{Beta}(MAP_j;\, 1, 25)\]</span></p>
+<hr>
+</section>
+</section>
+<section id="step3.-skat의-검정통계량" class="level3">
+<h3 class="anchored" data-anchor-id="step3.-skat의-검정통계량">step3. SKAT의 검정통계량</h3>
+<ul>
+<li><span class="math inline">\(\beta_j\)</span>를 평균 0을 가지는 임의 변수로 취급 <span class="math inline">\(\to\,\, \beta_j \sim(0, \tau w_j)\)</span></li>
+</ul>
+<p><span class="math display">\[H_0: \tau = 0(\beta = 0 \text{와 동치}) \quad \text{vs} \quad H_1: \text{not } H_0\]</span></p>
+<p><span class="math display">\[Q_{stat} = (\mathbf{y} - \hat{\boldsymbol{\mu}}_0)'\,\mathbf{K}\,(\mathbf{y} - \hat{\boldsymbol{\mu}}_0)\]</span></p>
+<ul>
+<li><span class="math inline">\(\hat{\boldsymbol{\mu}}_0\)</span>: 귀무가설 하의 예측 표현형 벡터. <span class="math inline">\(y\)</span>를 공변량 <span class="math inline">\(\mathbf{X}\)</span>에만 회귀하여 얻은, 유전자형 <span class="math inline">\(\mathbf{G}\)</span>을 제외하고 공변량만으로 설명 가능한 <span class="math inline">\(y\)</span>의 기댓값</li>
+</ul>
+<p><span class="math display">\[y_i = \alpha_0 + \boldsymbol{\alpha^{\prime}}\mathbf{X}_i+\boldsymbol{\beta^{\prime}}\mathbf{G}_i + \varepsilon_i\]</span></p>
+<p><span class="math display">\[\boldsymbol{\hat{Y}}=\boldsymbol{\hat{\mu}} = \hat{\alpha}_0 + \hat{\boldsymbol{\alpha}}\mathbf{X}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{K} = \mathbf{GW G^{\prime}}\)</span>: 커널행렬, <span class="math inline">\(\mathbf{W} = \text{diag}(w_1,\dots, w_p)\)</span></p></li>
+<li><p><span class="math inline">\(K_{i,i^{\prime}}\)</span>: 가중치(<span class="math inline">\(w_j\)</span>)를 활용해 두 사람 <span class="math inline">\(i, i^{\prime}\)</span>의 유전적 유사도</p></li>
+</ul>
+<p><span class="math display">\[K_{i,i^{\prime}} = \sum_{j=1}^{p} w_j G_{ij}G_{i^{\prime}j}\]</span></p>
+<ul>
+<li>검정통계량의 다른 표현: 개별 score statistic의 가중합</li>
+</ul>
+<p><span class="math display">\[Q_{stat} = \sum_{j=1}^{p} w_j S_{j}^{p}\]</span></p>
+<ul>
+<li><span class="math inline">\(S_j\)</span>는 <span class="math inline">\(j\)</span>번째 변이만 개별적으로 검정했을 때의 score statistice임.</li>
+</ul>
+<p><span class="math display">\[S_j = \mathbf{g}^{\prime}_j(\mathbf{y}-\hat{\mu}_0)\]</span></p>
+<p><span class="math display">\[\mathbf{g}_{j} = [G_{1j},G_{2j},\dots,G_{nj}]^{\prime}\]</span></p>
+<hr>
+</section>
+<section id="step4.-검정통계량값-비교" class="level3">
+<h3 class="anchored" data-anchor-id="step4.-검정통계량값-비교">step4. 검정통계량값 비교</h3>
+<ul>
+<li><p>Burden test: <span class="math inline">\(Q_{B} = \left ( \sum_{j=1}^{p} w_j S_j\right)^2\)</span></p></li>
+<li><p>SKAT: <span class="math inline">\(Q_{S} = \sum_{j=1}^{p} w_j S^2_j\)</span></p></li>
+</ul>
+<section id="예시1" class="level4">
+<h4 class="anchored" data-anchor-id="예시1">예시1</h4>
+<p>3개 변이, 모든 <span class="math inline">\(w_j=1\)</span>로 가정</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">시나리오</th>
+<th style="text-align: center;"><span class="math inline">\(S_1,S_2,S_3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q_B = \left (\sum S_j\right )^2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q_S= \sum S_j^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">같은 방향(+ + +)</td>
+<td style="text-align: center;">+3, +2, +1</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">방향 섞임(+ - +)</td>
+<td style="text-align: center;">+3, -2, +1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">14</td>
+</tr>
+</tbody>
+</table>
+<p><code>1</code> 시사점1: Burden test의 우월성은 조건부이다.</p>
+<ul>
+<li>위처럼 모든 변이가 같은 방향을 가질 때에는 압도적으로 큰 통계량값을 가지지만, <code>같은 방향</code>이라는 전제가 깨지는 순간 <span class="math inline">\(36 \to 4\)</span>로 급감한 것을 볼 수 있음.</li>
+</ul>
+<p><code>2</code> 시사점2: 반면에 SKAT는 방향과 무관하게 안정적임.</p>
+<p><code>3</code> 그렇다고 SKAT가 무조건 좋은 방법이냐? 그건 아님.</p>
+<ul>
+<li><p>앞선 예시처럼 모든 변이가 같은 방향으로 특정 질환에 영향을 미칠 떄는 burdent test가 더 검정력이 높아짐.</p></li>
+<li><p>또한, 반응벼수가 이분형으로 표현되고 표본의 수가 적을 때는 보수적으로 작용한다??(이거는 잘 모르겠음.)</p></li>
+<li><p>여튼 첫번째 변이가 많고 같은방향이면 Burden test가 SKAT보다 검정력이 더강함.</p></li>
+<li><p>또한 사전에 유전구조가 모두 같은 방향인지, 섞여 있는지 알 수가 없음.</p></li>
+<li><p>이것이 SKAT-O의 동기가 됨.(<code>SKAT-O = SKAT + Burden Test</code>를 최적 비율로 섞은 것임)</p></li>
 </ul>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
