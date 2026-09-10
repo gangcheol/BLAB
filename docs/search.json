@@ -96,11 +96,15 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BRIDGE",
+    "objectID": "posts/00. Intro.html",
+    "href": "posts/00. Intro.html",
+    "title": "00. Intro",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "crumbs": [
+      "Posts",
+      "00. Intro"
+    ]
   },
   {
     "objectID": "about.html",
@@ -113,14 +117,34 @@
     ]
   },
   {
-    "objectID": "posts/00. Intro.html",
-    "href": "posts/00. Intro.html",
-    "title": "00. Intro",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BRIDGE",
     "section": "",
-    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/01wk/00. GWAS.html",
+    "href": "posts/01wk/00. GWAS.html",
+    "title": "00. GWAS",
+    "section": "",
+    "text": "1 같은 환경에 살아도 어떤 사람은 당뇨병에 걸리고 어떤 사람은 걸리지 않음.\n2 식습관이나 운동 같은 환경 요인도 중요하지만, 태어날 떄부터 가지고 있는 유전적 차이도 큰 역할을 한다.\n3 그렇다면 다음과 같은 질문이 생김\n\n“유전적으로 어떤 차이가 질병 위험을 바꾸는가?”\n\n4 이 질문에 답하기 위한 연구 방법이 바로 GWAS(Genome-wide Association Study, 전장유전체 연관 분석)이다.\n\n\n용어 정리\n\n\nGenome Wide: 전장 유전체: 모든 유전체 위치에 대해서\nAssociation Study = 연관분석: 관심을 가진 형질(Target phenotype)과 연관성을 갖는 유전적 위치를 찾는 것",
     "crumbs": [
       "Posts",
-      "00. Intro"
+      "01wk",
+      "00. GWAS"
+    ]
+  },
+  {
+    "objectID": "posts/01wk/00. GWAS.html#dna-gene-genome",
+    "href": "posts/01wk/00. GWAS.html#dna-gene-genome",
+    "title": "00. GWAS",
+    "section": "DNA, Gene, Genome",
+    "text": "DNA, Gene, Genome\n1 DNA: 생명의 설계도(유전정보) \\(\\to\\) A, T, G, C 네 가지 글자로 이루어진 긴 문자열.\n2 Gene(유전자): DNA중에서 단백질 만드는 방법이 적힌 구간, 약 2만 개가 있음.\n3 Genome(유전체): 한 개체가 지닌 DNA 정보 전체 총합, 약 32억 글자\n\nSNP\nSingle Nucleotide Polymorphism\n1 사람마다 DNA의 대부분은 같지만, 글자 하나가 다른 곳이 있음.\n\n\n\n2 인간 유전체(Genome)에는 약 1천만 개의 SNP가 있으며, 이것이 개인차의 주요 원임임.",
+    "crumbs": [
+      "Posts",
+      "01wk",
+      "00. GWAS"
     ]
   }
 ]

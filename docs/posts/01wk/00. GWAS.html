@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="LGC">
-<meta name="dcterms.date" content="2026-03-05">
+<meta name="dcterms.date" content="2026-09-08">
 
-<title>00. Intro – BRIDGE</title>
+<title>00. GWAS – BRIDGE</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,63 +25,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../posts/01wk/00. GWAS.html" rel="next">
-<link href="../about.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8107aaa9c353762b8adf357f48dc80d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../posts/01wk/01. Review.html" rel="next">
+<link href="../../posts/00. Intro.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8107aaa9c353762b8adf357f48dc80d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,7 +105,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -150,7 +115,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">BRIDGE</span>
     </a>
   </div>
@@ -176,7 +141,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/00. Intro.html">00. Intro</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/01wk/00. GWAS.html">01wk</a></li><li class="breadcrumb-item"><a href="../../posts/01wk/00. GWAS.html">00. GWAS</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,7 +163,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -213,28 +178,28 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../posts/00. Intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../posts/00. Intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">00. Intro</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">01wk</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../posts/01wk/00. GWAS.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/01wk/00. GWAS.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">00. GWAS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../posts/01wk/01. Review.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/01wk/01. Review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Review</span></a>
   </div>
 </li>
@@ -252,16 +217,24 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#test" id="toc-test" class="nav-link active" data-scroll-target="#test">TEST</a></li>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">0. Intro</a></li>
+  <li><a href="#gwas란" id="toc-gwas란" class="nav-link" data-scroll-target="#gwas란">1. GWAS란?</a></li>
+  <li><a href="#사전지식" id="toc-사전지식" class="nav-link" data-scroll-target="#사전지식">2. 사전지식!</a>
+  <ul class="collapse">
+  <li><a href="#dna-gene-genome" id="toc-dna-gene-genome" class="nav-link" data-scroll-target="#dna-gene-genome">DNA, Gene, Genome</a>
+  <ul class="collapse">
+  <li><a href="#snp" id="toc-snp" class="nav-link" data-scroll-target="#snp">SNP</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/00. Intro.html">00. Intro</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/01wk/00. GWAS.html">01wk</a></li><li class="breadcrumb-item"><a href="../../posts/01wk/00. GWAS.html">00. GWAS</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">00. Intro</h1>
+<h1 class="title">00. GWAS</h1>
 </div>
 
 
@@ -278,7 +251,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 5, 2026</p>
+      <p class="date">September 8, 2026</p>
     </div>
   </div>
   
@@ -290,30 +263,50 @@ window.Quarto = {
 </header>
 
 
-<section id="test" class="level1">
-<h1>TEST</h1>
-<p>test 입니다.</p>
-<p><span class="math display">\[\hat y = \beta_{1} x + \beta_{0},\quad  X \sim N(\mu, \sigma^2)\]</span></p>
-<div id="1da3e106-e051-4a3c-806d-639d9387b664" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(c('tidyverse', 'data.table'))</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="bfacf27c-1818-4653-bc50-4c02546de332" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hwy, <span class="at">y =</span> cty, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>            <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="00. Intro_files/figure-html/cell-3-output-1.png" class="figure-img" width="420" height="420"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="intro" class="level1">
+<h1>0. Intro</h1>
+<p><code>1</code> 같은 환경에 살아도 어떤 사람은 당뇨병에 걸리고 어떤 사람은 걸리지 않음.</p>
+<p><code>2</code> 식습관이나 운동 같은 환경 요인도 중요하지만, <strong>태어날 떄부터 가지고 있는 유전적 차이</strong>도 큰 역할을 한다.</p>
+<p><code>3</code> 그렇다면 다음과 같은 질문이 생김</p>
+<blockquote class="blockquote">
+<p>“유전적으로 어떤 차이가 질병 위험을 바꾸는가?”</p>
+</blockquote>
+<p><code>4</code> 이 질문에 답하기 위한 연구 방법이 바로 GWAS(Genome-wide Association Study, 전장유전체 연관 분석)이다.</p>
+<details>
+<summary>
+용어 정리
+</summary>
+<ol type="1">
+<li><p>Genome Wide: 전장 유전체: 모든 유전체 위치에 대해서</p></li>
+<li><p>Association Study = 연관분석: 관심을 가진 형질(Target phenotype)과 연관성을 갖는 유전적 위치를 찾는 것</p></li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="gwas란" class="level1">
+<h1>1. GWAS란?</h1>
+<p><code>1</code> GWAS는 유전자 전체의 변이를 조사해서, 특정 질병이나 형질(특성)과 <strong>“통계적으로 연관된”</strong> 변이를 찾아내는 연구방법이다.</p>
+<p><code>2</code> 즉, <strong>“수십만-수백만 개의 유전변이를 한 번에 쭉 훑어보면서, 어느 변이가 병과 관련이 있는지 찾아내는 대규모 스캔”</strong> 이라고 할 수 있음</p>
+</section>
+<section id="사전지식" class="level1">
+<h1>2. 사전지식!</h1>
+<section id="dna-gene-genome" class="level2">
+<h2 class="anchored" data-anchor-id="dna-gene-genome">DNA, Gene, Genome</h2>
+<p><code>1</code> DNA: 생명의 설계도(유전정보) <span class="math inline">\(\to\)</span> A, T, G, C 네 가지 글자로 이루어진 긴 문자열.</p>
+<p><code>2</code> Gene(유전자): DNA중에서 단백질 만드는 방법이 적힌 구간, 약 2만 개가 있음.</p>
+<p><code>3</code> Genome(유전체): 한 개체가 지닌 DNA 정보 전체 총합, 약 32억 글자</p>
+<section id="snp" class="level3">
+<h3 class="anchored" data-anchor-id="snp">SNP</h3>
+<p>Single Nucleotide Polymorphism</p>
+<p><code>1</code> 사람마다 DNA의 대부분은 같지만, 글자 하나가 다른 곳이 있음.</p>
+<center>
+<img class="_1zhOyNuL" width="100%" src="//i.namu.wiki/i/g6bi8cfERHDRX1Y5KwPjKaipBe27unPl3uIoU9aXPqF2333Ohy_JRRvwqUbZLlteEYE9cAkX1a5RzODD-DCnA4dhr8HIs9zetAKktaig-qm_4vnEIoDDRhVDGAXKNkDLhZsV7EWUePWFq_fY3KqrWg.webp" data-filesize="26562" data-src="//i.namu.wiki/i/g6bi8cfERHDRX1Y5KwPjKaipBe27unPl3uIoU9aXPqF2333Ohy_JRRvwqUbZLlteEYE9cAkX1a5RzODD-DCnA4dhr8HIs9zetAKktaig-qm_4vnEIoDDRhVDGAXKNkDLhZsV7EWUePWFq_fY3KqrWg.webp" alt="SNP 직관적 이해" data-doc="/jump/k7NccfJmsDJcEkTGyBbC%2FWhNK%2FAhVnabGzlCp4%2FOzpkd7%2FRTaD%2FUJgZHHkFSy3Ul4MXC9JShGIYMyiBcOdRzIA%3D%3D" data-v-b9b211f7="" loading="lazy">
+</center>
+<p><code>2</code> 인간 유전체(Genome)에는 약 1천만 개의 SNP가 있으며, 이것이 <strong>개인차</strong>의 주요 원임임.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -721,13 +714,13 @@ window.Quarto = {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../about.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      <a href="../../posts/00. Intro.html" class="pagination-link" aria-label="00. Intro">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">00. Intro</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../posts/01wk/00. GWAS.html" class="pagination-link" aria-label="00. GWAS">
-        <span class="nav-page-text">00. GWAS</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../posts/01wk/01. Review.html" class="pagination-link" aria-label="01. Review">
+        <span class="nav-page-text">01. Review</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
