@@ -229,25 +229,14 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#a.-burden-testcast-wst-cmc-등의-한계" id="toc-a.-burden-testcast-wst-cmc-등의-한계" class="nav-link" data-scroll-target="#a.-burden-testcast-wst-cmc-등의-한계">a. Burden test(CAST, WST, CMC 등)의 한계</a></li>
   <li><a href="#b.-non-burden-testc-alpha-test-등" id="toc-b.-non-burden-testc-alpha-test-등" class="nav-link" data-scroll-target="#b.-non-burden-testc-alpha-test-등">b. Non-Burden Test(C-alpha test 등)</a></li>
-  <li><a href="#c.-소규모-표본-연구에서-large-sample-asymptotics-한계" id="toc-c.-소규모-표본-연구에서-large-sample-asymptotics-한계" class="nav-link" data-scroll-target="#c.-소규모-표본-연구에서-large-sample-asymptotics-한계">c.&nbsp;소규모 표본 연구에서 Large-Sample Asymptotics 한계</a></li>
-  <li><a href="#d.-public-controls-활용-시의-technical-artifacts" id="toc-d.-public-controls-활용-시의-technical-artifacts" class="nav-link" data-scroll-target="#d.-public-controls-활용-시의-technical-artifacts">d.&nbsp;Public Controls 활용 시의 Technical Artifacts</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#method-key-results" id="toc-method-key-results" class="nav-link" data-scroll-target="#method-key-results">02. Method &amp; Key Results</a>
   <ul class="collapse">
   <li><a href="#방법론-발전-과정" id="toc-방법론-발전-과정" class="nav-link" data-scroll-target="#방법론-발전-과정">(1) 방법론 발전 과정</a>
   <ul class="collapse">
-  <li><a href="#step1.-skat의-등장-단방향-가정-탈피" id="toc-step1.-skat의-등장-단방향-가정-탈피" class="nav-link" data-scroll-target="#step1.-skat의-등장-단방향-가정-탈피">step1. SKAT의 등장: 단방향 가정 탈피</a></li>
-  <li><a href="#step2.-skat-o-유전적-구조에-구애받지-않는-최적-파워-확보" id="toc-step2.-skat-o-유전적-구조에-구애받지-않는-최적-파워-확보" class="nav-link" data-scroll-target="#step2.-skat-o-유전적-구조에-구애받지-않는-최적-파워-확보">step2. SKAT-O: 유전적 구조에 구애받지 않는 최적 파워 확보</a></li>
-  <li><a href="#step3.-small-sample-adjustment" id="toc-step3.-small-sample-adjustment" class="nav-link" data-scroll-target="#step3.-small-sample-adjustment">step3. Small-Sample Adjustment</a></li>
-  <li><a href="#step4.-public-controlsgnomadexac-활용-및-trapd-아티팩트-보정" id="toc-step4.-public-controlsgnomadexac-활용-및-trapd-아티팩트-보정" class="nav-link" data-scroll-target="#step4.-public-controlsgnomadexac-활용-및-trapd-아티팩트-보정">step4. Public Controls(gnomAD/ExAC) 활용 및 TRAPD 아티팩트 보정</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">summary</a></li>
+  <li><a href="#step1.-skat" id="toc-step1.-skat" class="nav-link" data-scroll-target="#step1.-skat">step1. SKAT</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#결론-및-시사점" id="toc-결론-및-시사점" class="nav-link" data-scroll-target="#결론-및-시사점">03. 결론 및 시사점</a>
-  <ul class="collapse">
-  <li><a href="#종합-결론" id="toc-종합-결론" class="nav-link" data-scroll-target="#종합-결론">(1) 종합 결론</a></li>
-  <li><a href="#시사점" id="toc-시사점" class="nav-link" data-scroll-target="#시사점">(2) 시사점</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -293,7 +282,7 @@ window.Quarto = {
 <p><code>1</code> GWAS를 통해 발굴된 공통변이(Common Variant)들은 <code>Complex diseases</code>의 유전력 중 일부만 설명할 수 있음. <code>Missing Heritability</code> 문제가 발생함.</p>
 <p><code>2</code> 이를 해결하고자 <code>Next-Generation Sequencing(NGS)</code> 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.</p>
 <p><code>3</code> 그러나 희귀변이는 MAF가 극도록 낮다보니, <code>단일 변이 분석</code>(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.</p>
-<p><code>4</code> 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 <code>Gene-level aggregation test</code>가 필수적으로 요구되었으며, 금일 리뷰에서는 이와 관련된 Method들을 소개함.</p>
+<p><code>4</code> 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 <code>Gene-level aggregation test</code>가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.</p>
 <details>
 <summary>
 용어 정리
@@ -362,19 +351,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><em>“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”</em></p>
 </blockquote>
-<hr>
 </details>
-</section>
-<section id="c.-소규모-표본-연구에서-large-sample-asymptotics-한계" class="level3">
-<h3 class="anchored" data-anchor-id="c.-소규모-표본-연구에서-large-sample-asymptotics-한계">c.&nbsp;소규모 표본 연구에서 Large-Sample Asymptotics 한계</h3>
-<p><code>1</code> 표준 SKAT는 대규모 표본에 기반한 점근적 분포(Asymptotic distribution)를 사용하여 p-value를 계산함.</p>
-<p><code>2</code> 하지만 희귀 질한 연구와 같이 케이스-컨트롤 표본 크기가 수십~수백 명 수준으로 작은 이분형 형질(Dichotomous traits) 연구에서는 제 1종 오류가 지나치게 보수적(Conservative)으로 형성되어 진정한? 연관 신호를 놓치게 됨.</p>
-</section>
-<section id="d.-public-controls-활용-시의-technical-artifacts" class="level3">
-<h3 class="anchored" data-anchor-id="d.-public-controls-활용-시의-technical-artifacts">d.&nbsp;Public Controls 활용 시의 Technical Artifacts</h3>
-<p><code>1</code> 희귀질병 연구시 자체 컨트롤 코호트?를 추가 시퀀싱 하는 cost는 사실 매우 부담스러움.</p>
-<p><code>2</code> gnomAD/ExAC과 같은 대규모 공공 데이터를 컨트롤로 활용할 경우, 케이스와 컨트롤 간 시퀀싱 플랫폼 차이, Joint variant calling 부재, Read depth 및 Quality score의 계통적 불일치로 인해,</p>
-<p><code>3</code> 유의성이 인위적으로 부풀려지는(Artifactual inflation) 치명적인 문제가 발생함.</p>
 <hr>
 </section>
 </section>
@@ -383,186 +360,220 @@ window.Quarto = {
 <h1>02. Method &amp; Key Results</h1>
 <section id="방법론-발전-과정" class="level2">
 <h2 class="anchored" data-anchor-id="방법론-발전-과정">(1) 방법론 발전 과정</h2>
-<section id="step1.-skat의-등장-단방향-가정-탈피" class="level3">
-<h3 class="anchored" data-anchor-id="step1.-skat의-등장-단방향-가정-탈피">step1. SKAT의 등장: 단방향 가정 탈피</h3>
-<section id="a.-발전-배경-및-모형-수립" class="level4">
-<h4 class="anchored" data-anchor-id="a.-발전-배경-및-모형-수립">a. 발전 배경 및 모형 수립</h4>
-<p><code>1</code> 기존 Burden test는 변이들을 하나로 합치는 과정에서 Protective 변이와 Deleterious 변이가 서로의 효과를 상쇄시키거나,</p>
-<p><code>2</code> 비원인 변이가 노이즈로 작용해 검정력이 붕괴되었음.</p>
-<p><code>3</code> 이를 극복하기 위해 개별 변의의 효과 회귀계수 <span class="math inline">\(\beta_j\)</span>가 평균 0, 분산 <span class="math inline">\(w_j^2 \tau\)</span>인 임의의 분포를 따른다고 가정한 <strong>SKAT (Sequence Kernel Association Test)</strong> 을 제안됨.</p>
+<section id="step1.-skat" class="level3">
+<h3 class="anchored" data-anchor-id="step1.-skat">step1. SKAT</h3>
+<section id="a.-앞선-방법론의-한계점" class="level4">
+<h4 class="anchored" data-anchor-id="a.-앞선-방법론의-한계점">a. 앞선 방법론의 한계점</h4>
+<p><code>1</code> 모든 변이가 한 방향으로 흐른다. (<code>Burden test</code>)</p>
+<p><code>2</code> 변이들에 동일 방향성 가정은 없으나 공변량 보정이 어렵고 계산량이 크다. (<code>Non-Burden test</code>)</p>
 <details>
 <summary>
 원문
 </summary>
 <blockquote class="blockquote">
-<p>“SKAT uses a multiple regression model to directly regress the phenotype on genetic variants in a region and on covariates, and so allows different variants to have different directions and magnitude of effects, including no effects; SKAT also avoids selection of thresholds.</p>
+<p><em>A limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… The C-alpha test also uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”</em></p>
+</blockquote>
+</details>
+</section>
+<section id="b.-해결책" class="level4">
+<h4 class="anchored" data-anchor-id="b.-해결책">b. 해결책</h4>
+<p><code>1</code> 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 <span class="math inline">\(\beta_j\)</span>가 평균 0, 분산 <span class="math inline">\(w_j^2 \tau\)</span>인 임의의 분포를 따른다고 가정한 ****Variance-component score test****를 적용함</p>
+<details>
+<summary>
+Methodology
+</summary>
+<p><code>1</code> 기본 모형</p>
+<ul>
+<li><span class="math inline">\(\beta_j\)</span>를 평균 0을 가지는 임의 변수로 취급 <span class="math inline">\(\to\,\, \beta_j \sim(0, \tau w_j)\)</span>
+<ul>
+<li><span class="math inline">\(\tau\)</span>: 분산성분(Variance component): 영역 전체에 미치는 효과 <code>총량</code></li>
+<li><span class="math inline">\(w_j\)</span>: <span class="math inline">\(j\)</span>번째 변이에 대한 사전 가중치.</li>
+</ul></li>
+<li>Score test로 전환 <span class="math inline">\(\to\)</span> 공변량만 포함된 Null Model을 단 1회만 적합시키면 되므로, GWAS 분석 시 <code>계산 속도가 빨라짐</code></li>
+</ul>
+<p><span class="math display">\[H_0: \tau = 0 \quad \text{vs} \quad H_1: \text{not } H_0\]</span></p>
+<details>
+<summary>
+원문
+</summary>
+<blockquote class="blockquote">
+<p><em>“To increase the power, SKAT tests <span class="math inline">\(H_0\)</span> by assuming each <span class="math inline">\(\beta_j\)</span> follows an arbitrary distribution with a mean of zero and a variance of <span class="math inline">\(w_j \tau\)</span>… which can be conveniently tested with a variance-component score test… A key advantage of the score test is that it only requires fitting the null model…</em></p>
 </blockquote>
 </details>
 <ul>
-<li>검정통계량 <span class="math inline">\(Q\)</span></li>
+<li><p>Continuous trait: <span class="math inline">\(y_i = \alpha_0 + \alpha' X_i + \beta' G_i + \epsilon_i\)</span> (Equation 1)</p></li>
+<li><p>Dichotomous trait: <span class="math inline">\(\text{logit}\,\, P(y_i = 1) = \alpha_0 + \alpha' X_i + \beta' G_i\)</span> (Equation 2)</p></li>
 </ul>
+<p><code>2</code> 확장 모형(Semiparametric Models for Epistasis)</p>
+<p><span class="math display">\[H_0: f(G) = 0 \quad \text{vs} \quad H_1: \text{not } H_0\]</span></p>
+<ul>
+<li><p>Continuous trait: <span class="math inline">\(y_i = \alpha_0 + \alpha' X_i + f(G_i) + \epsilon_i\)</span> (Equation 4)</p></li>
+<li><p>Dichotomous trait: <span class="math inline">\(\text{logit}\,\,P(y_i = 1) = \alpha_0 + \alpha' X_i + f(G_i)\)</span> (Equation 5)</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>선형 항 <span class="math inline">\(\beta' G_i\)</span>를 임의의 함수 <span class="math inline">\(f(G_i)\)</span>로 대체함으로써, 단일 변이 효과뿐만 아니라 희귀변이 <span class="math inline">\(\times\)</span> 희귀변이 또는 흔한변이 <span class="math inline">\(\times\)</span> 희귀변이 간의 복잡한 상위성 효과(Epistatic effects) 및 비선형적 상호작용까지 유연하게 모형화할 수 있음.</p>
+</blockquote>
+<details>
+<summary>
+원문
+</summary>
+<blockquote class="blockquote">
+<p><em>An attractive feature of SKAT is the ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework. To do so, we replace <span class="math inline">\(G_i'\beta\)</span> by a more flexible function <span class="math inline">\(f(G_i)\)</span> in the linear and logistic models (1) and (2) where <span class="math inline">\(f(G_i)\)</span> allows for rare variant by rare variant and common variant by rare-variant interactions.</em></p>
+</blockquote>
+</details>
+<details>
+<summary>
+각 기호 의미
+</summary>
+<ul>
+<li><p><span class="math inline">\(y_i\)</span>: <span class="math inline">\(i\)</span>번째 개인의 표현형(반응변수라고 생각, Phenotypes)</p></li>
+<li><p><span class="math inline">\(\alpha_0\)</span>: 절편(intercept)</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\alpha}\)</span>: 공변량 <span class="math inline">\(\mathbf{X_i}\)</span>(나이<span class="math inline">\(\cdot\)</span>성별)의 효과 계수 벡터-고정 효과</p></li>
+<li><p><span class="math inline">\(\beta\)</span>: <span class="math inline">\(p\)</span>개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 <span class="math inline">\(\to\)</span> 검정대상</p></li>
+<li><p><span class="math inline">\(G_{i}\)</span>: <span class="math inline">\(i\)</span>번째 사람이 몇 개의 Minor allele를 가졌는지<code>(0,1,2)</code></p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">염색체1</th>
+<th style="text-align: center;">염색체2</th>
+<th style="text-align: center;">Minor allele 수(<span class="math inline">\(\boldsymbol{G}_{ij}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">Major</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">Minor</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<p><code>3</code> 검정통계량 <span class="math inline">\(Q\)</span> &amp; 가중치(<span class="math inline">\(w_j\)</span>)</p>
 <p><span class="math display">\[Q = (y - \hat{\mu})'K (y - \hat{\mu}) = \sum_{j=1}^p w_j^2 S_j^2\]</span></p>
-<blockquote class="blockquote">
-<p>여기서 <span class="math inline">\(K = G W W G'\)</span>는 커널 행렬이며, <span class="math inline">\(\sqrt{w_j} = \text{Beta}(\text{MAF}_j, 1, 25)\)</span> 가중치를 적용하여 희귀변이의 기여도를 끌어올림.</p>
-</blockquote>
-</section>
-<section id="b.-검정-결과" class="level4">
-<h4 class="anchored" data-anchor-id="b.-검정-결과">b. 검정 결과</h4>
-<p><code>1</code> <strong>시뮬레이션 검정력 비교</strong>: 이거 다시 결과 봐야함…..</p>
+<p><span class="math display">\[\sqrt{w_j} = \text{Beta}(\text{MAF}_j, 1, 25)\]</span></p>
 <ul>
-<li>Causal variants의 효과 방향이 양방향(50% positive / 50% negative)으로 섞인 조건에서,</li>
-<li>기존 Burden tests (WST, CAST, Counting)는 검정력이 0.10.2 이하로 완전히 붕괴된 반면,</li>
-<li>SKAT은 <span class="math inline">\(n=5,000\)</span>에서 0.60.7 이상의 높은 검정력을 유지했습니다</li>
-</ul>
-<p><code>2</code> 실제 데이터 적용 결과: Table 4</p>
-<ul>
-<li><p>ANGPTL3, ANGPTL4, ANGPTL5 유전자 내 희귀변이와 연속형 혈청 Triglyceride 수치 연관성 분석에서, SKAT은 <span class="math inline">\(p = 9.5 \times 10^{-5}\)</span>를 기록하여,</p></li>
-<li><p>CAST (<span class="math inline">\(1.9 \times 10^{-3}\)</span>) 및 WST (<span class="math inline">\(2.3 \times 10^{-4}\)</span>) 대비 월등히 우수한 유의성을 검출함.</p></li>
+<li><p><span class="math inline">\(K = G W W G'\)</span>: 샘플 간 유전적 유사도를 측정하는 Kernel 행렬.</p></li>
+<li><p>개별 변이 Score 통계량 <span class="math inline">\(S_j\)</span> 제곱의 가중 합산 형태로 <span class="math inline">\(Q\)</span>가 형성되며, MAF가 낮은 희귀변이에 더 큰 가중치를 부여합니다.</p></li>
+<li><p>귀무가설 하에서 <span class="math inline">\(Q\)</span>는 Mixture of Chi-square 분포를 따르며, Davies method로 Permutation 없이 즉시 유의확률을 산출</p></li>
 </ul>
 </section>
-</section>
-<section id="step2.-skat-o-유전적-구조에-구애받지-않는-최적-파워-확보" class="level3">
-<h3 class="anchored" data-anchor-id="step2.-skat-o-유전적-구조에-구애받지-않는-최적-파워-확보">step2. SKAT-O: 유전적 구조에 구애받지 않는 최적 파워 확보</h3>
-<section id="a.-발전-배경-및-모형-수립-1" class="level4">
-<h4 class="anchored" data-anchor-id="a.-발전-배경-및-모형-수립-1">a. 발전 배경 및 모형 수립</h4>
-<p><code>1</code> SKAT은 변이 효과가 섞여 있을 때 우수하지만, 유전자 내 원인변이 비율이 높고(예: 50%)</p>
-<p><code>2</code> 모두 동일한 방향일 때에는 오히려 Burden test가 SKAT보다 더 우수한 검정력을 보이는 딜레마가 존재했음.</p>
-<p><code>3</code> 이에 따라 두 검정통계량을 회귀계수 간 상관계수 파라미터 <span class="math inline">\(rho\)</span>로 가중 결합한 <strong>SKAT-O (Optimal Unified Test)</strong> 가 제안되었음.</p>
-<p><span class="math display">\[Q_\rho = \rho Q_B + (1-\rho) Q_S, \quad Q_{\text{optimal}} = \min_{0 \le \rho \le 1} p_\rho\]</span></p>
+<section id="c.-주요-결과" class="level4">
+<h4 class="anchored" data-anchor-id="c.-주요-결과">c.&nbsp;주요 결과</h4>
+<p><code>1</code> Type 1 Error Rate</p>
 <ul>
-<li><span class="math inline">\(\rho=1\)</span>이면 Burden test로, <span class="math inline">\(\rho=0\)</span>이면 SKAT으로 수렴하며, 데이터로부터 파워를 극대화하는 최적의 <span class="math inline">\(\rho\)</span>를 적응적으로 선택</li>
+<li><p>Continuous traits에서는 유의수준인 <span class="math inline">\(\alpha = 10^{-6}\)</span>에서도 Type I error을 부풀림 없이 정확하게 통제.</p></li>
+<li><p>특이사항: Dichotomous traits 및 표본이 적은 경우에는 Asymptotic <span class="math inline">\(p\)</span>-value 계산 특성상 <span class="math inline">\(p\)</span>-value가 Deflated으로 산출되는 경향을 보임</p></li>
 </ul>
 <details>
 <summary>
-원문
-</summary>
-<blockquote class="blockquote">
-<p>&gt; <em>“Burden tests are more powerful when most variants in a region are causal and the effects are in the same direction, whereas SKAT is more powerful when a large fraction of the variants in a region are noncausal or the effects of causal variants are in different directions. The proposed unified test maintains the power in both scenarios.”</em></p>
-</blockquote>
-</details>
-</section>
-<section id="b.-검정-결과-강건성-확보" class="level4">
-<h4 class="anchored" data-anchor-id="b.-검정-결과-강건성-확보">b. 검정 결과: 강건성 확보</h4>
-<p>Figure 1, 2, 3</p>
-<p><code>1</code> <em>Causal variants = 10% (희소 원인변이)</em>:</p>
-<ul>
-<li>SKAT과 SKAT-O가 Burden test 대비 압도적인 파워를 보임</li>
-</ul>
-<p><code>2</code> <em>Causal variants = 50% &amp; Unidirectional (높은 원인변이 비율)</em>:</p>
-<ul>
-<li>Burden test가 SKAT보다 우수한 구간에서,</li>
-<li>SKAT-O는 높은 <span class="math inline">\(\rho\)</span> 값(<span class="math inline">\(\rho \approx 1\)</span>)을 자동으로 선택하여 Burden test에 필적하는 최상의 파워를 보임</li>
-</ul>
-<p><code>3</code> <em>Mixed Effects (20% 또는 50% protective variants)</em>:</p>
-<ul>
-<li>Burden test는 효과 상쇄로 파워가 반토막 이하로 급감했으나, SKAT-O는 SKAT 수준 이상의 높은 검정력을 강건하게 유지함</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="step3.-small-sample-adjustment" class="level3">
-<h3 class="anchored" data-anchor-id="step3.-small-sample-adjustment">step3. Small-Sample Adjustment</h3>
-<section id="a.-발전-배경-및-모형-수립-2" class="level4">
-<h4 class="anchored" data-anchor-id="a.-발전-배경-및-모형-수립-2">a. 발전 배경 및 모형 수립</h4>
-<p><code>1</code> 소규모 이분형 케이스-컨트롤 시퀀싱 연구(<span class="math inline">\(n &lt; 1,000\)</span>)에서는 희소 데이터 특성으로 인해 표준 SKAT/SKAT-O의 점근적 <span class="math inline">\(p\)</span>-value가 지나치게 보수적(Deflated)으로 형성되어 진정한 연관 신호를 놓치는 문제가 발생했음.</p>
-<p><code>2</code> 이에 따라 소표본 분산 및 귀무가설 하에서 Bootstrap Resampling(10,000회)을 통한 Sample Kurtosis <span class="math inline">\(\hat{\gamma}\)</span> 추정을 도입하여 <code>Small-Sample Adjustment</code>를 완성함.</p>
-<details>
-<summary>
-원문
-</summary>
-<blockquote class="blockquote">
-<p>“The unadjusted SKAT and unified test (SKAT-O) had substantially deflated type I error rates for small sample sizes… Both the proposed small-sample-adjusted SKAT and the unified test (adjusted SKAT and adjusted SKAT-O) performed much better than their unadjusted counterparts in small samples.”</p>
-</blockquote>
-</details>
-</section>
-<section id="b.-검정-결과-1" class="level4">
-<h4 class="anchored" data-anchor-id="b.-검정-결과-1">b. 검정 결과</h4>
-<p><code>1</code> 제 1종 오류 정상화(table 1)</p>
-<ul>
-<li><p>Exome-wide 수준(<span class="math inline">\(\alpha = 2.5 \times 10^{-6}\)</span>, <span class="math inline">\(n=200\)</span>)에서, 미보정 SKAT의 Type I error는 <span class="math inline">\(1.00 \times 10^{-7}\)</span>, SKAT-O는 <span class="math inline">\(3.00 \times 10^{-7}\)</span>로 심각하게 왜곡되었으나,</p></li>
-<li><p>Adjusted SKAT (<span class="math inline">\(3.20 \times 10^{-6}\)</span>) 및 <strong>Adjusted SKAT-O (<span class="math inline">\(2.50 \times 10^{-6}\)</span>)</strong>는 목표 유의수준을 완벽하게 통제함</p></li>
-</ul>
-<p><code>2</code> 실제 데이터 적용 결과(Figure 4)</p>
-<ul>
-<li><p>88명의 급성 폐손상 환자 데이터에서 기존 미보정 SKAT/SKAT-O의 Q-Q plot은 아래로 강하게 왜곡(deflated)되었으나,</p></li>
-<li><p>Adjusted SKAT-O Q-Q plot은 <span class="math inline">\(45^\circ\)</span> 대각선에 일치했습니다76more_horiz. 이를 통해 급성 폐손상 원인 유전자인 MYLK 유전자가 상위 유의성(전체 4위)으로 검출됨.</p></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="step4.-public-controlsgnomadexac-활용-및-trapd-아티팩트-보정" class="level3">
-<h3 class="anchored" data-anchor-id="step4.-public-controlsgnomadexac-활용-및-trapd-아티팩트-보정">step4. Public Controls(gnomAD/ExAC) 활용 및 TRAPD 아티팩트 보정</h3>
-<section id="a.-발전-배경" class="level4">
-<h4 class="anchored" data-anchor-id="a.-발전-배경">a. 발전 배경</h4>
-<p><code>1</code> 희귀질환 연구 시 자체 대조군을 시퀀싱하는 비용을 절감하기 위해 gnomAD/ExAC 등 공공 데이터베이스를 컨트롤로 활용하려는 시도가 이루어졌음.</p>
-<p><code>2</code> 그러나 시퀀싱 플랫폼 차이 및 별도 Variant calling으로 인한 기술적 아티팩트(False positive)가 발생함…</p>
-<p><code>3</code> 이에 따라 해당 논문에서는 Guo et al.&nbsp;(2018)은 TRAPD 프레임워크를 개발하고,</p>
-<p><code>4</code> Read-Depth 필터링(<span class="math inline">\(&gt;10\times\)</span> depth in <span class="math inline">\(\ge 90\%\)</span> samples), Quality-by-Depth (QD) 정량 필터링(gnomAD 상위 95%, Case 상위 85%),ㅡ</p>
-<p><code>5</code> 그리고 Synonymous variant 캘리브레이션 지표 <strong><span class="math inline">\(\lambda_{D95} \approx 1.00\)</span></strong>을 제안했음.</p>
-<details>
-<summary>
-원문
-</summary>
-<blockquote class="blockquote">
-<p><em>“We leveraged presumably benign synonymous variants to calibrate our approach. Through iterative analyses, we systematically addressed and overcame various sources of artifact that can arise when using public control data.”</em></p>
-</blockquote>
-</details>
-</section>
-<section id="b.-검정-결과-2" class="level4">
-<h4 class="anchored" data-anchor-id="b.-검정-결과-2">b. 검정 결과</h4>
-<p><code>1</code> 아티팩트의 단계적 제거: 그림 2,3</p>
-<ul>
-<li><p>필터 미적용 초기 분석: Synonymous variants <span class="math inline">\(\lambda_{D95} = 1.23\)</span> (위양성 신호 팽창)</p></li>
-<li><p>Read Depth 필터링 적용: <span class="math inline">\(\lambda_{D95} = 1.11\)</span>로 개선</p></li>
-<li><p>QD score 필터링 적용: <strong><span class="math inline">\(\lambda_{D95} = 0.99\)</span></strong>로 이상적인 Null calibration 달성</p></li>
-</ul>
-<p><code>2</code> 원인유전자 재발견 및 신규 유전자 발굴(그림 4, 5)</p>
-<ul>
-<li><p>IHH 환자 393명과 gnomAD 123,136명을 비교 분석하여, PolyPhen2 damaging + PTV + Indel 통합 필터 적용 후</p></li>
-<li><p>양성 대조군 유전자 FGFR1 (<span class="math inline">\(p = 7.31 \times 10^{-11}\)</span>, <span class="math inline">\(\text{OR} = 7.41\)</span>), TACR3 (<span class="math inline">\(p = 1.90 \times 10^{-8}\)</span>), GNRHR (<span class="math inline">\(p = 1.29 \times 10^{-6}\)</span>)를 재발견하였으며,</p></li>
-<li><p>마우스 모델 기반 신규 후보 유전자 TYRO3 (<span class="math inline">\(p = 1.77 \times 10^{-6}\)</span>, <span class="math inline">\(\text{OR} = 7.98\)</span>)의 Exome-wide significance를 최초로 입증함.</p></li>
-</ul>
-</section>
-</section>
-<section id="summary" class="level3">
-<h3 class="anchored" data-anchor-id="summary">summary</h3>
-<details>
-<summary>
-발전 과정 요약
+Table 1-(1)
 </summary>
 <center>
-<img src="01. 발전과정.png" width="600">
+<img src="02. table1.png">
 </center>
 </details>
-<hr>
-</section>
-</section>
-</section>
-<section id="결론-및-시사점" class="level1">
-<h1>03. 결론 및 시사점</h1>
-<section id="종합-결론" class="level2">
-<h2 class="anchored" data-anchor-id="종합-결론">(1) 종합 결론</h2>
-<p><code>1</code> 유전체 희귀변이 연관성 분석 방법론은 단일 변이 검정의 파워 부족을 해결하기 위해 <strong>SKAT</strong>과 같은 분산 성분 검정으로 발전하였고,</p>
-<p><code>2</code> 나아가 Burden test와의 파워 트레이드오프를 데이터 적응적으로 해소하는 <strong>SKAT-O</strong> 프레임워크로 진화함.</p>
-<p><code>3</code> 더불어 <strong>Small-Sample Adjustment</strong>를 통해 소규모 코호트 연구에서도 수학적으로 정확한 Type I error 통제와 파워 향상을 이뤄냈으며,</p>
-<p><code>4</code> <strong>TRAPD 프레임워크</strong>를 통해 gnomAD와 같은 공공 데이터베이스를 컨트롤로 안전하게 결합할 수 있는 정량 필터링 기법이 정립되었음.</p>
-</section>
-<section id="시사점" class="level2">
-<h2 class="anchored" data-anchor-id="시사점">(2) 시사점</h2>
-<p><code>1</code> <strong>유전적 구조에 대한 높은 강건성 (Robustness)</strong>:</p>
+<details>
+<summary>
+Table 1-(2)
+</summary>
+<center>
+<img src="02. table1(2).png">
+</center>
+</details>
+<p><code>2</code> Statistical Power 비교</p>
 <ul>
-<li>원인 변이의 비율, 변이 효과의 방향성, LD 구조, 케이스 표본 크기에 관계없이 최적의 통계적 검정력을 안정적으로 확보함.</li>
+<li>위험 변이와 보호 변수가 50대 50으로 섞여 있을 때 기존 Burden test들(W, N, C)의 Power은 0.1~0.2 수준에 그치는 반면, <strong>SKAT</strong> 은 표본이 늘어남에 따라 0.7 이상으로 치솟는 모습을 보임</li>
 </ul>
-<p><code>2</code> <strong>연구 비용 및 자원 절감 (Cost Efficiency)</strong></p>
+<details>
+<summary>
+Figure 1
+</summary>
+<center>
+<img src="02. fig1.png">
+</center>
+</details>
+<details>
+<summary>
+Table 2
+</summary>
+<center>
+<img src="03. table2.png" width="500">
+</center>
+</details>
+<p><code>3</code> 실데이터 검증</p>
 <ul>
-<li>희귀 질환 연구에서 자체 대조군 코호트를 대규모로 추가 시퀀싱하지 않고도 gnomAD/ExAC 공공 데이터를 대조군으로 활용할 수 있게 되어 연구 자원이 제한된 환경에서도 희귀질환 원인 유전자 발굴 연구를 대폭 촉진</li>
+<li><p>자료: <em>Analysis of the Dallas Heart Study Sequencing Data</em></p></li>
+<li><p>DHS 데이터 3,476명의 <em>ANGPTL3, ANGPTL4, ANGPTL5</em> 유전자 내 93개 희귀변이 분석 결과를 수록한 표</p></li>
+<li><p>표의 두 번째 행인 Dichotomized TG level 열을 보면 <strong>SKAT의 <span class="math inline">\(p\)</span>-value가 <span class="math inline">\(1.3 \times 10^{-4}\)</span></strong> 로 명시되어 있으며, 옆에 적힌 CAST (<span class="math inline">\(3.2 \times 10^{-2}\)</span>)나 Weighted Sum (<span class="math inline">\(3.1 \times 10^{-3}\)</span>)보다 수치가 훨씬 작아(유의성이 더 높아) 우수한 검정력을 보임</p></li>
 </ul>
-<p><code>3</code> <strong>정밀 의료 및 미지의 유전력 규명 (Translational Discovery)</strong>:</p>
+<details>
+<summary>
+Table 4
+</summary>
+<center>
+<img src="04. table4.png" width="900">
+</center>
+</details>
+<p><code>4</code> 계산 효율성</p>
 <ul>
-<li><em>MYLK</em>, <em>TYRO3</em> 등의 신규 원인 유전자 발굴 사례에서 입증되었듯, 정밀 의료(Precision Medicine) 구현을 위한 희귀/복잡 질환의 Missing Heritability 해소에 결정적인 기여</li>
+<li>원인 변이 비중이 높을수록, 효과 크기(OR)가 클수록 필요 표본 수가 지수적으로 감소하며, 유병률이 낮을수록 환자군 내 원인 변이 집적(Enrichment) 효과로 인해 필요 표본 수가 줄어드는 경향을 정량적으로 입증함.</li>
 </ul>
+<details>
+<summary>
+Table 3
+</summary>
+<center>
+<img src="05. table3.png" width="900">
+</center>
+</details>
+<details>
+<summary>
+Figure 3
+</summary>
+<center>
+<img src="03. fig2.png" width="700">
+</center>
+<ul>
+<li>표본 크기 <span class="math inline">\(n = 2,000 \sim 10,000\)</span>명 구간에서 <strong>SKAT의 이론적 추정 공식으로 그려낸 검정력 곡선(Theoretical Power, 검은선)</strong> 과 <strong>1,000회 시뮬레이션으로 얻은 실측 곡선(Empirical Power, 빨간선)</strong> 을 직접 대조한 결과, 두 곡선이 <strong>완벽하게 오버랩(Overlap)</strong> 된 것으로 보임.</li>
+</ul>
+</details>
+<details>
+<summary>
+Figure 3
+</summary>
+<center>
+<img src="04. fig3.png" width="500">
+</center>
+</details>
+</section>
+<section id="d.-한계점" class="level4">
+<h4 class="anchored" data-anchor-id="d.-한계점">d.&nbsp;한계점</h4>
+<p><code>1</code> 원인 변이 비율이 높고 단방향(Unidirectional)인 경우의 파워 열세</p>
+<p><code>2</code> 소표본(<span class="math inline">\(n &lt; 1,000\)</span>) 케이스-컨트롤 연구 시 <span class="math inline">\(p\)</span>-value Deflation이 발생함.</p>
 
 
+</section>
+</section>
 </section>
 </section>
 
