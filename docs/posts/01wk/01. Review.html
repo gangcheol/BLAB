@@ -374,7 +374,7 @@ window.Quarto = {
 </section>
 <section id="b.-해결책" class="level4">
 <h4 class="anchored" data-anchor-id="b.-해결책">b. 해결책</h4>
-<p><code>1</code> 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 <span class="math inline">\(\beta_j\)</span>가 평균 0, 분산 <span class="math inline">\(w_j^2 \tau\)</span>인 임의의 분포를 따른다고 가정한 ****Variance-component score test****를 적용함</p>
+<p><code>1</code> 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 <span class="math inline">\(\beta_j\)</span>가 평균 0, 분산 <span class="math inline">\(w_j^2 \tau\)</span>인 임의의 분포를 따른다고 가정한 <strong>Variance-component score test</strong>를 적용함</p>
 <details>
 <summary>
 Methodology
@@ -417,7 +417,6 @@ Methodology
 <blockquote class="blockquote">
 <p><em>An attractive feature of SKAT is the ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework. To do so, we replace <span class="math inline">\(G_i'\beta\)</span> by a more flexible function <span class="math inline">\(f(G_i)\)</span> in the linear and logistic models (1) and (2) where <span class="math inline">\(f(G_i)\)</span> allows for rare variant by rare variant and common variant by rare-variant interactions.</em></p>
 </blockquote>
-</details>
 <details>
 <summary>
 각 기호 의미
@@ -470,6 +469,7 @@ Methodology
 <li><p>개별 변이 Score 통계량 <span class="math inline">\(S_j\)</span> 제곱의 가중 합산 형태로 <span class="math inline">\(Q\)</span>가 형성되며, MAF가 낮은 희귀변이에 더 큰 가중치를 부여합니다.</p></li>
 <li><p>귀무가설 하에서 <span class="math inline">\(Q\)</span>는 Mixture of Chi-square 분포를 따르며, Davies method로 Permutation 없이 즉시 유의확률을 산출</p></li>
 </ul>
+</details>
 </section>
 <section id="c.-주요-결과" class="level4">
 <h4 class="anchored" data-anchor-id="c.-주요-결과">c.&nbsp;주요 결과</h4>
@@ -503,7 +503,7 @@ Table 1-(2)
 Figure 1
 </summary>
 <center>
-<img src="02. fig1.png" width="500">
+<img src="02. fig1.png" width="700">
 </center>
 </details>
 <details>
