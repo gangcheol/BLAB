@@ -100,14 +100,14 @@
     ]
   },
   {
-    "objectID": "posts/01.SKTA-O/00. Subject.html",
-    "href": "posts/01.SKTA-O/00. Subject.html",
+    "objectID": "posts/01. SKTA-O/00. Subject.html",
+    "href": "posts/01. SKTA-O/00. Subject.html",
     "title": "00. Subject",
     "section": "",
     "text": "알아봐야 할 것들…\n1 용어정리: 스닢, 변이, 싱글베리언트, 싱글 유클렝오타이드 폴리멀피즘, 스트럭쳐 베리언트, Allele(레퍼런스 allele?), GWAS(다시 정확히), 컴파운더, 널 디스트리뷰션, 본페로니 컬렉션, 멀티플 태스킹 프라블롬, p-value inflation & deflation\n2 MAP를 어떻게 측정하는지 누가 봐도 한눈에 볼 수 있게끔 정리.\n3 버든테스트에서 어떻게 정확히 어떻게 수행하는지…\n4 기존의 방식(C알파테스트)에서는 왜 퍼뮤테이션을 해야했고, 어떻게 수행하며, 계산량이 얼마나 되는지 측정하기(오리지널 P값?) 그래서 GWAS가 왜 계산량이 급감되는 지까지 이어서 설명할 줄 알아야함.\n5 SCORE, ward, LRT: 그래서 SCORE test의 장점이 뭐고 교수님과 하는 연구에서 왜 이것을 사용해야만 하는지 까지.\n6 logit을 쓰는 이유\n7 검정통계량 Q가 의미하는바\n8 왜 카이스퀘어로 수렴하는지….(교수님이 이해한 바를 내가 이해할 수 있도록)\n9",
     "crumbs": [
       "Posts",
-      "01.SKTA O",
+      "01. SKTA-O",
       "00. Subject"
     ]
   }
