@@ -1,5 +1,65 @@
 [
   {
+    "objectID": "posts/01. SKTA-O/01. review.html",
+    "href": "posts/01. SKTA-O/01. review.html",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 본 논문은 Sequencing association 연구에서 rare variants와 Phenotypes간의 association을 검정하기 위한 통합적 접근방법(unified approach)을 제안함.\n\\[Q_{\\rho} = \\rho Q_{B} + (1-\\rho)Q_{S}\\]\n\n\\(Q_{\\rho}\\): SKAT-O의 검정통계량\n\\(Q_{B}\\): Burden-test의 검정통계량\n\\(Q_{S}\\): SKAT의 검정통계량\n\\(\\rho\\): 각 변이의 회귀계수 \\(\\beta_j\\)들 간의 상관계수\n\n2 또한 이전 SKAT 방법에서 지적되었던 dichhotomous이고 표본 수가 적을 때 나타나는 Type 1 error를 보정하기 위한 Small-sample adjustment procedure를 개발함.\n3 Small-sample adjusted SKAT와 SKAT-O는 모두 연산이 효율적이여서 GWAS에 쉽게 적용할 수 있음.\n4 본 논문에서 많은 시뮬레이션을 통해 제안한 방법들을 평가했고, NHLBI Exome Sequencing Projcet의 급성 폐 손상(ALI) Exome Sequencing data를 활용하여, 실데이터에서의 활용도 입증했다…. 뭐 그런 이야기입니다.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/01. review.html#rare-variant의-등장",
+    "href": "posts/01. SKTA-O/01. review.html#rare-variant의-등장",
+    "title": "01. Review",
+    "section": "(1) Rare Variant의 등장",
+    "text": "(1) Rare Variant의 등장\n1 Array 기반 유전형 분석 기술은 많은 GWAS 연구에서 복합 질환과 관련된 1,000개 이상의 Common Variants를 발굴함.\n2 최근 대용량 병렬 시퀀싱(NGS) 기술의 발전은 Human Genetic 연구를 변화시켰다.\n3 특히, 희귀변이와 복잡한 질병 간의 연관성을 연구할 수 있는 많은 기회들을 제공함.\n\nMAP가 0.01 ~ 0.05 미만인 희귀변이가 complex traits of etiology에서 중요한 역할을 할 수 있으며,\nCommon variants들로는 설명되지 않는 Missing heritability를 설명할 수 있게됨.\n\n4 NGS가 필수적인 이유는?\n\nMicroarray칩은 이미 알려진 Common SNP들 위주로 Probe가 설계되어 있어 새로운 희귀변이를 포착하지 못함.\n반면 NGS는 염기서열 전체를 Direct Sequencing하기 때문에 인구집단 내 빈도가 극ㅎ히 낮거나 개별 가계에만 존재하는 Novel rare Variant까지 발굴할 수 있음.\n\n\n\n원문\n\n\n“Array-based genotyping technologies have been used successfully in hundreds of genome-wide association studies in the last few years for identifying over one thousand common genetic variants associated with many complex diseases. The recent advance of massively parallel sequencing technologies has transformed human genetic research. These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits. Rare variants, which have minor allele frequencies (MAFs) of less than 0.01~0.05, might play an important role in the etiology of complex traits and account for missing heritability unexplained by common variants. Several complex traits have been found to be associated with rare variants.”",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/01. review.html#single-variant-test의-한계와-gene-level-aggregation의-필요성",
+    "href": "posts/01. SKTA-O/01. review.html#single-variant-test의-한계와-gene-level-aggregation의-필요성",
+    "title": "01. Review",
+    "section": "(2) Single-Variant Test의 한계와 Gene-Level Aggregation의 필요성",
+    "text": "(2) Single-Variant Test의 한계와 Gene-Level Aggregation의 필요성\n1 Singl-Variant test은 일반적으로 Common Variant와 Phenotypes간의 연관성을 찾기위해 수행되지만,\n2 Rare variant의 낮은 빈도로 인해 통계적 검정력이 거의 없음\n3 대신 희귀변이 분석은 유전자와 같은 유전체 구역 또는 SNP 세트 내 희귀변이들의 누적 효과(Cumulative effects)를 검정하는데 집중되어 왔음.\n4 이러한 검정법들은 크게 Burden과 Non Burden으로 분류됨.\n5 즉, 희귀변이의 낮은 빈도라는 특성 문제를 해결하기 위해 희귀변이 신호를 묶어서 검정하는 방법인 burden과 Non-Burden이 도입된 것임.\n\n\n원문\n\n\n“In recent years, significant efforts have been devoted to developing powerful and computationally efficient statistical methods for testing associations between rare variants and complex traits. Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers. Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”*",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/01. review.html#burden-test-vs-non-burden",
+    "href": "posts/01. SKTA-O/01. review.html#burden-test-vs-non-burden",
+    "title": "01. Review",
+    "section": "(3) Burden test vs Non-Burden",
+    "text": "(3) Burden test vs Non-Burden\n\nBurdenNon-Burden(SKAT)\n\n\n1 Burden test는 genetic region내 희귀변이들을 단일 Burden 변수로 collapsing 한 후,\n2 해당 Burden 변수에 대하여 phenotype을 regress해서 구역 내 희귀변이들의 누적 효과를 검정함.\n3 그러나 Protective Variant나 Non-Causal Variant가 혼재될 경우, 동일 방향성 가정이 위배되어 검정력의 손실을 겪게됨\n\n\n1 반면, SKAT는 SNP효과가 선형으로 모델링될 때 개별 변이의 Score 통계량을 가중치와 함께 집계함.\n2 보다 일반적으로, SKAT는 커널 행렬을 통해 변이와 표현형간의 연관성을 집계하여 SNP간 상호작용, 즉 Epistatic Effect를 허용함.\n3 SKAT는 Protective or deleterious Variant나 Non-Causal Variant가 모두 존재하거나 다수가 있을 때, 특히 강력함.\n4 그러나 명확한 한계점들이 졵\n\n희귀변이의 상당 비율이 실제로 원인변이이고, 동일한 방향으로 영향을 미치는 경우, Burden보다 검정력이 떨어짐.\n또한, p-value deflation 문제 발생(이 부분 따로 정리)\n\n\n\n\n\n\\[Q_{\\text{burden}} =\\left ( \\sum w_j S_j \\right )^2\n\\quad \\text{vs} \\quad Q_{\\text{SKAT}}\\sum w_{j}^{2} S_{j}^{2}\\]\n\\[S_j = \\sum_{i=1}^n g_{ij} \\left( y_i - \\hat{\\mu}_i \\right)\\]\n\n\n기호 의미\n\n\n\\(w_j\\) \\(j\\)번쨰 희귀변이에 부여되는 가중치\n\n\\(w_j \\sim \\text{Beta}(\\text{MAP}_j;, 1, 25)\\)\n\n\\(S_j\\): \\(j\\)번쨰 희귀변이에 대한 Score-statisic\n\\(g_{ij}\\): \\(i\\)번째 피험자가 보유한 \\(j\\)번째 희귀변이의 희귀 대립유전자 개수.(0,1,2)\n\n\n\n\n염색체1\n염색체2\nMinor allele 수(\\(g_{ij}\\))\n의미\n\n\n\n\nMajor\nMajor\n0\n희귀변이가 없음\n\n\nMajor\nMinor\n1\n희귀변이를 1개 보유\n\n\nMinor\nMajor\n1\n희귀변이를 1개 보유\n\n\nMinor\nMinor\n2\n희귀변이를 2개 보유\n\n\n\n\n\\(y_i\\): \\(i\\)번째 핗럼자의 실제 관측된 Phenotypes\n\\(\\hat{\\mu}_i\\) (또는 \\(\\hat{\\pi}_i\\)): 귀무모형(Null Model) 하에서 예측된 \\(i\\)번째 피험자의 피노타입\n\n귀무모형(Null Model)이란, 유전자 변이 효과가 전혀 없다(\\(\\beta = 0\\))고 전제하고 나이, 성별, 인종(PC) 등 공변량(Covariates)만 투입하여 적합(Fit)시킨 회귀모형\n\n\\(\\left( y_i - \\hat{\\mu}_i \\right)\\): 공변량으로 설명되고 남은 표현형의 잔차(Residual)",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/01. review.html#skat-o-small-sample-adjustment",
+    "href": "posts/01. SKTA-O/01. review.html#skat-o-small-sample-adjustment",
+    "title": "01. Review",
+    "section": "(4) SKAT-O & Small-Sample Adjustment",
+    "text": "(4) SKAT-O & Small-Sample Adjustment\n0 본 논문은 이전 방법론들의 문제점을 해결하고자 두 가지 목표를 가지고 출발함.\n1 첫째, 검정력을 극대화하기 위한 Burden과 SKAT의 최적 선형 결합을 찾는 unified test를 제안함. (변이간 상관관계 활용)\n\n구체적으로는 Burden test가 강력할 떈 Burden test처럼 작동하고, 반대의 경우에도 이와 동일하게 자동적으로 작용함.\n\n2 둘째, 표본수가 적은 case-control에서도 SKAT 및 SKAT-O의 성능을 향상시킨다.\n\n본 논문에서는 small-sample variance와 Kurtosis를 정밀하게 추정하여 SKAT 및 SKAT-O에 대한 analytic adjsutment method를 개발함.\n이를 통해 소표본에 대한 reference distribution을 정확히 계산하여 Type 1 error를 적절하게 통제할 수 있도록 함.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
     "objectID": "posts/00. SKAT/01. Review.html",
     "href": "posts/00. SKAT/01. Review.html",
     "title": "01. Review",
