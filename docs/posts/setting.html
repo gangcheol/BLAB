@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="LGC">
-<meta name="dcterms.date" content="2026-09-23">
+<meta name="author" content="lgc">
+<meta name="dcterms.date" content="2026-06-02">
 
-<title>00. Subject – BRIDGE</title>
+<title>기본 단축키 셋팅 – BRIDGE</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,28 +25,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../posts/01. SKTA-O/01. review.html" rel="next">
-<link href="../../posts/00. SKAT/01. Review.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8107aaa9c353762b8adf357f48dc80d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../posts/00. SKAT/00. GWAS.html" rel="next">
+<link href="../posts/00. Intro.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8107aaa9c353762b8adf357f48dc80d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -86,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">BRIDGE</span>
     </a>
   </div>
@@ -112,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/01. SKTA-O/00. Subject.html">01. SKTA-O</a></li><li class="breadcrumb-item"><a href="../../posts/01. SKTA-O/00. Subject.html">00. Subject</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/setting.html">기본 단축키 셋팅</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -134,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -149,13 +184,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/00. Intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/00. Intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">00. Intro</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/setting.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/setting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">기본 단축키 셋팅</span></a>
   </div>
 </li>
@@ -170,13 +205,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/00. SKAT/00. GWAS.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/00. SKAT/00. GWAS.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">00. GWAS</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/00. SKAT/01. Review.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/00. SKAT/01. Review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Review</span></a>
   </div>
 </li>
@@ -184,22 +219,22 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">01. SKTA-O</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/01. SKTA-O/00. Subject.html" class="sidebar-item-text sidebar-link active">
+  <a href="../posts/01. SKTA-O/00. Subject.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">00. Subject</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/01. SKTA-O/01. review.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/01. SKTA-O/01. review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01. Review</span></a>
   </div>
 </li>
@@ -217,22 +252,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#알아봐야-할-것들" id="toc-알아봐야-할-것들" class="nav-link active" data-scroll-target="#알아봐야-할-것들">알아봐야 할 것들…</a></li>
-  <li><a href="#검정법-비교" id="toc-검정법-비교" class="nav-link" data-scroll-target="#검정법-비교">검정법 비교</a>
-  <ul class="collapse">
-  <li><a href="#lrt" id="toc-lrt" class="nav-link" data-scroll-target="#lrt">LRT</a></li>
-  <li><a href="#ward" id="toc-ward" class="nav-link" data-scroll-target="#ward">WARD</a></li>
-  <li><a href="#score" id="toc-score" class="nav-link" data-scroll-target="#score">Score</a></li>
-  </ul></li>
+  <li><a href="#주피터에-r단축키-추가하기" id="toc-주피터에-r단축키-추가하기" class="nav-link active" data-scroll-target="#주피터에-r단축키-추가하기">주피터에 R단축키 추가하기</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/01. SKTA-O/00. Subject.html">01. SKTA-O</a></li><li class="breadcrumb-item"><a href="../../posts/01. SKTA-O/00. Subject.html">00. Subject</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/00. Intro.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/setting.html">기본 단축키 셋팅</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">00. Subject</h1>
+<h1 class="title">기본 단축키 셋팅</h1>
 </div>
 
 
@@ -242,14 +271,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>LGC </p>
+             <p>lgc </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 23, 2026</p>
+      <p class="date">June 2, 2026</p>
     </div>
   </div>
   
@@ -261,36 +290,71 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<details>
-<summary>
-숙제
-</summary>
-<section id="알아봐야-할-것들" class="level1">
-<h1>알아봐야 할 것들…</h1>
-<p><code>1</code> 용어정리: 스닢, 변이, 싱글베리언트, 싱글 유클렝오타이드 폴리멀피즘, 스트럭쳐 베리언트, Allele(레퍼런스 allele?), GWAS(다시 정확히), 컴파운더, 널 디스트리뷰션, 본페로니 컬렉션, 멀티플 태스킹 프라블롬, p-value inflation &amp; deflation</p>
-<p><code>2</code> MAP를 어떻게 측정하는지 누가 봐도 한눈에 볼 수 있게끔 정리.</p>
-<p><code>3</code> 버든테스트에서 어떻게 정확히 어떻게 수행하는지…</p>
-<p><code>4</code> 기존의 방식(C알파테스트)에서는 왜 퍼뮤테이션을 해야했고, 어떻게 수행하며, 계산량이 얼마나 되는지 측정하기(오리지널 P값?) 그래서 GWAS가 왜 계산량이 급감되는 지까지 이어서 설명할 줄 알아야함.</p>
-<p><code>5</code> SCORE, ward, LRT: 그래서 SCORE test의 장점이 뭐고 교수님과 하는 연구에서 왜 이것을 사용해야만 하는지 까지.</p>
-<p><code>6</code> logit을 쓰는 이유</p>
-<p><code>7</code> 검정통계량 Q가 의미하는바</p>
-<p><code>8</code> 왜 카이스퀘어로 수렴하는지….(교수님이 이해한 바를 내가 이해할 수 있도록)</p>
-</section></details>
+<section id="주피터에-r단축키-추가하기" class="level2">
+<h2 class="anchored" data-anchor-id="주피터에-r단축키-추가하기">주피터에 R단축키 추가하기</h2>
+<p><code>1</code> Anaconda prompt에 다음과 같은 명령어를 입력하여 폴더 생성</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mkdir <span class="st">"%USERPROFILE%</span><span class="er">\</span><span class="st">.jupyter</span><span class="er">\</span><span class="st">lab</span><span class="er">\</span><span class="st">user-settings</span><span class="er">\</span><span class="st">@jupyterlab</span><span class="er">\</span><span class="st">shortcuts-extension"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>2</code> 위 폴더에 단축키를 추가하고 적용할 <code>JSON</code>파일 생성</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>notepad <span class="st">"%USERPROFILE%</span><span class="er">\</span><span class="st">.jupyter</span><span class="er">\</span><span class="st">lab</span><span class="er">\</span><span class="st">user-settings</span><span class="er">\</span><span class="st">@jupyterlab</span><span class="er">\</span><span class="st">shortcuts-extension</span><span class="er">\</span><span class="st">shortcuts.jupyterlab-settings"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>3</code> 해당 경로를 타고, 파일을 연다음 아래 <code>노트</code>를 열어 코드를 복사 후, 본인이 자주쓰는 단축키(<code>%&gt;%</code>, <code>&lt;-</code>) 등을 추가.</p>
+<ul>
+<li>이후 주피터랩을 재실행하면 단축키가 적용됨</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"shortcuts"</span>: [</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">"command"</span>: <span class="st">"apputils:run-first-enabled"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"selector"</span>: <span class="st">"body"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"keys"</span>: [</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Accel Shift M"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      ],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"args"</span>: {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"commands"</span>: [</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>          <span class="st">"console:replace-selection"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>          <span class="st">"fileeditor:replace-selection"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>          <span class="st">"notebook:replace-selection"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"args"</span>: {</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>          <span class="st">"text"</span>: <span class="st">" %&gt;% "</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"command"</span>: <span class="st">"apputils:run-first-enabled"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"selector"</span>: <span class="st">"body"</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"keys"</span>: [</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Alt -"</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      ],</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>      <span class="st">"args"</span>: {</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"commands"</span>: [</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>          <span class="st">"console:replace-selection"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>          <span class="st">"fileeditor:replace-selection"</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>          <span class="st">"notebook:replace-selection"</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"args"</span>: {</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>          <span class="st">"text"</span>: <span class="st">" &lt;- "</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 
-<section id="검정법-비교" class="level1">
-<h1>검정법 비교</h1>
-<p>{.panel-tabset}</p>
-<section id="lrt" class="level2">
-<h2 class="anchored" data-anchor-id="lrt">LRT</h2>
-</section>
-<section id="ward" class="level2">
-<h2 class="anchored" data-anchor-id="ward">WARD</h2>
-</section>
-<section id="score" class="level2">
-<h2 class="anchored" data-anchor-id="score">Score</h2>
 
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -698,13 +762,13 @@ ul.task-list li input[type="checkbox"] {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../posts/00. SKAT/01. Review.html" class="pagination-link" aria-label="01. Review">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01. Review</span>
+      <a href="../posts/00. Intro.html" class="pagination-link" aria-label="00. Intro">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">00. Intro</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../posts/01. SKTA-O/01. review.html" class="pagination-link" aria-label="01. Review">
-        <span class="nav-page-text">01. Review</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../posts/00. SKAT/00. GWAS.html" class="pagination-link" aria-label="00. GWAS">
+        <span class="nav-page-text">00. GWAS</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

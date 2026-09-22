@@ -1,5 +1,175 @@
 [
   {
+    "objectID": "posts/setting.html",
+    "href": "posts/setting.html",
+    "title": "기본 단축키 셋팅",
+    "section": "",
+    "text": "1 Anaconda prompt에 다음과 같은 명령어를 입력하여 폴더 생성\nmkdir \"%USERPROFILE%\\.jupyter\\lab\\user-settings\\@jupyterlab\\shortcuts-extension\"\n2 위 폴더에 단축키를 추가하고 적용할 JSON파일 생성\nnotepad \"%USERPROFILE%\\.jupyter\\lab\\user-settings\\@jupyterlab\\shortcuts-extension\\shortcuts.jupyterlab-settings\"\n3 해당 경로를 타고, 파일을 연다음 아래 노트를 열어 코드를 복사 후, 본인이 자주쓰는 단축키(%&gt;%, &lt;-) 등을 추가.\n\n이후 주피터랩을 재실행하면 단축키가 적용됨\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n{\n  \"shortcuts\": [\n    {\n      \"command\": \"apputils:run-first-enabled\",\n      \"selector\": \"body\",\n      \"keys\": [\n        \"Accel Shift M\"\n      ],\n      \"args\": {\n        \"commands\": [\n          \"console:replace-selection\",\n          \"fileeditor:replace-selection\",\n          \"notebook:replace-selection\"\n        ],\n        \"args\": {\n          \"text\": \" %&gt;% \"\n        }\n      }\n    },\n    {\n      \"command\": \"apputils:run-first-enabled\",\n      \"selector\": \"body\",\n      \"keys\": [\n        \"Alt -\"\n      ],\n      \"args\": {\n        \"commands\": [\n          \"console:replace-selection\",\n          \"fileeditor:replace-selection\",\n          \"notebook:replace-selection\"\n        ],\n        \"args\": {\n          \"text\": \" &lt;- \"\n        }\n      }\n    }\n  ]\n}",
+    "crumbs": [
+      "Posts",
+      "기본 단축키 셋팅"
+    ]
+  },
+  {
+    "objectID": "posts/setting.html#주피터에-r단축키-추가하기",
+    "href": "posts/setting.html#주피터에-r단축키-추가하기",
+    "title": "기본 단축키 셋팅",
+    "section": "",
+    "text": "1 Anaconda prompt에 다음과 같은 명령어를 입력하여 폴더 생성\nmkdir \"%USERPROFILE%\\.jupyter\\lab\\user-settings\\@jupyterlab\\shortcuts-extension\"\n2 위 폴더에 단축키를 추가하고 적용할 JSON파일 생성\nnotepad \"%USERPROFILE%\\.jupyter\\lab\\user-settings\\@jupyterlab\\shortcuts-extension\\shortcuts.jupyterlab-settings\"\n3 해당 경로를 타고, 파일을 연다음 아래 노트를 열어 코드를 복사 후, 본인이 자주쓰는 단축키(%&gt;%, &lt;-) 등을 추가.\n\n이후 주피터랩을 재실행하면 단축키가 적용됨\n\n\n\n\n\n\n\nNote\n\n\n\n\n\n{\n  \"shortcuts\": [\n    {\n      \"command\": \"apputils:run-first-enabled\",\n      \"selector\": \"body\",\n      \"keys\": [\n        \"Accel Shift M\"\n      ],\n      \"args\": {\n        \"commands\": [\n          \"console:replace-selection\",\n          \"fileeditor:replace-selection\",\n          \"notebook:replace-selection\"\n        ],\n        \"args\": {\n          \"text\": \" %&gt;% \"\n        }\n      }\n    },\n    {\n      \"command\": \"apputils:run-first-enabled\",\n      \"selector\": \"body\",\n      \"keys\": [\n        \"Alt -\"\n      ],\n      \"args\": {\n        \"commands\": [\n          \"console:replace-selection\",\n          \"fileeditor:replace-selection\",\n          \"notebook:replace-selection\"\n        ],\n        \"args\": {\n          \"text\": \" &lt;- \"\n        }\n      }\n    }\n  ]\n}",
+    "crumbs": [
+      "Posts",
+      "기본 단축키 셋팅"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html",
+    "href": "posts/01. SKTA-O/00. Subject.html",
+    "title": "00. Subject",
+    "section": "",
+    "text": "숙제\n\n\n\n1 용어정리: 스닢, 변이, 싱글베리언트, 싱글 유클렝오타이드 폴리멀피즘, 스트럭쳐 베리언트, Allele(레퍼런스 allele?), GWAS(다시 정확히), 컴파운더, 널 디스트리뷰션, 본페로니 컬렉션, 멀티플 태스킹 프라블롬, p-value inflation & deflation\n2 MAP를 어떻게 측정하는지 누가 봐도 한눈에 볼 수 있게끔 정리.\n3 버든테스트에서 어떻게 정확히 어떻게 수행하는지…\n4 기존의 방식(C알파테스트)에서는 왜 퍼뮤테이션을 해야했고, 어떻게 수행하며, 계산량이 얼마나 되는지 측정하기(오리지널 P값?) 그래서 GWAS가 왜 계산량이 급감되는 지까지 이어서 설명할 줄 알아야함.\n5 SCORE, ward, LRT: 그래서 SCORE test의 장점이 뭐고 교수님과 하는 연구에서 왜 이것을 사용해야만 하는지 까지.\n6 logit을 쓰는 이유\n7 검정통계량 Q가 의미하는바\n8 왜 카이스퀘어로 수렴하는지….(교수님이 이해한 바를 내가 이해할 수 있도록)",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#lrt",
+    "href": "posts/01. SKTA-O/00. Subject.html#lrt",
+    "title": "00. Subject",
+    "section": "LRT",
+    "text": "LRT",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#ward",
+    "href": "posts/01. SKTA-O/00. Subject.html#ward",
+    "title": "00. Subject",
+    "section": "WARD",
+    "text": "WARD",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#score",
+    "href": "posts/01. SKTA-O/00. Subject.html#score",
+    "title": "00. Subject",
+    "section": "Score",
+    "text": "Score",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/00. GWAS.html",
+    "href": "posts/00. SKAT/00. GWAS.html",
+    "title": "00. GWAS",
+    "section": "",
+    "text": "1 같은 환경에 살아도 어떤 사람은 당뇨병에 걸리고 어떤 사람은 걸리지 않음.\n2 식습관이나 운동 같은 환경 요인도 중요하지만, 태어날 떄부터 가지고 있는 유전적 차이도 큰 역할을 한다.\n3 그렇다면 다음과 같은 질문이 생김\n\n“유전적으로 어떤 차이가 질병 위험을 바꾸는가?”\n\n4 이 질문에 답하기 위한 연구 방법이 바로 GWAS(Genome-wide Association Study, 전장유전체 연관 분석)이다.\n\n\n용어 정리\n\n\nGenome Wide: 전장 유전체: 모든 유전체 위치에 대해서\nAssociation Study = 연관분석: 관심을 가진 형질(Target phenotype)과 연관성을 갖는 유전적 위치를 찾는 것",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "00. GWAS"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
+    "href": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
+    "title": "00. GWAS",
+    "section": "DNA, Gene, Genome",
+    "text": "DNA, Gene, Genome\n1 DNA: 생명의 설계도(유전정보) \\(\\to\\) A, T, G, C 네 가지 글자로 이루어진 긴 문자열.\n2 Gene(유전자): DNA중에서 단백질 만드는 방법이 적힌 구간, 약 2만 개가 있음.\n3 Genome(유전체): 한 개체가 지닌 DNA 정보 전체 총합, 약 32억 글자\n\nSNP\nSingle Nucleotide Polymorphism\n1 사람마다 DNA의 대부분은 같지만, 글자 하나가 다른 곳이 있음.\n\n\n\n2 인간 유전체(Genome)에는 약 1천만 개의 SNP가 있으며, 이것이 개인차의 주요 원임임.",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "00. GWAS"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BRIDGE",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\n00. Subject\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 14, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nJun 2, 2026\n\n\n기본 단축키 셋팅\n\n\nlgc \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "posts/00. Intro.html",
+    "href": "posts/00. Intro.html",
+    "title": "00. Intro",
+    "section": "",
+    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "crumbs": [
+      "Posts",
+      "00. Intro"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html",
+    "href": "posts/00. SKAT/01. Review.html",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”\n\n\n\n\n\n\n\n1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
+    "href": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
+    "href": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
+    "href": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
+    "title": "01. Review",
+    "section": "(1) 방법론 발전 과정",
+    "text": "(1) 방법론 발전 과정\n\nstep1. SKAT\n\na. 앞선 방법론의 한계점\n1 모든 변이가 한 방향으로 흐른다. (Burden test)\n2 변이들에 동일 방향성 가정은 없으나 공변량 보정이 어렵고 계산량이 크다. (Non-Burden test)\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\nDespite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… The C-alpha test also uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”\n\n\n\n\nb. 해결책\n1 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 \\(\\beta_j\\)가 평균 0, 분산 \\(w_j^2 \\tau\\)인 임의의 분포를 따른다고 가정한 Variance-component score test를 적용함\n\n\nMethodology\n\n1 기본 모형\n\n\\(\\beta_j\\)를 평균 0을 가지는 임의 변수로 취급 \\(\\to\\,\\, \\beta_j \\sim(0, \\tau w_j)\\)\n\n\\(\\tau\\): 분산성분(Variance component): 영역 전체에 미치는 효과 총량\n\\(w_j\\): \\(j\\)번째 변이에 대한 사전 가중치.\n\nScore test로 전환 \\(\\to\\) covariate만 포함된 Null Model을 단 1회만 적합시키면 되므로, GWAS 분석 시 계산 속도가 빨라짐\n\n\\[H_0: \\tau = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\n\n원문\n\n\n“To increase the power, SKAT tests \\(H_0\\) by assuming each \\(\\beta_j\\) follows an arbitrary distribution with a mean of zero and a variance of \\(w_j \\tau\\)… which can be conveniently tested with a variance-component score test… A key advantage of the score test is that it only requires fitting the null model…\n\n\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + \\beta' G_i + \\epsilon_i\\) (Equation 1)\nDichotomous trait: \\(\\text{logit}\\,\\, P(y_i = 1) = \\alpha_0 + \\alpha' X_i + \\beta' G_i\\) (Equation 2)\n\n2 확장 모형(Semiparametric Models for Epistasis)\n\\[H_0: f(G) = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + f(G_i) + \\epsilon_i\\) (Equation 4)\nDichotomous trait: \\(\\text{logit}\\,\\,P(y_i = 1) = \\alpha_0 + \\alpha' X_i + f(G_i)\\) (Equation 5)\n\n\n선형 항 \\(\\beta' G_i\\)를 임의의 함수 \\(f(G_i)\\)로 대체함으로써, 단일 변이 효과뿐만 아니라 희귀변이 \\(\\times\\) 희귀변이 또는 흔한변이 \\(\\times\\) 희귀변이 간의 복잡한 상위성 효과(Epistatic effects) 및 비선형적 상호작용까지 유연하게 모형화할 수 있음.\n\n\n\n원문\n\n\nAn attractive feature of SKAT is the ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework. To do so, we replace \\(G_i'\\beta\\) by a more flexible function \\(f(G_i)\\) in the linear and logistic models (1) and (2) where \\(f(G_i)\\) allows for rare variant by rare variant and common variant by rare-variant interactions.\n\n\n\n각 기호 의미\n\n\n\\(y_i\\): \\(i\\)번째 개인의 표현형(반응변수라고 생각, Phenotypes)\n\\(\\alpha_0\\): 절편(intercept)\n\\(\\boldsymbol{\\alpha}\\): 공변량 \\(\\mathbf{X_i}\\)(나이\\(\\cdot\\)성별)의 효과 계수 벡터-고정 효과\n\\(\\beta\\): \\(p\\)개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 \\(\\to\\) 검정대상\n\\(G_{i}\\): \\(i\\)번째 사람이 몇 개의 Minor allele를 가졌는지(0,1,2)\n\n\n\n\n염색체1\n염색체2\nMinor allele 수(\\(\\boldsymbol{G}_{ij}\\))\n\n\n\n\nMajor\nMajor\n0\n\n\nMajor\nMinor\n1\n\n\nMinor\nMajor\n1\n\n\nMinor\nMinor\n2\n\n\n\n\n\n3 검정통계량 \\(Q\\) & 가중치(\\(w_j\\))\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]\n\\[\\sqrt{w_j} = \\text{Beta}(\\text{MAF}_j, 1, 25)\\]\n\n\\(K = G W W G'\\): 샘플 간 유전적 유사도를 측정하는 Kernel 행렬.\n개별 변이 Score 통계량 \\(S_j\\) 제곱의 가중 합산 형태로 \\(Q\\)가 형성되며, MAF가 낮은 희귀변이에 더 큰 가중치를 부여합니다.\n귀무가설 하에서 \\(Q\\)는 Mixture of Chi-square 분포를 따르며, Davies method로 Permutation 없이 즉시 유의확률을 산출\n\n\n\n\nc. 주요 결과\n1 Type 1 Error Rate\n\nContinuous traits에서는 유의수준인 \\(\\alpha = 10^{-6}\\)에서도 Type I error을 부풀림 없이 정확하게 통제.\n특이사항: Dichotomous traits 및 표본이 적은 경우에는 Asymptotic \\(p\\)-value 계산 특성상 \\(p\\)-value가 Deflated으로 산출되는 경향을 보임\n\n\n\nTable 1-(1)\n\n\n\n\n\n\n\nTable 1-(2)\n\n\n\n\n\n2 Statistical Power 비교\n\n\\(\\beta\\)가 50대 50으로 섞여 있을 때 기존 Burden test들(W, N, C)의 Power은 0.1~0.2 수준에 그치는 반면, SKAT 은 표본이 늘어남에 따라 0.7 이상으로 치솟는 모습을 보임\n\n\n\nFigure 1\n\n\n\n\n\n\n\nTable 2\n\n\n\n\n\n3 실데이터 검증\n\n자료: Analysis of the Dallas Heart Study Sequencing Data\nDHS 데이터 3,476명의 ANGPTL3, ANGPTL4, ANGPTL5 유전자 내 93개 희귀변이 분석 결과를 수록한 표\n표의 두 번째 행인 Dichotomized TG level 열을 보면 SKAT의 \\(p\\)-value가 \\(1.3 \\times 10^{-4}\\) 로 명시되어 있으며, 옆에 적힌 CAST (\\(3.2 \\times 10^{-2}\\))나 Weighted Sum (\\(3.1 \\times 10^{-3}\\))보다 수치가 훨씬 작아(유의성이 더 높아) 우수한 검정력을 보임\n\n\n\nTable 4\n\n\n\n\n\n4 계산 효율성\n\n원인 변이 비중이 높을수록, 효과 크기(OR)가 클수록 필요 표본 수가 지수적으로 감소하며, 유병률이 낮을수록 환자군 내 원인 변이 집적(Enrichment) 효과로 인해 필요 표본 수가 줄어드는 경향을 정량적으로 입증함.\n표본 크기 \\(n = 2,000 \\sim 10,000\\)명 구간에서 SKAT의 이론적 추정 공식으로 그려낸 검정력 곡선(Theoretical Power, 검은선) 과 1,000회 시뮬레이션으로 얻은 실측 곡선(Empirical Power, 빨간선) 을 직접 대조한 결과, 두 곡선이 완벽하게 오버랩(Overlap) 된 것으로 보임.\n\n\n\nTable 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nd. 한계점\n1 원인 변이 비율이 높고 단방향(Unidirectional)인 경우의 파워 열세\n2 소표본(\\(n &lt; 1,000\\)) 케이스-컨트롤 연구 시 \\(p\\)-value Deflation이 발생함.",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
     "objectID": "posts/01. SKTA-O/01. review.html",
     "href": "posts/01. SKTA-O/01. review.html",
     "title": "01. Review",
@@ -93,118 +263,6 @@
       "Posts",
       "01. SKTA-O",
       "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html",
-    "href": "posts/00. SKAT/01. Review.html",
-    "title": "01. Review",
-    "section": "",
-    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”\n\n\n\n\n\n\n\n1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
-    "href": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
-    "title": "01. Review",
-    "section": "",
-    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
-    "href": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
-    "title": "01. Review",
-    "section": "",
-    "text": "1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
-    "href": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
-    "title": "01. Review",
-    "section": "(1) 방법론 발전 과정",
-    "text": "(1) 방법론 발전 과정\n\nstep1. SKAT\n\na. 앞선 방법론의 한계점\n1 모든 변이가 한 방향으로 흐른다. (Burden test)\n2 변이들에 동일 방향성 가정은 없으나 공변량 보정이 어렵고 계산량이 크다. (Non-Burden test)\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\nDespite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… The C-alpha test also uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”\n\n\n\n\nb. 해결책\n1 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 \\(\\beta_j\\)가 평균 0, 분산 \\(w_j^2 \\tau\\)인 임의의 분포를 따른다고 가정한 Variance-component score test를 적용함\n\n\nMethodology\n\n1 기본 모형\n\n\\(\\beta_j\\)를 평균 0을 가지는 임의 변수로 취급 \\(\\to\\,\\, \\beta_j \\sim(0, \\tau w_j)\\)\n\n\\(\\tau\\): 분산성분(Variance component): 영역 전체에 미치는 효과 총량\n\\(w_j\\): \\(j\\)번째 변이에 대한 사전 가중치.\n\nScore test로 전환 \\(\\to\\) covariate만 포함된 Null Model을 단 1회만 적합시키면 되므로, GWAS 분석 시 계산 속도가 빨라짐\n\n\\[H_0: \\tau = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\n\n원문\n\n\n“To increase the power, SKAT tests \\(H_0\\) by assuming each \\(\\beta_j\\) follows an arbitrary distribution with a mean of zero and a variance of \\(w_j \\tau\\)… which can be conveniently tested with a variance-component score test… A key advantage of the score test is that it only requires fitting the null model…\n\n\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + \\beta' G_i + \\epsilon_i\\) (Equation 1)\nDichotomous trait: \\(\\text{logit}\\,\\, P(y_i = 1) = \\alpha_0 + \\alpha' X_i + \\beta' G_i\\) (Equation 2)\n\n2 확장 모형(Semiparametric Models for Epistasis)\n\\[H_0: f(G) = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + f(G_i) + \\epsilon_i\\) (Equation 4)\nDichotomous trait: \\(\\text{logit}\\,\\,P(y_i = 1) = \\alpha_0 + \\alpha' X_i + f(G_i)\\) (Equation 5)\n\n\n선형 항 \\(\\beta' G_i\\)를 임의의 함수 \\(f(G_i)\\)로 대체함으로써, 단일 변이 효과뿐만 아니라 희귀변이 \\(\\times\\) 희귀변이 또는 흔한변이 \\(\\times\\) 희귀변이 간의 복잡한 상위성 효과(Epistatic effects) 및 비선형적 상호작용까지 유연하게 모형화할 수 있음.\n\n\n\n원문\n\n\nAn attractive feature of SKAT is the ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework. To do so, we replace \\(G_i'\\beta\\) by a more flexible function \\(f(G_i)\\) in the linear and logistic models (1) and (2) where \\(f(G_i)\\) allows for rare variant by rare variant and common variant by rare-variant interactions.\n\n\n\n각 기호 의미\n\n\n\\(y_i\\): \\(i\\)번째 개인의 표현형(반응변수라고 생각, Phenotypes)\n\\(\\alpha_0\\): 절편(intercept)\n\\(\\boldsymbol{\\alpha}\\): 공변량 \\(\\mathbf{X_i}\\)(나이\\(\\cdot\\)성별)의 효과 계수 벡터-고정 효과\n\\(\\beta\\): \\(p\\)개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 \\(\\to\\) 검정대상\n\\(G_{i}\\): \\(i\\)번째 사람이 몇 개의 Minor allele를 가졌는지(0,1,2)\n\n\n\n\n염색체1\n염색체2\nMinor allele 수(\\(\\boldsymbol{G}_{ij}\\))\n\n\n\n\nMajor\nMajor\n0\n\n\nMajor\nMinor\n1\n\n\nMinor\nMajor\n1\n\n\nMinor\nMinor\n2\n\n\n\n\n\n3 검정통계량 \\(Q\\) & 가중치(\\(w_j\\))\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]\n\\[\\sqrt{w_j} = \\text{Beta}(\\text{MAF}_j, 1, 25)\\]\n\n\\(K = G W W G'\\): 샘플 간 유전적 유사도를 측정하는 Kernel 행렬.\n개별 변이 Score 통계량 \\(S_j\\) 제곱의 가중 합산 형태로 \\(Q\\)가 형성되며, MAF가 낮은 희귀변이에 더 큰 가중치를 부여합니다.\n귀무가설 하에서 \\(Q\\)는 Mixture of Chi-square 분포를 따르며, Davies method로 Permutation 없이 즉시 유의확률을 산출\n\n\n\n\nc. 주요 결과\n1 Type 1 Error Rate\n\nContinuous traits에서는 유의수준인 \\(\\alpha = 10^{-6}\\)에서도 Type I error을 부풀림 없이 정확하게 통제.\n특이사항: Dichotomous traits 및 표본이 적은 경우에는 Asymptotic \\(p\\)-value 계산 특성상 \\(p\\)-value가 Deflated으로 산출되는 경향을 보임\n\n\n\nTable 1-(1)\n\n\n\n\n\n\n\nTable 1-(2)\n\n\n\n\n\n2 Statistical Power 비교\n\n\\(\\beta\\)가 50대 50으로 섞여 있을 때 기존 Burden test들(W, N, C)의 Power은 0.1~0.2 수준에 그치는 반면, SKAT 은 표본이 늘어남에 따라 0.7 이상으로 치솟는 모습을 보임\n\n\n\nFigure 1\n\n\n\n\n\n\n\nTable 2\n\n\n\n\n\n3 실데이터 검증\n\n자료: Analysis of the Dallas Heart Study Sequencing Data\nDHS 데이터 3,476명의 ANGPTL3, ANGPTL4, ANGPTL5 유전자 내 93개 희귀변이 분석 결과를 수록한 표\n표의 두 번째 행인 Dichotomized TG level 열을 보면 SKAT의 \\(p\\)-value가 \\(1.3 \\times 10^{-4}\\) 로 명시되어 있으며, 옆에 적힌 CAST (\\(3.2 \\times 10^{-2}\\))나 Weighted Sum (\\(3.1 \\times 10^{-3}\\))보다 수치가 훨씬 작아(유의성이 더 높아) 우수한 검정력을 보임\n\n\n\nTable 4\n\n\n\n\n\n4 계산 효율성\n\n원인 변이 비중이 높을수록, 효과 크기(OR)가 클수록 필요 표본 수가 지수적으로 감소하며, 유병률이 낮을수록 환자군 내 원인 변이 집적(Enrichment) 효과로 인해 필요 표본 수가 줄어드는 경향을 정량적으로 입증함.\n표본 크기 \\(n = 2,000 \\sim 10,000\\)명 구간에서 SKAT의 이론적 추정 공식으로 그려낸 검정력 곡선(Theoretical Power, 검은선) 과 1,000회 시뮬레이션으로 얻은 실측 곡선(Empirical Power, 빨간선) 을 직접 대조한 결과, 두 곡선이 완벽하게 오버랩(Overlap) 된 것으로 보임.\n\n\n\nTable 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nd. 한계점\n1 원인 변이 비율이 높고 단방향(Unidirectional)인 경우의 파워 열세\n2 소표본(\\(n &lt; 1,000\\)) 케이스-컨트롤 연구 시 \\(p\\)-value Deflation이 발생함.",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. Intro.html",
-    "href": "posts/00. Intro.html",
-    "title": "00. Intro",
-    "section": "",
-    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
-    "crumbs": [
-      "Posts",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BRIDGE",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\n00. Subject\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 14, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/00. SKAT/00. GWAS.html",
-    "href": "posts/00. SKAT/00. GWAS.html",
-    "title": "00. GWAS",
-    "section": "",
-    "text": "1 같은 환경에 살아도 어떤 사람은 당뇨병에 걸리고 어떤 사람은 걸리지 않음.\n2 식습관이나 운동 같은 환경 요인도 중요하지만, 태어날 떄부터 가지고 있는 유전적 차이도 큰 역할을 한다.\n3 그렇다면 다음과 같은 질문이 생김\n\n“유전적으로 어떤 차이가 질병 위험을 바꾸는가?”\n\n4 이 질문에 답하기 위한 연구 방법이 바로 GWAS(Genome-wide Association Study, 전장유전체 연관 분석)이다.\n\n\n용어 정리\n\n\nGenome Wide: 전장 유전체: 모든 유전체 위치에 대해서\nAssociation Study = 연관분석: 관심을 가진 형질(Target phenotype)과 연관성을 갖는 유전적 위치를 찾는 것",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "00. GWAS"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
-    "href": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
-    "title": "00. GWAS",
-    "section": "DNA, Gene, Genome",
-    "text": "DNA, Gene, Genome\n1 DNA: 생명의 설계도(유전정보) \\(\\to\\) A, T, G, C 네 가지 글자로 이루어진 긴 문자열.\n2 Gene(유전자): DNA중에서 단백질 만드는 방법이 적힌 구간, 약 2만 개가 있음.\n3 Genome(유전체): 한 개체가 지닌 DNA 정보 전체 총합, 약 32억 글자\n\nSNP\nSingle Nucleotide Polymorphism\n1 사람마다 DNA의 대부분은 같지만, 글자 하나가 다른 곳이 있음.\n\n\n\n2 인간 유전체(Genome)에는 약 1천만 개의 SNP가 있으며, 이것이 개인차의 주요 원임임.",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "00. GWAS"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html",
-    "href": "posts/01. SKTA-O/00. Subject.html",
-    "title": "00. Subject",
-    "section": "",
-    "text": "숙제\n\n\n알아봐야 할 것들…\n1 용어정리: 스닢, 변이, 싱글베리언트, 싱글 유클렝오타이드 폴리멀피즘, 스트럭쳐 베리언트, Allele(레퍼런스 allele?), GWAS(다시 정확히), 컴파운더, 널 디스트리뷰션, 본페로니 컬렉션, 멀티플 태스킹 프라블롬, p-value inflation & deflation\n2 MAP를 어떻게 측정하는지 누가 봐도 한눈에 볼 수 있게끔 정리.\n3 버든테스트에서 어떻게 정확히 어떻게 수행하는지…\n4 기존의 방식(C알파테스트)에서는 왜 퍼뮤테이션을 해야했고, 어떻게 수행하며, 계산량이 얼마나 되는지 측정하기(오리지널 P값?) 그래서 GWAS가 왜 계산량이 급감되는 지까지 이어서 설명할 줄 알아야함.\n5 SCORE, ward, LRT: 그래서 SCORE test의 장점이 뭐고 교수님과 하는 연구에서 왜 이것을 사용해야만 하는지 까지.\n6 logit을 쓰는 이유\n7 검정통계량 Q가 의미하는바\n8 왜 카이스퀘어로 수렴하는지….(교수님이 이해한 바를 내가 이해할 수 있도록)",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
     ]
   }
 ]
