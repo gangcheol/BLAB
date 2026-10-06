@@ -254,11 +254,35 @@
     ]
   },
   {
+    "objectID": "posts/01. SKTA-O/01. review.html#small-sample-optimal-unified-test",
+    "href": "posts/01. SKTA-O/01. review.html#small-sample-optimal-unified-test",
+    "title": "01. Review",
+    "section": "Small-Sample Optimal Unified Test",
+    "text": "Small-Sample Optimal Unified Test\n(흠…. 여기부터는 이해가 잘 안갑니다…)\n\n앞선 방식들의 문제점 (p-value)\n1 SKAT 및 SKAT-O는 Permutation 없이 카이제곰 분포를 통해 p-value를 빠르게 계산함.\n2 그러나 Binary trait & 표본 수가 적을 경우, 기존 점근적 공식은 p-value가 실제보다 너무 크게 산출되어 Type 1 Error control and Power loss가 발생\n3 수학적으로 생각하면…..\n\nGenotype Matrix \\(\\bf{G}\\)가 sparse할 경우, 귀무가설 하에서 검정통계량 \\(Q_{s}\\)의 Small-sample variance가 asymptotic보다 훨씬 작아짐 (뭔 소리인지….?)\n그래서 논문 저자들은 \\(H_0\\)하에서 \\(Q_s\\)의 평균과 분산을 새로운 방법으로 유도함.\n\n\n\nNotation(소표본 평균 및 분산 수식)\n\\[\\mathbb{E}[Q_S \\mid U, L, \\pi] = \\sum_{j=1}^q \\lambda_j, \\quad \\text{Var}[Q_S \\mid U, L, \\pi] = \\sum_{j=1}^q \\sum_{k=1}^q \\lambda_j \\lambda_k c_{jk} \\quad \\text{--- (Equation 10)} \\]\n\\[\\text{where}\\quad c_{jk} = \\sum_{i=1}^n u_{ij}^2 u_{ik}^2 \\frac{3\\pi_i^2 - 3\\pi_i + 1}{\\pi_i(1-\\pi_i)} + \\sum_{i_1 \\neq i_2} u_{i1j}^2 u_{i2k}^2 + 2 \\sum_{i_1 \\neq i_2} u_{i1j} u_{i2j} u_{i1k} u_{i2k} - \\text{Appendix A}\\]\n\n\n기호\n\n1 \\(D = \\text{diag}\\{\\pi_i(1-\\pi_i)\\}\\): 귀무모형 하에서 각 피험자의 발병 예측 확률\n2 \\(\\pi_i\\)로 구성된 대각 행렬.\\(\\tilde{K} = D^{1/2} K D^{1/2}\\): 조정된 커널 행렬.\n3 \\(\\lambda_1, \\dots, \\lambda_q\\): \\(\\tilde{K}\\)의 0이 아닌 고유값(Eigenvalues) 대각 행렬 \\(L\\).\n4 \\(U = [u_1, \\dots, u_q]\\): \\(\\tilde{K}\\)의 고유벡터(Eigenvectors) 행렬 (\\(u_{ij}\\)는 \\(j\\)번째 고유벡터의 \\(i\\)번째 요소).\n5 \\(c_{jk}\\): 소표본 모멘트 보정 계수\n\n\\(\\divideontimes\\) 핵심은 소표본 평균(\\(\\mathbb{E}[Q_S]\\))은 점근적 평균과 동일하지만, 소표본 분산(\\(\\text{Var}[Q_S]\\))은 보정 계수 \\(c_{jk}\\)가 곱해져 점근적 분산과 완전히 달라진다고 합니다…..\n\n\np-value 계산\n산출된 소표본 모멘트(\\(\\mu_Q, v_Q\\))를 바탕으로 카이제곱 분포의 자유도(\\(df\\))를 모멘트 매칭(Moment Matching)으로 수정하여 정밀한 \\(p\\)-value를 계산\n\\[p\\text{-value} = 1 - F\\left( \\frac{Q_S - \\mu_Q}{\\sqrt{v_Q}} \\sqrt{2 \\cdot df} + df \\;\\Big|\\; \\chi^2_{df} \\right) \\quad \\text{--- (Equation 11)}\\]\n구성 요소: - \\(\\mu_Q = \\sum_{j=1}^q \\lambda_j\\) (소표본 평균)\n\n\\(v_Q = \\sum_{i,j=1}^q \\lambda_i \\lambda_j \\hat{c}_{ij}\\) (소표본 분산)\n수정 자유도 \\(df = \\frac{\\left(\\sum \\lambda_j^*\\right)^2}{\\sum \\lambda_j^{*4}} \\quad \\left(\\text{단, } \\lambda_j^* = \\lambda_j \\frac{\\sqrt{\\hat{c}_{jj}}}{\\sqrt{2}}\\right)\\)\n\n\n\nSKAT-O에도 적용\n1 이 소표본 분산 보정 알고리즘은 SKAT(\\(Q_S\\))에만 국한되지 않고 SKAT-O(\\(Q_\\rho\\))에도 동일하게 확장\n2 또한 본 논문에서 제안한 Small-sample adjustment procedure은 커널 행렬 \\(\\bf{K}\\)가 반드시 linear weighted kernel이라는 제약을 두지 않고,\n3 IBS(Identity-By-State)커널 및 가중 IBS커널을 포함한 모든 커널 행렬에 적용할 수 있다고 합니다….",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
     "objectID": "posts/01. SKTA-O/01. review.html#small-sample-skat-and-unified-test-with-higher-moments-adjustments",
     "href": "posts/01. SKTA-O/01. review.html#small-sample-skat-and-unified-test-with-higher-moments-adjustments",
     "title": "01. Review",
     "section": "Small-Sample SKAT and Unified Test with Higher Moments Adjustments",
-    "text": "Small-Sample SKAT and Unified Test with Higher Moments Adjustments\n1 여기서 부턴 다음에……",
+    "text": "Small-Sample SKAT and Unified Test with Higher Moments Adjustments\n1 이전 섹션 Equations 10 & 11에서 한 단계 더 나아가,\n2 샘플 수가 \\(n=88\\) 수준으로 극단적으로 적을 때 발생하는 Type 1 error rate을 잡기 위해\n3 4차 모멘트인 Kurtosis를 추가 교정하는 알고리즘을 다룸.\n4 \\(Q_S\\)의 첨도를 분석적 수식으로 유도하는 것은 어려워, 리샘플링 기법을 통해 표본 첨도를 추정하는 방법을 제안함.\n\nNo Covariate: 단순 선열 검정\n1 나이, 성별 등 보정할 공변량이 없는 경우에는 \\(y\\)를 \\(B\\)번 단순 Permutation하여 표본을 생성\n2 \\(b\\)번째 순열 표본 \\(y^*_b\\) (\\(b = 1, \\dots, B\\))로부터 얻은 SKAT 통계량을 \\(Q^*_{s;b}\\)라 할 때, 표본 첨도(\\(\\hat{\\gamma}\\))는 다음과 같이 산출됨.\n\\[\\hat{\\gamma} = \\frac{\\hat{m}_4}{\\hat{s}^4} - 3\\]\n\\[\\text{where } \\hat{m}_4 = \\frac{1}{B} \\sum_{b=1}^B \\left( Q^*_{s;b} - \\mu_Q \\right)^4, \\quad \\hat{s}^2 = \\frac{1}{B} \\sum_{b=1}^B \\left( Q^*_{s;b} - \\mu_Q \\right)^2\\]\n(단, \\(\\mu_Q\\)는 \\(Q_S\\)의 기대값)\n3 추정된 표본 첨도 \\(\\hat{\\gamma}\\)를 이용하여 카이제곱 혼합 분포의 자유도(\\(\\widehat{df}\\))를 다음과 같이 수정\n\\[\\widehat{df} = \\frac{12}{\\hat{\\gamma}}\\]\n4 이렇게 수정된 자유도 \\(\\widehat{df}\\)를 Equation 11 수식의 \\(\\chi^2_{\\widehat{df}}\\) 분포식에 대입하여 최종 보정된 \\(p\\)-value를 계산\n\\[p\\text{-value} = 1 - F\\left( \\frac{Q_S - \\mu_Q}{\\sqrt{v_Q}} \\sqrt{2 \\cdot df} + df \\;\\Big|\\; \\chi^2_{df} \\right) \\quad \\text{--- (Equation 11)}\\]\n\n\nCovariate가 존재하는 경우\n1 공변량을 보정해야 하는 실제 연구에서는 단순 Permutation을 사용할 수 없음.\n2 대신 Parametric Bootstrap을 사용하여 리샘플링을 수행\n3 세부 절차\n\n귀무모형(Null Model) 하에서 공변량만으로 각 피험자의 발병 확률 \\(\\pi_i\\)를 먼저 추정한 후,\n이를 확률값으로 사용하여 원래 데이터와 동일한 환자(Case) 및 대조군(Control) 수를 유지하는 부트스트랩 표현형 \\(y^*_b\\)를 생성\n생성된 부트스트랩 표본으로부터 표본 첨도 \\(\\hat{\\gamma}\\)를 추정하고 자유도 \\(\\widehat{df} = 12/\\hat{\\gamma}\\)를 수정하여 동일하게 Equation 11로 \\(p\\)-value를 계산\n\n\n\nComputation-Time Advantage\n1 기존 Whole-Exome Sequencing 연구에서는 다중 비교 보정을 위해 \\(10^{-5} \\sim 10^{-6}\\) 수준의 유의수준에서 \\(p\\)-value를 산출해야 했음.\n2 기존처럼 \\(Q^*_{s;b} &gt; Q_S\\)인 비율로 \\(p\\)-value를 직접 세어내려면 유전자 1개당 \\(10^7 \\sim 10^8\\)번 이상의 순열 또는 부트스트랩이 필요하여 연산이 불가능에 가까웠다.\n3 본 논문에서 제안한 부트스트랩은 \\(p\\)-value를 직접 세는 것이 아니라, 오직 고차 모멘트(첨도 \\(\\hat{\\gamma}\\)) 하나만 안정적으로 추정하는 목적이므로 단 \\(10,000\\)번의 부트스트랩이면 충분함.\n4 가장 결정적인 핵심은 귀무모형(Null Model)은 오직 공변량(\\(X\\))만으로 적합되므로 모든 유전자에서 완벽히 동일\n5 따라서 귀무모형 하에서 생성된 10,000개의 부트스트랩 표현형 표본(\\(y^*_b\\))을 전장 엑솜 20,000개 모든 유전자에 단 한 번 생성하여 재사용(Re-use)할 수 있다.\n6 이를 통해 유전자별 반복 계산 없이 전체 엑솜 분석의 연산 시간을 획기적으로 단축할 수 있다는 이야기…",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/01. review.html#numerical-simulations",
+    "href": "posts/01. SKTA-O/01. review.html#numerical-simulations",
+    "title": "01. Review",
+    "section": "Numerical Simulations",
+    "text": "Numerical Simulations\n저자들은 이분형(Binary/Case-Control) 형질 환경에서 소표본 보정법과 SKAT-O의 성능을 검증하기 위해 유럽인 선조 데이터 기반의 COSI 합체 모형(Coalescent model)으로 생성된 10,000개 염색체에서 무작위 추출한 3 kb 유전 구역을 대상으로 대규모 시뮬레이션을 수행함\n\n\n시뮬레이션 설정 및 비교 대상 방법론\n\n\n📌 기본 모형 설정\n1 표본 크기: 총 \\(n = 200, 500, 1,000\\) 명 (케이스 50%, 컨트롤 50%)\n2 Null Model: \\(\\text{logit}(\\pi_i) = \\gamma_0 + 0.5 X_{1i} + 0.5 X_{2i}\\)\n\n\\(X_1 \\sim N(0, 1)\\) (연속형 공변량), \\(X_2 \\sim \\text{Bernoulli}(0.5)\\) (이분형 공변량)\n기저 질환 유병률(Prevalence) = 1% (\\(\\gamma_0\\)로 조절)\n\n3 Alternative Model: \\(\\text{logit}(\\pi_i) = \\gamma_0 + 0.5 X_{1i} + 0.5 X_{2i} + \\beta_1 g_{i1} + \\dots + \\beta_s g_{is}\\)\n\n원인 변이는 MAF &lt; 3% 희귀변이 중에서 선택.\n회귀계수 크기: \\(|\\beta_j| = c |\\log_{10}(p_j)| / 2\\) (MAF \\(p_j\\)가 작을수록 효과 크기가 커지도록 설정)\n\n\\(p_j\\) was the MAF of the \\(j^{th}\\) variant\n\n\n\n\n📌 비교 분석한 6가지 방법론\n1 \\(N\\) (Counting Burden Test): MAF &lt; 3% 희귀변이 개수 단순 합산 (Flat weight)\n2 \\(W\\) (Weighted Burden Test): \\(\\text{Beta}(\\text{MAF}; 1, 25)\\) 가중치 적용 Burden test\n3 SKAT: 기존 점근적(Asymptotic) SKAT (소표본 미보정)\n4 SKAT-O: 기존 점근적 SKAT-O (소표본 미보정)\n5 Adjusted SKAT: 소표본 분산 및 첨도(Kurtosis) 보정 적용 SKAT\n6 Adjusted SKAT-O: 소표본 분산 및 첨도 보정 적용 SKAT-O",
     "crumbs": [
       "Posts",
       "01. SKTA-O",
