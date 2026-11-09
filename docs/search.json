@@ -22,190 +22,6 @@
     ]
   },
   {
-    "objectID": "posts/01. SKTA-O/00. Subject.html",
-    "href": "posts/01. SKTA-O/00. Subject.html",
-    "title": "00. Subject",
-    "section": "",
-    "text": "1 귀무가설 하에서의 최대 우도값 \\(L(\\hat{\\Omega}_0) = \\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})\\)와 전체 모수 공간에서의 최대 우도값 \\(L(\\hat{\\Omega}) = \\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})\\)의 비율로 검정통계량 \\(\\lambda\\)를 정의\n\\[\\lambda = \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} = \\frac{\\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})}{\\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})} \\quad (0 \\le \\lambda \\le 1) \\quad\\]\n2 점근적 성질 (Wackerly Theorem 10.2): 표본 크기 \\(n\\)이 충분히 클 때, 정규성 조건(Regularity conditions) 하에서 \\(-2 \\ln(\\lambda)\\)는 점근적으로 카이제곱(\\(\\chi^2\\)) 분포를 따름.\n\n\n\n1 대립가설 하에서 구한 최대우도추정량(MLE) \\(\\hat{\\theta}\\)와 귀무가설 하의 모수값 \\(\\theta_0\\) 간의 거리를 추정량의 표준오차 \\(\\sigma_{\\hat{\\theta}}\\)[또는 피셔 정보 행렬 \\(I(\\hat{\\theta})\\)]로 나눈 통계량을 활용\n\\[Z = \\frac{\\hat{\\theta} - \\theta_0}{\\sigma_{\\hat{\\theta}}} \\sim N(0, 1) \\quad \\Longrightarrow \\quad W = Z^2 = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1 \\quad\\]\n\n\n\n1 로그우도함수 \\(l(\\boldsymbol{\\theta})\\)의 1차 미분인 스코어 함수(Score Function) \\(U(\\boldsymbol{\\theta}) = \\frac{\\partial l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta}}\\)와 2차 미분 기대값인,\n2 피셔 정보 행렬(Fisher Information) \\(I(\\boldsymbol{\\theta}) = -E\\left[\\frac{\\partial^2 l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta} \\partial \\boldsymbol{\\theta}^T}\\right]\\)을 바탕으로, 귀무가설 하 \\(\\boldsymbol{\\theta}_0\\)에서 평가\n\\[S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\]\n3 대립가설에서의 모수 추정치 \\(\\hat{\\boldsymbol{\\theta}}\\)를 구하지 않고, 오직 귀무가설 지점 \\(\\boldsymbol{\\theta}_0\\) 하에서 우도함수의 기울기(Slope, \\(U\\))와 곡률(Information, \\(I\\))만을 측정\n\n\n\n\n\n\n\n\n\n\n\n비교 항목\nWald Test\nLikelihood Ratio Test (LRT)\nRao’s Score Test\n\n\n\n\n검정통계량 수식\n\\(W = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1\\)\n\\(\\Lambda = -2 \\ln \\left[ \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} \\right] \\sim \\chi^2_{\\nu}\\)\n\\(S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\)\n\n\n수식 평가 위치\n\\(H_1\\) 하의 MLE (\\(\\hat{\\theta}\\))\n\\(H_0\\) (\\(\\hat{\\Omega}_0\\)) 및 \\(H_1\\) (\\(\\hat{\\Omega}\\)) 모두\n오직 \\(H_0\\) (\\(\\boldsymbol{\\theta}_0\\)) 하에서만\n\n\n통계량의 수리적 의미\n모수 추정치 거리 \\((\\hat{\\theta} - \\theta_0)\\)\n두 모수 공간의 우도비 \\(\\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})}\\)\n\\(H_0\\) 지점에서의 우도 기울기 \\(U(\\boldsymbol{\\theta}_0) = \\left. \\frac{\\partial \\ln L}{\\partial \\boldsymbol{\\theta}} \\right|_{\\boldsymbol{\\theta}_0}\\)\n\n\n\\(H_1\\) 하의 MLE 추정 필요성\n필수 (MLE 수치 구함)\n필수 (MLE 수치 구함)\n불필요 (\\(H_0\\) 수식만 활용)\n\n\n다중 검정 시 연산 구조\n\\(M\\)번의 수치 최적화 반복\n\\(M\\)번의 수치 최적화 반복\nNull Model 1회 적합 + \\(M\\)번의 단순 내적\n\n\n\n\n\n\n\n1 검정통계량 \\(S\\)의 평가 위치가 오직 귀무가설 지점 \\(\\boldsymbol{\\beta}_m = \\mathbf{0}\\)에 고정되어 있으므로 대립모형에서의 모수 추정 과정을 완전히 소거.\n2 관심 변수 \\(\\boldsymbol{\\beta}_m\\)이 소거된 귀무모형은 모든 \\(M\\)개 검정에서 동일한 성입모수 \\(\\boldsymbol{\\gamma}\\)만을 포함(우리 연구에서는 공변량만을 포함한다고 생각)\n3 따라서 전체 분석 시작 시 Null model을 단 1회만 적합(Fit Null Model Once) 하여 기대값 \\(\\hat{\\mu}_{0i}\\) 및 잔차 벡터 \\(r_i = y_i - \\hat{\\mu}_{0i}\\)를 구해둠.\n\\[\\hat{\\mu}_{0i} = \\hat{\\pi}_{0i} = P(y_i = 1 \\mid \\mathbf{X}_i) = \\text{logit}^{-1}(\\hat{\\alpha}_0 + \\mathbf{X}_i^T \\hat{\\boldsymbol{\\alpha}})\\]\n\n(유전자와 상관없이, 이 사람의 나이, 성별, 인종 구조만 보았을 때 질병에 걸릴 확률이 얼마인지)\n\n4 이후 \\(M\\)개 가설을 검정할 때는 미리 구한 공통 잔차 벡터와 타겟 변수 간의 단순 행렬 내적 연산(Matrix Inner Product) 만 수행하므로,\n5 반복 계산이 선형대수 곱셈으로 전환되어 연산량이 급감.\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]\n\n\n\n1 중심극한정리에 의해 대규모 표본에서 스코어 벡터 \\(U(\\boldsymbol{\\theta}_0)\\)는 점근적으로 정규분포를 따름.\n2 정규 확률변수의 제곱합은 카이스퀘어(\\(\\chi^2\\)) 분포를 형성하므로, 표본을 무작위로 섞는 Permutation 없이도 카이스퀘어 표(Table)나 수치 적분 공식을 통해 \\(p\\)-value(유의확률)를 즉시 산출 가능.\n\n\n1 \\(H_0\\) 귀무가설(\\(H_0\\)) 하에서 스코어 통계량(및 그 이차형식)이 이론적으로 카이제곱(혼합) 분포를 완벽히 따른다는 점을 이용해,\n2 표본을 수천만 번 섞는 Permutation 시뮬레이션 없이 해석적 공식 대입만으로 exact \\(p\\)-value를 즉시 산출할 수 있다.\n3 오직 귀무가설(\\(H_0\\)) 지점에서만 평가하므로 대립모형(\\(H_1\\)) 하의 수치 최적화(Newton-Raphson) 반복 계산을 완전히 회피하고,\n4 Null Model 1회 적합으로 얻은 공통 잔차를 재사용해 단순 행렬 내적 연산만으로 연산 시간을 단축시킴.",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html#likelihood-ratio-test-lrt",
-    "href": "posts/01. SKTA-O/00. Subject.html#likelihood-ratio-test-lrt",
-    "title": "00. Subject",
-    "section": "",
-    "text": "1 귀무가설 하에서의 최대 우도값 \\(L(\\hat{\\Omega}_0) = \\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})\\)와 전체 모수 공간에서의 최대 우도값 \\(L(\\hat{\\Omega}) = \\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})\\)의 비율로 검정통계량 \\(\\lambda\\)를 정의\n\\[\\lambda = \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} = \\frac{\\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})}{\\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})} \\quad (0 \\le \\lambda \\le 1) \\quad\\]\n2 점근적 성질 (Wackerly Theorem 10.2): 표본 크기 \\(n\\)이 충분히 클 때, 정규성 조건(Regularity conditions) 하에서 \\(-2 \\ln(\\lambda)\\)는 점근적으로 카이제곱(\\(\\chi^2\\)) 분포를 따름.",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html#wald-test-대표본-z카이스퀘어-검정",
-    "href": "posts/01. SKTA-O/00. Subject.html#wald-test-대표본-z카이스퀘어-검정",
-    "title": "00. Subject",
-    "section": "",
-    "text": "1 대립가설 하에서 구한 최대우도추정량(MLE) \\(\\hat{\\theta}\\)와 귀무가설 하의 모수값 \\(\\theta_0\\) 간의 거리를 추정량의 표준오차 \\(\\sigma_{\\hat{\\theta}}\\)[또는 피셔 정보 행렬 \\(I(\\hat{\\theta})\\)]로 나눈 통계량을 활용\n\\[Z = \\frac{\\hat{\\theta} - \\theta_0}{\\sigma_{\\hat{\\theta}}} \\sim N(0, 1) \\quad \\Longrightarrow \\quad W = Z^2 = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1 \\quad\\]",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html#raos-score-test-스코어-검정",
-    "href": "posts/01. SKTA-O/00. Subject.html#raos-score-test-스코어-검정",
-    "title": "00. Subject",
-    "section": "",
-    "text": "1 로그우도함수 \\(l(\\boldsymbol{\\theta})\\)의 1차 미분인 스코어 함수(Score Function) \\(U(\\boldsymbol{\\theta}) = \\frac{\\partial l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta}}\\)와 2차 미분 기대값인,\n2 피셔 정보 행렬(Fisher Information) \\(I(\\boldsymbol{\\theta}) = -E\\left[\\frac{\\partial^2 l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta} \\partial \\boldsymbol{\\theta}^T}\\right]\\)을 바탕으로, 귀무가설 하 \\(\\boldsymbol{\\theta}_0\\)에서 평가\n\\[S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\]\n3 대립가설에서의 모수 추정치 \\(\\hat{\\boldsymbol{\\theta}}\\)를 구하지 않고, 오직 귀무가설 지점 \\(\\boldsymbol{\\theta}_0\\) 하에서 우도함수의 기울기(Slope, \\(U\\))와 곡률(Information, \\(I\\))만을 측정\n\n\n\n\n\n\n\n\n\n\n\n비교 항목\nWald Test\nLikelihood Ratio Test (LRT)\nRao’s Score Test\n\n\n\n\n검정통계량 수식\n\\(W = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1\\)\n\\(\\Lambda = -2 \\ln \\left[ \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} \\right] \\sim \\chi^2_{\\nu}\\)\n\\(S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\)\n\n\n수식 평가 위치\n\\(H_1\\) 하의 MLE (\\(\\hat{\\theta}\\))\n\\(H_0\\) (\\(\\hat{\\Omega}_0\\)) 및 \\(H_1\\) (\\(\\hat{\\Omega}\\)) 모두\n오직 \\(H_0\\) (\\(\\boldsymbol{\\theta}_0\\)) 하에서만\n\n\n통계량의 수리적 의미\n모수 추정치 거리 \\((\\hat{\\theta} - \\theta_0)\\)\n두 모수 공간의 우도비 \\(\\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})}\\)\n\\(H_0\\) 지점에서의 우도 기울기 \\(U(\\boldsymbol{\\theta}_0) = \\left. \\frac{\\partial \\ln L}{\\partial \\boldsymbol{\\theta}} \\right|_{\\boldsymbol{\\theta}_0}\\)\n\n\n\\(H_1\\) 하의 MLE 추정 필요성\n필수 (MLE 수치 구함)\n필수 (MLE 수치 구함)\n불필요 (\\(H_0\\) 수식만 활용)\n\n\n다중 검정 시 연산 구조\n\\(M\\)번의 수치 최적화 반복\n\\(M\\)번의 수치 최적화 반복\nNull Model 1회 적합 + \\(M\\)번의 단순 내적",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html#score-test-사용-시-연산량이-급감하는-원리",
-    "href": "posts/01. SKTA-O/00. Subject.html#score-test-사용-시-연산량이-급감하는-원리",
-    "title": "00. Subject",
-    "section": "",
-    "text": "1 검정통계량 \\(S\\)의 평가 위치가 오직 귀무가설 지점 \\(\\boldsymbol{\\beta}_m = \\mathbf{0}\\)에 고정되어 있으므로 대립모형에서의 모수 추정 과정을 완전히 소거.\n2 관심 변수 \\(\\boldsymbol{\\beta}_m\\)이 소거된 귀무모형은 모든 \\(M\\)개 검정에서 동일한 성입모수 \\(\\boldsymbol{\\gamma}\\)만을 포함(우리 연구에서는 공변량만을 포함한다고 생각)\n3 따라서 전체 분석 시작 시 Null model을 단 1회만 적합(Fit Null Model Once) 하여 기대값 \\(\\hat{\\mu}_{0i}\\) 및 잔차 벡터 \\(r_i = y_i - \\hat{\\mu}_{0i}\\)를 구해둠.\n\\[\\hat{\\mu}_{0i} = \\hat{\\pi}_{0i} = P(y_i = 1 \\mid \\mathbf{X}_i) = \\text{logit}^{-1}(\\hat{\\alpha}_0 + \\mathbf{X}_i^T \\hat{\\boldsymbol{\\alpha}})\\]\n\n(유전자와 상관없이, 이 사람의 나이, 성별, 인종 구조만 보았을 때 질병에 걸릴 확률이 얼마인지)\n\n4 이후 \\(M\\)개 가설을 검정할 때는 미리 구한 공통 잔차 벡터와 타겟 변수 간의 단순 행렬 내적 연산(Matrix Inner Product) 만 수행하므로,\n5 반복 계산이 선형대수 곱셈으로 전환되어 연산량이 급감.\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html#중심극한정리clt와-카이스퀘어-분포로의-점근적-수렴",
-    "href": "posts/01. SKTA-O/00. Subject.html#중심극한정리clt와-카이스퀘어-분포로의-점근적-수렴",
-    "title": "00. Subject",
-    "section": "",
-    "text": "1 중심극한정리에 의해 대규모 표본에서 스코어 벡터 \\(U(\\boldsymbol{\\theta}_0)\\)는 점근적으로 정규분포를 따름.\n2 정규 확률변수의 제곱합은 카이스퀘어(\\(\\chi^2\\)) 분포를 형성하므로, 표본을 무작위로 섞는 Permutation 없이도 카이스퀘어 표(Table)나 수치 적분 공식을 통해 \\(p\\)-value(유의확률)를 즉시 산출 가능.\n\n\n1 \\(H_0\\) 귀무가설(\\(H_0\\)) 하에서 스코어 통계량(및 그 이차형식)이 이론적으로 카이제곱(혼합) 분포를 완벽히 따른다는 점을 이용해,\n2 표본을 수천만 번 섞는 Permutation 시뮬레이션 없이 해석적 공식 대입만으로 exact \\(p\\)-value를 즉시 산출할 수 있다.\n3 오직 귀무가설(\\(H_0\\)) 지점에서만 평가하므로 대립모형(\\(H_1\\)) 하의 수치 최적화(Newton-Raphson) 반복 계산을 완전히 회피하고,\n4 Null Model 1회 적합으로 얻은 공통 잔차를 재사용해 단순 행렬 내적 연산만으로 연산 시간을 단축시킴.",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/01. SKTA-O/00. Subject.html#확률의-정의구역-0-1-보장-bounded-domain",
-    "href": "posts/01. SKTA-O/00. Subject.html#확률의-정의구역-0-1-보장-bounded-domain",
-    "title": "00. Subject",
-    "section": "확률의 정의구역 \\([0, 1]\\) 보장 (Bounded Domain)",
-    "text": "확률의 정의구역 \\([0, 1]\\) 보장 (Bounded Domain)\n1 선형 확률 모형(LPM: \\(\\pi_i = \\mathbf{X}_i \\boldsymbol{\\beta}\\))을 적용하면 예측된 \\(\\hat{\\pi}_i\\)가 \\(0\\) 미만이거나 \\(1\\)을 초과하는 치명적 결함이 발생\n2 \\(\\text{logit}(\\pi) = \\ln\\left(\\frac{\\pi}{1-\\pi}\\right)\\)은 확률 구간 \\((0, 1)\\)을 실수 전체 \\((-\\infty, \\infty)\\)로 1:1 일대일 매핑해줌.\n3 역변환(Sigmoid) \\(\\pi_i = \\frac{e^{\\mathbf{X}_i \\boldsymbol{\\beta}}}{1 + e^{\\mathbf{X}_i \\boldsymbol{\\beta}}}\\)을 통해 선형 결합 \\(\\mathbf{X}_i \\boldsymbol{\\beta}\\)가 어떤 실수를 갖더라도 항상 \\(0 &lt; \\hat{\\pi}_i &lt; 1\\) 범위 내의 유효한 확률값을 보장함.\n4 예를 들어 일반 선형회귀로 질병 확률을 예측하면 위험 요인이 많아질 때 확률이 \\(120\\%\\)가 되거나 \\(-15\\%\\)가 되는 기괴한 문제가 발생합\n5 반면 Logit 변환을 거치면 S자 곡선 형태가 되어 X값이 아무리 극단적이어도 예측 확률을 항상 \\(0\\%\\)와 \\(100\\%\\) 사이(\\([0, 1]\\))로 예쁘게 가두어줌.",
-    "crumbs": [
-      "Posts",
-      "01. SKTA-O",
-      "00. Subject"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/00. GWAS.html",
-    "href": "posts/00. SKAT/00. GWAS.html",
-    "title": "00. GWAS",
-    "section": "",
-    "text": "1 같은 환경에 살아도 어떤 사람은 당뇨병에 걸리고 어떤 사람은 걸리지 않음.\n2 식습관이나 운동 같은 환경 요인도 중요하지만, 태어날 떄부터 가지고 있는 유전적 차이도 큰 역할을 한다.\n3 그렇다면 다음과 같은 질문이 생김\n\n“유전적으로 어떤 차이가 질병 위험을 바꾸는가?”\n\n4 이 질문에 답하기 위한 연구 방법이 바로 GWAS(Genome-wide Association Study, 전장유전체 연관 분석)이다.\n\n\n용어 정리\n\n\nGenome Wide: 전장 유전체: 모든 유전체 위치에 대해서\nAssociation Study = 연관분석: 관심을 가진 형질(Target phenotype)과 연관성을 갖는 유전적 위치를 찾는 것",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "00. GWAS"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
-    "href": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
-    "title": "00. GWAS",
-    "section": "DNA, Gene, Genome",
-    "text": "DNA, Gene, Genome\n1 DNA: 생명의 설계도(유전정보) \\(\\to\\) A, T, G, C 네 가지 글자로 이루어진 긴 문자열.\n2 Gene(유전자): DNA중에서 단백질 만드는 방법이 적힌 구간, 약 2만 개가 있음.\n3 Genome(유전체): 한 개체가 지닌 DNA 정보 전체 총합, 약 32억 글자\n\nSNP\nSingle Nucleotide Polymorphism\n1 사람마다 DNA의 대부분은 같지만, 글자 하나가 다른 곳이 있음.\n\n\n\n2 인간 유전체(Genome)에는 약 1천만 개의 SNP가 있으며, 이것이 개인차의 주요 원임임.",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "00. GWAS"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BRIDGE",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nSep 23, 2026\n\n\n00. Subject\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 14, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nJun 2, 2026\n\n\n기본 단축키 셋팅\n\n\nlgc \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "posts/00. Intro.html",
-    "href": "posts/00. Intro.html",
-    "title": "00. Intro",
-    "section": "",
-    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
-    "crumbs": [
-      "Posts",
-      "00. Intro"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html",
-    "href": "posts/00. SKAT/01. Review.html",
-    "title": "01. Review",
-    "section": "",
-    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”\n\n\n\n\n\n\n\n1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
-    "href": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
-    "title": "01. Review",
-    "section": "",
-    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
-    "href": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
-    "title": "01. Review",
-    "section": "",
-    "text": "1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
-    "href": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
-    "title": "01. Review",
-    "section": "(1) 방법론 발전 과정",
-    "text": "(1) 방법론 발전 과정\n\nstep1. SKAT\n\na. 앞선 방법론의 한계점\n1 모든 변이가 한 방향으로 흐른다. (Burden test)\n2 변이들에 동일 방향성 가정은 없으나 공변량 보정이 어렵고 계산량이 크다. (Non-Burden test)\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\nDespite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… The C-alpha test also uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”\n\n\n\n\nb. 해결책\n1 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 \\(\\beta_j\\)가 평균 0, 분산 \\(w_j^2 \\tau\\)인 임의의 분포를 따른다고 가정한 Variance-component score test를 적용함\n\n\nMethodology\n\n1 기본 모형\n\n\\(\\beta_j\\)를 평균 0을 가지는 임의 변수로 취급 \\(\\to\\,\\, \\beta_j \\sim(0, \\tau w_j)\\)\n\n\\(\\tau\\): 분산성분(Variance component): 영역 전체에 미치는 효과 총량\n\\(w_j\\): \\(j\\)번째 변이에 대한 사전 가중치.\n\nScore test로 전환 \\(\\to\\) covariate만 포함된 Null Model을 단 1회만 적합시키면 되므로, GWAS 분석 시 계산 속도가 빨라짐\n\n\\[H_0: \\tau = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\n\n원문\n\n\n“To increase the power, SKAT tests \\(H_0\\) by assuming each \\(\\beta_j\\) follows an arbitrary distribution with a mean of zero and a variance of \\(w_j \\tau\\)… which can be conveniently tested with a variance-component score test… A key advantage of the score test is that it only requires fitting the null model…\n\n\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + \\beta' G_i + \\epsilon_i\\) (Equation 1)\nDichotomous trait: \\(\\text{logit}\\,\\, P(y_i = 1) = \\alpha_0 + \\alpha' X_i + \\beta' G_i\\) (Equation 2)\n\n2 확장 모형(Semiparametric Models for Epistasis)\n\\[H_0: f(G) = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + f(G_i) + \\epsilon_i\\) (Equation 4)\nDichotomous trait: \\(\\text{logit}\\,\\,P(y_i = 1) = \\alpha_0 + \\alpha' X_i + f(G_i)\\) (Equation 5)\n\n\n선형 항 \\(\\beta' G_i\\)를 임의의 함수 \\(f(G_i)\\)로 대체함으로써, 단일 변이 효과뿐만 아니라 희귀변이 \\(\\times\\) 희귀변이 또는 흔한변이 \\(\\times\\) 희귀변이 간의 복잡한 상위성 효과(Epistatic effects) 및 비선형적 상호작용까지 유연하게 모형화할 수 있음.\n\n\n\n원문\n\n\nAn attractive feature of SKAT is the ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework. To do so, we replace \\(G_i'\\beta\\) by a more flexible function \\(f(G_i)\\) in the linear and logistic models (1) and (2) where \\(f(G_i)\\) allows for rare variant by rare variant and common variant by rare-variant interactions.\n\n\n\n각 기호 의미\n\n\n\\(y_i\\): \\(i\\)번째 개인의 표현형(반응변수라고 생각, Phenotypes)\n\\(\\alpha_0\\): 절편(intercept)\n\\(\\boldsymbol{\\alpha}\\): 공변량 \\(\\mathbf{X_i}\\)(나이\\(\\cdot\\)성별)의 효과 계수 벡터-고정 효과\n\\(\\beta\\): \\(p\\)개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 \\(\\to\\) 검정대상\n\\(G_{i}\\): \\(i\\)번째 사람이 몇 개의 Minor allele를 가졌는지(0,1,2)\n\n\n\n\n염색체1\n염색체2\nMinor allele 수(\\(\\boldsymbol{G}_{ij}\\))\n\n\n\n\nMajor\nMajor\n0\n\n\nMajor\nMinor\n1\n\n\nMinor\nMajor\n1\n\n\nMinor\nMinor\n2\n\n\n\n\n\n3 검정통계량 \\(Q\\) & 가중치(\\(w_j\\))\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]\n\\[\\sqrt{w_j} = \\text{Beta}(\\text{MAF}_j, 1, 25)\\]\n\n\\(K = G W W G'\\): 샘플 간 유전적 유사도를 측정하는 Kernel 행렬.\n개별 변이 Score 통계량 \\(S_j\\) 제곱의 가중 합산 형태로 \\(Q\\)가 형성되며, MAF가 낮은 희귀변이에 더 큰 가중치를 부여합니다.\n귀무가설 하에서 \\(Q\\)는 Mixture of Chi-square 분포를 따르며, Davies method로 Permutation 없이 즉시 유의확률을 산출\n\n\n\n\nc. 주요 결과\n1 Type 1 Error Rate\n\nContinuous traits에서는 유의수준인 \\(\\alpha = 10^{-6}\\)에서도 Type I error을 부풀림 없이 정확하게 통제.\n특이사항: Dichotomous traits 및 표본이 적은 경우에는 Asymptotic \\(p\\)-value 계산 특성상 \\(p\\)-value가 Deflated으로 산출되는 경향을 보임\n\n\n\nTable 1-(1)\n\n\n\n\n\n\n\nTable 1-(2)\n\n\n\n\n\n2 Statistical Power 비교\n\n\\(\\beta\\)가 50대 50으로 섞여 있을 때 기존 Burden test들(W, N, C)의 Power은 0.1~0.2 수준에 그치는 반면, SKAT 은 표본이 늘어남에 따라 0.7 이상으로 치솟는 모습을 보임\n\n\n\nFigure 1\n\n\n\n\n\n\n\nTable 2\n\n\n\n\n\n3 실데이터 검증\n\n자료: Analysis of the Dallas Heart Study Sequencing Data\nDHS 데이터 3,476명의 ANGPTL3, ANGPTL4, ANGPTL5 유전자 내 93개 희귀변이 분석 결과를 수록한 표\n표의 두 번째 행인 Dichotomized TG level 열을 보면 SKAT의 \\(p\\)-value가 \\(1.3 \\times 10^{-4}\\) 로 명시되어 있으며, 옆에 적힌 CAST (\\(3.2 \\times 10^{-2}\\))나 Weighted Sum (\\(3.1 \\times 10^{-3}\\))보다 수치가 훨씬 작아(유의성이 더 높아) 우수한 검정력을 보임\n\n\n\nTable 4\n\n\n\n\n\n4 계산 효율성\n\n원인 변이 비중이 높을수록, 효과 크기(OR)가 클수록 필요 표본 수가 지수적으로 감소하며, 유병률이 낮을수록 환자군 내 원인 변이 집적(Enrichment) 효과로 인해 필요 표본 수가 줄어드는 경향을 정량적으로 입증함.\n표본 크기 \\(n = 2,000 \\sim 10,000\\)명 구간에서 SKAT의 이론적 추정 공식으로 그려낸 검정력 곡선(Theoretical Power, 검은선) 과 1,000회 시뮬레이션으로 얻은 실측 곡선(Empirical Power, 빨간선) 을 직접 대조한 결과, 두 곡선이 완벽하게 오버랩(Overlap) 된 것으로 보임.\n\n\n\nTable 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nd. 한계점\n1 원인 변이 비율이 높고 단방향(Unidirectional)인 경우의 파워 열세\n2 소표본(\\(n &lt; 1,000\\)) 케이스-컨트롤 연구 시 \\(p\\)-value Deflation이 발생함.",
-    "crumbs": [
-      "Posts",
-      "00. SKAT",
-      "01. Review"
-    ]
-  },
-  {
     "objectID": "posts/01. SKTA-O/01. review.html",
     "href": "posts/01. SKTA-O/01. review.html",
     "title": "01. Review",
@@ -323,6 +139,262 @@
       "Posts",
       "01. SKTA-O",
       "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html",
+    "href": "posts/00. SKAT/01. Review.html",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”\n\n\n\n\n\n\n\n1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
+    "href": "posts/00. SKAT/01. Review.html#연구배경-및-핵심문제",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 GWAS를 통해 발굴된 공통변이(Common Variant)들은 Complex diseases의 유전력 중 일부만 설명할 수 있음. Missing Heritability 문제가 발생함.\n2 이를 해결하고자 Next-Generation Sequencing(NGS) 기술이 등장했고, 희귀변이를 찾아내는 것 자체는 성공하였음.\n3 그러나 희귀변이는 MAF가 극도록 낮다보니, 단일 변이 분석(Single-Variant test)를 적용할 경우 통계적 검정력이 현저히 떨어짐.\n4 이를 극복하기 위해 유전자나 특정영역 단위들로 변이들을 집계하여 검정하는 Gene-level aggregation test가 필수적으로 요구되었으며, 금번 리뷰에서는 이와 관련된 Method들을 소개함.\n\n\n용어 정리\n\n1 Complex diseases: 고혈압, 당뇨병, 암, 성 조숙증 등과 같이 유전자 카드 수십~수천 장과 식습관, 운동과 같은 생활 환경이 복잡하게 얽혀서 발생하는 질병, 즉 유전자 + 환경이 합쳐서 나타나는 질병들을 일컫는다.\n2 Missing Heritability(놓친 유전력): 전체 유전력(Overall Heritability)과 GWAS로 발굴된 설명력 간의 격차를 의미. 여기서 놓친 설명력이 회귀변이에 있으며, 이러한 설명력을 확보하기 위해 NGS 시퀀싱과 금일 리뷰할 방법론 연구들이 시작되었음.\n3 Next-Generation Sequencing(NGS): 대량 병렬 시퀀싱 기술로, 유전체 전체 또는 단백질을 코딩하는 Whole-Exome의 대량 DNA 염기서열 데이터를 고속으로 해독하는 분자생물학적 분석 플랫폼.\n4 단일 변이 분석(Single-Variant) test: - genome상의 개별 변이와 질환 형질 간의 연관성을 1대1로 검정하는 전통적인 방법 - Common Variants 분석에서는 효과적이지만, Rare Variants의 경우 관측빈도가 낮아 대표본이 확보되지 않는 한 검정력이 심각하게 저해됨.\n5 Gene-level aggregation test - 특정 유전자나 서열 구역(Genomic region) 내에 존재하는 Rare Variants 효과를 하나의 단위로 집계(Aggreation/Collapsing)하여 질환과의 연관성을 종합적으로 검증하는 기법임\n\n\n\n원문\n\n1 GAAWS의 한계와 NGS 기술의 도래\n\n“Genome-wide association studies (GWASs) have identified more than 1000 genetic loci associated with many human diseases and traits, yet common variants identified through GWASs often explain only a small proportion of trait heritability. The advent of massively parallel sequencing has transformed human genetics and has the potential to explain some of this missing heritability through identification of trait-associated rare variants.”\n\n2 단일 변이 검정의 문제점\n\n“These emerging sequencing technologies provide a rich opportunity to study the association between rare variants and complex traits… Single-variant tests are typically conducted to investigate associations of common variants and phenotypes; however the same approach has little power for testing for rare-variant effects because of their low frequencies and large numbers.”\n\n\n“Standard methods used to test for association with single common genetic variants are underpowered for rare variants unless sample sizes or effect sizes are very large.”\n\n3 Gene-level aggregation test 등장\n\n“Instead, the statistical development of rare-variant analysis has been focused on testing cumulative effects of rare variants in genetic regions or SNP sets, such as genes. These tests can be broadly classified as burden and nonburden tests.”\n\n\n“The motivation behind this approach is that while a single variant is usually underpowered to detect statistical signals between case and control subjects, aggregating variants across a candidate gene might improve power.”",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
+    "href": "posts/00. SKAT/01. Review.html#초기-방법론의-한계",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 유전자 내 희귀변이들을 하나로 합쳐서 검정하는 방식\n2 한계점\n\n유전자 영역 내 모든 회귀변이가 동일한 방향(Unidirectional, 예: 모두 위험 변이)으로 작용한다는 비현실적인 가정에 의존함.\n그러나 실제 유전체 영역에는 효과가 없는 Non-causal variants나 반대 작용을 하는 Protective variants가 혼재되어 있으면, 변이를 합치는 과정에서 노이즈가 유입되어 Statistical Power가 급격히 붕괴됨.\n\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\n\n\n\n1 변이들을 하나로 합치지 않고 변이 빈도와 분산을 비교하여, 변이 효과의 방향성에 상관없이 검정하는 방식.\n2 한계점\n\n변이 방향성에는 강건(Robust)하지만, Population stratification 보정을 위한 Covariates(예: Principal Components)를 모델에 쉽게 포함하기 어렵고,\nPermutation을 통해 \\(p\\)-value를 계산해야 해서 Genome-wide scale 분석 시 계산 비용이 비현실적으로 큼.\n\n\n\n원문\n\n\n“The recently proposed C-alpha test is a non-burden-based test and is hence robust to the direction and magnitude of effect… Despite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… [and] uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
+    "href": "posts/00. SKAT/01. Review.html#방법론-발전-과정",
+    "title": "01. Review",
+    "section": "(1) 방법론 발전 과정",
+    "text": "(1) 방법론 발전 과정\n\nstep1. SKAT\n\na. 앞선 방법론의 한계점\n1 모든 변이가 한 방향으로 흐른다. (Burden test)\n2 변이들에 동일 방향성 가정은 없으나 공변량 보정이 어렵고 계산량이 크다. (Non-Burden test)\n\n\n원문\n\n\nA limitation for all these burden tests is that they implicitly assume that all rare variants influence the phenotype in the same direction and with the same magnitude of effect… Hence, collapsing across all variants is likely to introduce substantial noise into the aggregated index, attenuate evidence for association, and result in power loss.\n\n\nDespite these attractive features, the C-alpha test does not allow for easy covariate adjustment, such as for controlling population stratification… The C-alpha test also uses permutation to obtain a p value… which is computationally expensive for whole-genome experiments.”\n\n\n\n\nb. 해결책\n1 이를 해결하기 위해, 변이들을 하나로 뭉뚱그려 합치지 않고, 개별 변의의 효과 회귀계수 \\(\\beta_j\\)가 평균 0, 분산 \\(w_j^2 \\tau\\)인 임의의 분포를 따른다고 가정한 Variance-component score test를 적용함\n\n\nMethodology\n\n1 기본 모형\n\n\\(\\beta_j\\)를 평균 0을 가지는 임의 변수로 취급 \\(\\to\\,\\, \\beta_j \\sim(0, \\tau w_j)\\)\n\n\\(\\tau\\): 분산성분(Variance component): 영역 전체에 미치는 효과 총량\n\\(w_j\\): \\(j\\)번째 변이에 대한 사전 가중치.\n\nScore test로 전환 \\(\\to\\) covariate만 포함된 Null Model을 단 1회만 적합시키면 되므로, GWAS 분석 시 계산 속도가 빨라짐\n\n\\[H_0: \\tau = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\n\n원문\n\n\n“To increase the power, SKAT tests \\(H_0\\) by assuming each \\(\\beta_j\\) follows an arbitrary distribution with a mean of zero and a variance of \\(w_j \\tau\\)… which can be conveniently tested with a variance-component score test… A key advantage of the score test is that it only requires fitting the null model…\n\n\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + \\beta' G_i + \\epsilon_i\\) (Equation 1)\nDichotomous trait: \\(\\text{logit}\\,\\, P(y_i = 1) = \\alpha_0 + \\alpha' X_i + \\beta' G_i\\) (Equation 2)\n\n2 확장 모형(Semiparametric Models for Epistasis)\n\\[H_0: f(G) = 0 \\quad \\text{vs} \\quad H_1: \\text{not } H_0\\]\n\nContinuous trait: \\(y_i = \\alpha_0 + \\alpha' X_i + f(G_i) + \\epsilon_i\\) (Equation 4)\nDichotomous trait: \\(\\text{logit}\\,\\,P(y_i = 1) = \\alpha_0 + \\alpha' X_i + f(G_i)\\) (Equation 5)\n\n\n선형 항 \\(\\beta' G_i\\)를 임의의 함수 \\(f(G_i)\\)로 대체함으로써, 단일 변이 효과뿐만 아니라 희귀변이 \\(\\times\\) 희귀변이 또는 흔한변이 \\(\\times\\) 희귀변이 간의 복잡한 상위성 효과(Epistatic effects) 및 비선형적 상호작용까지 유연하게 모형화할 수 있음.\n\n\n\n원문\n\n\nAn attractive feature of SKAT is the ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework. To do so, we replace \\(G_i'\\beta\\) by a more flexible function \\(f(G_i)\\) in the linear and logistic models (1) and (2) where \\(f(G_i)\\) allows for rare variant by rare variant and common variant by rare-variant interactions.\n\n\n\n각 기호 의미\n\n\n\\(y_i\\): \\(i\\)번째 개인의 표현형(반응변수라고 생각, Phenotypes)\n\\(\\alpha_0\\): 절편(intercept)\n\\(\\boldsymbol{\\alpha}\\): 공변량 \\(\\mathbf{X_i}\\)(나이\\(\\cdot\\)성별)의 효과 계수 벡터-고정 효과\n\\(\\beta\\): \\(p\\)개의 변이 각각이 반응변수(Phenotypes)에 미치는 효과 크기(계수, 회귀계수)벡터 \\(\\to\\) 검정대상\n\\(G_{i}\\): \\(i\\)번째 사람이 몇 개의 Minor allele를 가졌는지(0,1,2)\n\n\n\n\n염색체1\n염색체2\nMinor allele 수(\\(\\boldsymbol{G}_{ij}\\))\n\n\n\n\nMajor\nMajor\n0\n\n\nMajor\nMinor\n1\n\n\nMinor\nMajor\n1\n\n\nMinor\nMinor\n2\n\n\n\n\n\n3 검정통계량 \\(Q\\) & 가중치(\\(w_j\\))\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]\n\\[\\sqrt{w_j} = \\text{Beta}(\\text{MAF}_j, 1, 25)\\]\n\n\\(K = G W W G'\\): 샘플 간 유전적 유사도를 측정하는 Kernel 행렬.\n개별 변이 Score 통계량 \\(S_j\\) 제곱의 가중 합산 형태로 \\(Q\\)가 형성되며, MAF가 낮은 희귀변이에 더 큰 가중치를 부여합니다.\n귀무가설 하에서 \\(Q\\)는 Mixture of Chi-square 분포를 따르며, Davies method로 Permutation 없이 즉시 유의확률을 산출\n\n\n\n\nc. 주요 결과\n1 Type 1 Error Rate\n\nContinuous traits에서는 유의수준인 \\(\\alpha = 10^{-6}\\)에서도 Type I error을 부풀림 없이 정확하게 통제.\n특이사항: Dichotomous traits 및 표본이 적은 경우에는 Asymptotic \\(p\\)-value 계산 특성상 \\(p\\)-value가 Deflated으로 산출되는 경향을 보임\n\n\n\nTable 1-(1)\n\n\n\n\n\n\n\nTable 1-(2)\n\n\n\n\n\n2 Statistical Power 비교\n\n\\(\\beta\\)가 50대 50으로 섞여 있을 때 기존 Burden test들(W, N, C)의 Power은 0.1~0.2 수준에 그치는 반면, SKAT 은 표본이 늘어남에 따라 0.7 이상으로 치솟는 모습을 보임\n\n\n\nFigure 1\n\n\n\n\n\n\n\nTable 2\n\n\n\n\n\n3 실데이터 검증\n\n자료: Analysis of the Dallas Heart Study Sequencing Data\nDHS 데이터 3,476명의 ANGPTL3, ANGPTL4, ANGPTL5 유전자 내 93개 희귀변이 분석 결과를 수록한 표\n표의 두 번째 행인 Dichotomized TG level 열을 보면 SKAT의 \\(p\\)-value가 \\(1.3 \\times 10^{-4}\\) 로 명시되어 있으며, 옆에 적힌 CAST (\\(3.2 \\times 10^{-2}\\))나 Weighted Sum (\\(3.1 \\times 10^{-3}\\))보다 수치가 훨씬 작아(유의성이 더 높아) 우수한 검정력을 보임\n\n\n\nTable 4\n\n\n\n\n\n4 계산 효율성\n\n원인 변이 비중이 높을수록, 효과 크기(OR)가 클수록 필요 표본 수가 지수적으로 감소하며, 유병률이 낮을수록 환자군 내 원인 변이 집적(Enrichment) 효과로 인해 필요 표본 수가 줄어드는 경향을 정량적으로 입증함.\n표본 크기 \\(n = 2,000 \\sim 10,000\\)명 구간에서 SKAT의 이론적 추정 공식으로 그려낸 검정력 곡선(Theoretical Power, 검은선) 과 1,000회 시뮬레이션으로 얻은 실측 곡선(Empirical Power, 빨간선) 을 직접 대조한 결과, 두 곡선이 완벽하게 오버랩(Overlap) 된 것으로 보임.\n\n\n\nTable 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nFigure 3\n\n\n\n\n\n\n\nd. 한계점\n1 원인 변이 비율이 높고 단방향(Unidirectional)인 경우의 파워 열세\n2 소표본(\\(n &lt; 1,000\\)) 케이스-컨트롤 연구 시 \\(p\\)-value Deflation이 발생함.",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/00. Intro.html",
+    "href": "posts/00. Intro.html",
+    "title": "00. Intro",
+    "section": "",
+    "text": "TEST\ntest 입니다.\n\\[\\hat y = \\beta_{1} x + \\beta_{0},\\quad  X \\sim N(\\mu, \\sigma^2)\\]\n\n#install.packages(c('tidyverse', 'data.table'))\nlibrary(tidyverse)\nlibrary(data.table)\n\n\nmpg %&gt;% ggplot(aes(x = hwy, y = cty, color = cyl)) +\n            geom_point(alpha = 0.5, size = 2) +\n            scale_color_viridis_c() +\n            theme_minimal()",
+    "crumbs": [
+      "Posts",
+      "00. Intro"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BRIDGE",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nNov 2, 2026\n\n\n02. Review (2)\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n00. Subject\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 14, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nJun 2, 2026\n\n\n기본 단축키 셋팅\n\n\nlgc \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/00. SKAT/00. GWAS.html",
+    "href": "posts/00. SKAT/00. GWAS.html",
+    "title": "00. GWAS",
+    "section": "",
+    "text": "1 같은 환경에 살아도 어떤 사람은 당뇨병에 걸리고 어떤 사람은 걸리지 않음.\n2 식습관이나 운동 같은 환경 요인도 중요하지만, 태어날 떄부터 가지고 있는 유전적 차이도 큰 역할을 한다.\n3 그렇다면 다음과 같은 질문이 생김\n\n“유전적으로 어떤 차이가 질병 위험을 바꾸는가?”\n\n4 이 질문에 답하기 위한 연구 방법이 바로 GWAS(Genome-wide Association Study, 전장유전체 연관 분석)이다.\n\n\n용어 정리\n\n\nGenome Wide: 전장 유전체: 모든 유전체 위치에 대해서\nAssociation Study = 연관분석: 관심을 가진 형질(Target phenotype)과 연관성을 갖는 유전적 위치를 찾는 것",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "00. GWAS"
+    ]
+  },
+  {
+    "objectID": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
+    "href": "posts/00. SKAT/00. GWAS.html#dna-gene-genome",
+    "title": "00. GWAS",
+    "section": "DNA, Gene, Genome",
+    "text": "DNA, Gene, Genome\n1 DNA: 생명의 설계도(유전정보) \\(\\to\\) A, T, G, C 네 가지 글자로 이루어진 긴 문자열.\n2 Gene(유전자): DNA중에서 단백질 만드는 방법이 적힌 구간, 약 2만 개가 있음.\n3 Genome(유전체): 한 개체가 지닌 DNA 정보 전체 총합, 약 32억 글자\n\nSNP\nSingle Nucleotide Polymorphism\n1 사람마다 DNA의 대부분은 같지만, 글자 하나가 다른 곳이 있음.\n\n\n\n2 인간 유전체(Genome)에는 약 1천만 개의 SNP가 있으며, 이것이 개인차의 주요 원임임.",
+    "crumbs": [
+      "Posts",
+      "00. SKAT",
+      "00. GWAS"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html",
+    "href": "posts/01. SKTA-O/00. Subject.html",
+    "title": "00. Subject",
+    "section": "",
+    "text": "1 귀무가설 하에서의 최대 우도값 \\(L(\\hat{\\Omega}_0) = \\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})\\)와 전체 모수 공간에서의 최대 우도값 \\(L(\\hat{\\Omega}) = \\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})\\)의 비율로 검정통계량 \\(\\lambda\\)를 정의\n\\[\\lambda = \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} = \\frac{\\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})}{\\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})} \\quad (0 \\le \\lambda \\le 1) \\quad\\]\n2 점근적 성질 (Wackerly Theorem 10.2): 표본 크기 \\(n\\)이 충분히 클 때, 정규성 조건(Regularity conditions) 하에서 \\(-2 \\ln(\\lambda)\\)는 점근적으로 카이제곱(\\(\\chi^2\\)) 분포를 따름.\n\n\n\n1 대립가설 하에서 구한 최대우도추정량(MLE) \\(\\hat{\\theta}\\)와 귀무가설 하의 모수값 \\(\\theta_0\\) 간의 거리를 추정량의 표준오차 \\(\\sigma_{\\hat{\\theta}}\\)[또는 피셔 정보 행렬 \\(I(\\hat{\\theta})\\)]로 나눈 통계량을 활용\n\\[Z = \\frac{\\hat{\\theta} - \\theta_0}{\\sigma_{\\hat{\\theta}}} \\sim N(0, 1) \\quad \\Longrightarrow \\quad W = Z^2 = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1 \\quad\\]\n\n\n\n1 로그우도함수 \\(l(\\boldsymbol{\\theta})\\)의 1차 미분인 스코어 함수(Score Function) \\(U(\\boldsymbol{\\theta}) = \\frac{\\partial l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta}}\\)와 2차 미분 기대값인,\n2 피셔 정보 행렬(Fisher Information) \\(I(\\boldsymbol{\\theta}) = -E\\left[\\frac{\\partial^2 l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta} \\partial \\boldsymbol{\\theta}^T}\\right]\\)을 바탕으로, 귀무가설 하 \\(\\boldsymbol{\\theta}_0\\)에서 평가\n\\[S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\]\n3 대립가설에서의 모수 추정치 \\(\\hat{\\boldsymbol{\\theta}}\\)를 구하지 않고, 오직 귀무가설 지점 \\(\\boldsymbol{\\theta}_0\\) 하에서 우도함수의 기울기(Slope, \\(U\\))와 곡률(Information, \\(I\\))만을 측정\n\n\n\n\n\n\n\n\n\n\n\n비교 항목\nWald Test\nLikelihood Ratio Test (LRT)\nRao’s Score Test\n\n\n\n\n검정통계량 수식\n\\(W = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1\\)\n\\(\\Lambda = -2 \\ln \\left[ \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} \\right] \\sim \\chi^2_{\\nu}\\)\n\\(S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\)\n\n\n수식 평가 위치\n\\(H_1\\) 하의 MLE (\\(\\hat{\\theta}\\))\n\\(H_0\\) (\\(\\hat{\\Omega}_0\\)) 및 \\(H_1\\) (\\(\\hat{\\Omega}\\)) 모두\n오직 \\(H_0\\) (\\(\\boldsymbol{\\theta}_0\\)) 하에서만\n\n\n통계량의 수리적 의미\n모수 추정치 거리 \\((\\hat{\\theta} - \\theta_0)\\)\n두 모수 공간의 우도비 \\(\\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})}\\)\n\\(H_0\\) 지점에서의 우도 기울기 \\(U(\\boldsymbol{\\theta}_0) = \\left. \\frac{\\partial \\ln L}{\\partial \\boldsymbol{\\theta}} \\right|_{\\boldsymbol{\\theta}_0}\\)\n\n\n\\(H_1\\) 하의 MLE 추정 필요성\n필수 (MLE 수치 구함)\n필수 (MLE 수치 구함)\n불필요 (\\(H_0\\) 수식만 활용)\n\n\n다중 검정 시 연산 구조\n\\(M\\)번의 수치 최적화 반복\n\\(M\\)번의 수치 최적화 반복\nNull Model 1회 적합 + \\(M\\)번의 단순 내적\n\n\n\n\n\n\n\n1 검정통계량 \\(S\\)의 평가 위치가 오직 귀무가설 지점 \\(\\boldsymbol{\\beta}_m = \\mathbf{0}\\)에 고정되어 있으므로 대립모형에서의 모수 추정 과정을 완전히 소거.\n2 관심 변수 \\(\\boldsymbol{\\beta}_m\\)이 소거된 귀무모형은 모든 \\(M\\)개 검정에서 동일한 성입모수 \\(\\boldsymbol{\\gamma}\\)만을 포함(우리 연구에서는 공변량만을 포함한다고 생각)\n3 따라서 전체 분석 시작 시 Null model을 단 1회만 적합(Fit Null Model Once) 하여 기대값 \\(\\hat{\\mu}_{0i}\\) 및 잔차 벡터 \\(r_i = y_i - \\hat{\\mu}_{0i}\\)를 구해둠.\n\\[\\hat{\\mu}_{0i} = \\hat{\\pi}_{0i} = P(y_i = 1 \\mid \\mathbf{X}_i) = \\text{logit}^{-1}(\\hat{\\alpha}_0 + \\mathbf{X}_i^T \\hat{\\boldsymbol{\\alpha}})\\]\n\n(유전자와 상관없이, 이 사람의 나이, 성별, 인종 구조만 보았을 때 질병에 걸릴 확률이 얼마인지)\n\n4 이후 \\(M\\)개 가설을 검정할 때는 미리 구한 공통 잔차 벡터와 타겟 변수 간의 단순 행렬 내적 연산(Matrix Inner Product) 만 수행하므로,\n5 반복 계산이 선형대수 곱셈으로 전환되어 연산량이 급감.\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]\n\n\n\n1 중심극한정리에 의해 대규모 표본에서 스코어 벡터 \\(U(\\boldsymbol{\\theta}_0)\\)는 점근적으로 정규분포를 따름.\n2 정규 확률변수의 제곱합은 카이스퀘어(\\(\\chi^2\\)) 분포를 형성하므로, 표본을 무작위로 섞는 Permutation 없이도 카이스퀘어 표(Table)나 수치 적분 공식을 통해 \\(p\\)-value(유의확률)를 즉시 산출 가능.\n\n\n1 \\(H_0\\) 귀무가설(\\(H_0\\)) 하에서 스코어 통계량(및 그 이차형식)이 이론적으로 카이제곱(혼합) 분포를 완벽히 따른다는 점을 이용해,\n2 표본을 수천만 번 섞는 Permutation 시뮬레이션 없이 해석적 공식 대입만으로 exact \\(p\\)-value를 즉시 산출할 수 있다.\n3 오직 귀무가설(\\(H_0\\)) 지점에서만 평가하므로 대립모형(\\(H_1\\)) 하의 수치 최적화(Newton-Raphson) 반복 계산을 완전히 회피하고,\n4 Null Model 1회 적합으로 얻은 공통 잔차를 재사용해 단순 행렬 내적 연산만으로 연산 시간을 단축시킴.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#likelihood-ratio-test-lrt",
+    "href": "posts/01. SKTA-O/00. Subject.html#likelihood-ratio-test-lrt",
+    "title": "00. Subject",
+    "section": "",
+    "text": "1 귀무가설 하에서의 최대 우도값 \\(L(\\hat{\\Omega}_0) = \\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})\\)와 전체 모수 공간에서의 최대 우도값 \\(L(\\hat{\\Omega}) = \\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})\\)의 비율로 검정통계량 \\(\\lambda\\)를 정의\n\\[\\lambda = \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} = \\frac{\\max_{\\boldsymbol{\\theta} \\in \\Omega_0} L(\\boldsymbol{\\theta})}{\\max_{\\boldsymbol{\\theta} \\in \\Omega} L(\\boldsymbol{\\theta})} \\quad (0 \\le \\lambda \\le 1) \\quad\\]\n2 점근적 성질 (Wackerly Theorem 10.2): 표본 크기 \\(n\\)이 충분히 클 때, 정규성 조건(Regularity conditions) 하에서 \\(-2 \\ln(\\lambda)\\)는 점근적으로 카이제곱(\\(\\chi^2\\)) 분포를 따름.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#wald-test-대표본-z카이스퀘어-검정",
+    "href": "posts/01. SKTA-O/00. Subject.html#wald-test-대표본-z카이스퀘어-검정",
+    "title": "00. Subject",
+    "section": "",
+    "text": "1 대립가설 하에서 구한 최대우도추정량(MLE) \\(\\hat{\\theta}\\)와 귀무가설 하의 모수값 \\(\\theta_0\\) 간의 거리를 추정량의 표준오차 \\(\\sigma_{\\hat{\\theta}}\\)[또는 피셔 정보 행렬 \\(I(\\hat{\\theta})\\)]로 나눈 통계량을 활용\n\\[Z = \\frac{\\hat{\\theta} - \\theta_0}{\\sigma_{\\hat{\\theta}}} \\sim N(0, 1) \\quad \\Longrightarrow \\quad W = Z^2 = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1 \\quad\\]",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#raos-score-test-스코어-검정",
+    "href": "posts/01. SKTA-O/00. Subject.html#raos-score-test-스코어-검정",
+    "title": "00. Subject",
+    "section": "",
+    "text": "1 로그우도함수 \\(l(\\boldsymbol{\\theta})\\)의 1차 미분인 스코어 함수(Score Function) \\(U(\\boldsymbol{\\theta}) = \\frac{\\partial l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta}}\\)와 2차 미분 기대값인,\n2 피셔 정보 행렬(Fisher Information) \\(I(\\boldsymbol{\\theta}) = -E\\left[\\frac{\\partial^2 l(\\boldsymbol{\\theta})}{\\partial \\boldsymbol{\\theta} \\partial \\boldsymbol{\\theta}^T}\\right]\\)을 바탕으로, 귀무가설 하 \\(\\boldsymbol{\\theta}_0\\)에서 평가\n\\[S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\]\n3 대립가설에서의 모수 추정치 \\(\\hat{\\boldsymbol{\\theta}}\\)를 구하지 않고, 오직 귀무가설 지점 \\(\\boldsymbol{\\theta}_0\\) 하에서 우도함수의 기울기(Slope, \\(U\\))와 곡률(Information, \\(I\\))만을 측정\n\n\n\n\n\n\n\n\n\n\n\n비교 항목\nWald Test\nLikelihood Ratio Test (LRT)\nRao’s Score Test\n\n\n\n\n검정통계량 수식\n\\(W = \\frac{(\\hat{\\theta} - \\theta_0)^2}{\\text{Var}(\\hat{\\theta})} \\sim \\chi^2_1\\)\n\\(\\Lambda = -2 \\ln \\left[ \\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})} \\right] \\sim \\chi^2_{\\nu}\\)\n\\(S = U(\\boldsymbol{\\theta}_0)^T \\left[ I(\\boldsymbol{\\theta}_0) \\right]^{-1} U(\\boldsymbol{\\theta}_0) \\sim \\chi^2_p\\)\n\n\n수식 평가 위치\n\\(H_1\\) 하의 MLE (\\(\\hat{\\theta}\\))\n\\(H_0\\) (\\(\\hat{\\Omega}_0\\)) 및 \\(H_1\\) (\\(\\hat{\\Omega}\\)) 모두\n오직 \\(H_0\\) (\\(\\boldsymbol{\\theta}_0\\)) 하에서만\n\n\n통계량의 수리적 의미\n모수 추정치 거리 \\((\\hat{\\theta} - \\theta_0)\\)\n두 모수 공간의 우도비 \\(\\frac{L(\\hat{\\Omega}_0)}{L(\\hat{\\Omega})}\\)\n\\(H_0\\) 지점에서의 우도 기울기 \\(U(\\boldsymbol{\\theta}_0) = \\left. \\frac{\\partial \\ln L}{\\partial \\boldsymbol{\\theta}} \\right|_{\\boldsymbol{\\theta}_0}\\)\n\n\n\\(H_1\\) 하의 MLE 추정 필요성\n필수 (MLE 수치 구함)\n필수 (MLE 수치 구함)\n불필요 (\\(H_0\\) 수식만 활용)\n\n\n다중 검정 시 연산 구조\n\\(M\\)번의 수치 최적화 반복\n\\(M\\)번의 수치 최적화 반복\nNull Model 1회 적합 + \\(M\\)번의 단순 내적",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#score-test-사용-시-연산량이-급감하는-원리",
+    "href": "posts/01. SKTA-O/00. Subject.html#score-test-사용-시-연산량이-급감하는-원리",
+    "title": "00. Subject",
+    "section": "",
+    "text": "1 검정통계량 \\(S\\)의 평가 위치가 오직 귀무가설 지점 \\(\\boldsymbol{\\beta}_m = \\mathbf{0}\\)에 고정되어 있으므로 대립모형에서의 모수 추정 과정을 완전히 소거.\n2 관심 변수 \\(\\boldsymbol{\\beta}_m\\)이 소거된 귀무모형은 모든 \\(M\\)개 검정에서 동일한 성입모수 \\(\\boldsymbol{\\gamma}\\)만을 포함(우리 연구에서는 공변량만을 포함한다고 생각)\n3 따라서 전체 분석 시작 시 Null model을 단 1회만 적합(Fit Null Model Once) 하여 기대값 \\(\\hat{\\mu}_{0i}\\) 및 잔차 벡터 \\(r_i = y_i - \\hat{\\mu}_{0i}\\)를 구해둠.\n\\[\\hat{\\mu}_{0i} = \\hat{\\pi}_{0i} = P(y_i = 1 \\mid \\mathbf{X}_i) = \\text{logit}^{-1}(\\hat{\\alpha}_0 + \\mathbf{X}_i^T \\hat{\\boldsymbol{\\alpha}})\\]\n\n(유전자와 상관없이, 이 사람의 나이, 성별, 인종 구조만 보았을 때 질병에 걸릴 확률이 얼마인지)\n\n4 이후 \\(M\\)개 가설을 검정할 때는 미리 구한 공통 잔차 벡터와 타겟 변수 간의 단순 행렬 내적 연산(Matrix Inner Product) 만 수행하므로,\n5 반복 계산이 선형대수 곱셈으로 전환되어 연산량이 급감.\n\\[Q = (y - \\hat{\\mu})'K (y - \\hat{\\mu}) = \\sum_{j=1}^p w_j^2 S_j^2\\]",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#중심극한정리clt와-카이스퀘어-분포로의-점근적-수렴",
+    "href": "posts/01. SKTA-O/00. Subject.html#중심극한정리clt와-카이스퀘어-분포로의-점근적-수렴",
+    "title": "00. Subject",
+    "section": "",
+    "text": "1 중심극한정리에 의해 대규모 표본에서 스코어 벡터 \\(U(\\boldsymbol{\\theta}_0)\\)는 점근적으로 정규분포를 따름.\n2 정규 확률변수의 제곱합은 카이스퀘어(\\(\\chi^2\\)) 분포를 형성하므로, 표본을 무작위로 섞는 Permutation 없이도 카이스퀘어 표(Table)나 수치 적분 공식을 통해 \\(p\\)-value(유의확률)를 즉시 산출 가능.\n\n\n1 \\(H_0\\) 귀무가설(\\(H_0\\)) 하에서 스코어 통계량(및 그 이차형식)이 이론적으로 카이제곱(혼합) 분포를 완벽히 따른다는 점을 이용해,\n2 표본을 수천만 번 섞는 Permutation 시뮬레이션 없이 해석적 공식 대입만으로 exact \\(p\\)-value를 즉시 산출할 수 있다.\n3 오직 귀무가설(\\(H_0\\)) 지점에서만 평가하므로 대립모형(\\(H_1\\)) 하의 수치 최적화(Newton-Raphson) 반복 계산을 완전히 회피하고,\n4 Null Model 1회 적합으로 얻은 공통 잔차를 재사용해 단순 행렬 내적 연산만으로 연산 시간을 단축시킴.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/00. Subject.html#확률의-정의구역-0-1-보장-bounded-domain",
+    "href": "posts/01. SKTA-O/00. Subject.html#확률의-정의구역-0-1-보장-bounded-domain",
+    "title": "00. Subject",
+    "section": "확률의 정의구역 \\([0, 1]\\) 보장 (Bounded Domain)",
+    "text": "확률의 정의구역 \\([0, 1]\\) 보장 (Bounded Domain)\n1 선형 확률 모형(LPM: \\(\\pi_i = \\mathbf{X}_i \\boldsymbol{\\beta}\\))을 적용하면 예측된 \\(\\hat{\\pi}_i\\)가 \\(0\\) 미만이거나 \\(1\\)을 초과하는 치명적 결함이 발생\n2 \\(\\text{logit}(\\pi) = \\ln\\left(\\frac{\\pi}{1-\\pi}\\right)\\)은 확률 구간 \\((0, 1)\\)을 실수 전체 \\((-\\infty, \\infty)\\)로 1:1 일대일 매핑해줌.\n3 역변환(Sigmoid) \\(\\pi_i = \\frac{e^{\\mathbf{X}_i \\boldsymbol{\\beta}}}{1 + e^{\\mathbf{X}_i \\boldsymbol{\\beta}}}\\)을 통해 선형 결합 \\(\\mathbf{X}_i \\boldsymbol{\\beta}\\)가 어떤 실수를 갖더라도 항상 \\(0 &lt; \\hat{\\pi}_i &lt; 1\\) 범위 내의 유효한 확률값을 보장함.\n4 예를 들어 일반 선형회귀로 질병 확률을 예측하면 위험 요인이 많아질 때 확률이 \\(120\\%\\)가 되거나 \\(-15\\%\\)가 되는 기괴한 문제가 발생합\n5 반면 Logit 변환을 거치면 S자 곡선 형태가 되어 X값이 아무리 극단적이어도 예측 확률을 항상 \\(0\\%\\)와 \\(100\\%\\) 사이(\\([0, 1]\\))로 예쁘게 가두어줌.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "00. Subject"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/02. Review.html",
+    "href": "posts/01. SKTA-O/02. Review.html",
+    "title": "02. Review (2)",
+    "section": "",
+    "text": "\\[Q_{\\text{Burden}} = \\left [ \\sum_{j=1}^{m} w_jS_j \\right ]^2 \\quad \\text{vs} \\quad Q_{\\text{SKAT}} =\\sum_{j=1}^m w_j^2 S_j^2\\]\n\n\n\n예시\n\\(w = 1, \\,\\,S = [1,2,3]\\)\n\\(w = 1, \\,\\,S =[4,5,-6]\\)\n\n\n\n\n\\(Q_{\\text{Burden}}\\)\n36\n9\n\n\n\\(Q_{\\text{SKAT}}\\)\n14\n77",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "02. Review (2)"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/02. Review.html#step1.-기본-기호-정의",
+    "href": "posts/01. SKTA-O/02. Review.html#step1.-기본-기호-정의",
+    "title": "02. Review (2)",
+    "section": "Step1. 기본 기호 정의",
+    "text": "Step1. 기본 기호 정의\n1 잔차 벡터: \\(\\mathbf{r} = \\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0\\)\n2 변이별 가중치 대각 행렬: \\(\\mathbf{W} = \\text{diag}(w_1, w_2, \\dots, w_m)\\)\n3 변이 스코어 행렬: \\(\\mathbf{S} = \\mathbf{G}^T (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0) = \\mathbf{G}^T \\mathbf{r}\\)\n\n\\(S_j = \\sum_{i=1}^n g_{ij}(y_i - \\hat{\\pi}_{0,i})\\))",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "02. Review (2)"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/02. Review.html#step2.-각-q를-행렬-표현",
+    "href": "posts/01. SKTA-O/02. Review.html#step2.-각-q를-행렬-표현",
+    "title": "02. Review (2)",
+    "section": "Step2. 각 Q를 행렬 표현",
+    "text": "Step2. 각 Q를 행렬 표현\n1 SKAT\n\\[Q_{\\text{SKAT}}= \\sum_{j=1}^m w_j^2 S_j^2  = \\mathbf{S}^T \\mathbf{W} \\mathbf{I}_m \\mathbf{W} \\mathbf{S}\\]\n2 Buredn\n\\[Q_{\\text{Burden}} = \\left( \\mathbf{1}^T \\mathbf{W}\\mathbf{S} \\right)^2 = \\left( \\mathbf{1}^T \\mathbf{W}\\mathbf{S} \\right)^T \\left( \\mathbf{1}^T \\mathbf{W}\\mathbf{S} \\right) = \\mathbf{S}^T \\mathbf{W} (\\mathbf{1}\\mathbf{1}^T) \\mathbf{W} \\mathbf{S}\\]",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "02. Review (2)"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/02. Review.html#step3.-행렬-묶기",
+    "href": "posts/01. SKTA-O/02. Review.html#step3.-행렬-묶기",
+    "title": "02. Review (2)",
+    "section": "Step3. 행렬 묶기",
+    "text": "Step3. 행렬 묶기\n\\[\n\\begin{aligned}\nQ_\\rho &= (1 - \\rho) Q_S + \\rho Q_B \\\\ \\\\\n&= (1 - \\rho) \\left( \\mathbf{S}^T \\mathbf{W} \\mathbf{I} \\mathbf{W} \\mathbf{S} \\right) + \\rho \\left( \\mathbf{S}^T \\mathbf{W} (\\mathbf{1}\\mathbf{1}^T) \\mathbf{W} \\mathbf{S} \\right) \\\\ \\\\\n&= \\mathbf{S}^T \\mathbf{W} \\left[ \\mathbf{(1 - \\rho) \\mathbf{I} + \\rho \\mathbf{1}\\mathbf{1}^T} \\right] \\mathbf{W} \\mathbf{S} \\\\ \\\\\n&= \\mathbf{S}^T \\mathbf{W}\\mathbf{R}_\\rho \\mathbf{W} \\mathbf{S}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "02. Review (2)"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/02. Review.html#step4.-잔차-벡터와-커널-행렬로-전환",
+    "href": "posts/01. SKTA-O/02. Review.html#step4.-잔차-벡터와-커널-행렬로-전환",
+    "title": "02. Review (2)",
+    "section": "Step4. 잔차 벡터와 커널 행렬로 전환",
+    "text": "Step4. 잔차 벡터와 커널 행렬로 전환\n\\[\n\\begin{aligned}\nQ_\\rho &= \\mathbf{S}^T \\mathbf{W} \\mathbf{R}_\\rho \\mathbf{W} \\mathbf{S} \\\\ \\\\\n&= \\left( \\mathbf{G}^T (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0) \\right)^T \\mathbf{W} \\mathbf{R}_\\rho \\mathbf{W} \\left( \\mathbf{G}^T (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0) \\right) \\\\ \\\\\n&= (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0)^T \\underbrace{\\left( \\mathbf{G} \\mathbf{W} \\mathbf{R}_\\rho \\mathbf{W} \\mathbf{G}^T \\right)}_{\\mathbf{K}_\\rho} (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0) \\\\\n&= (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0)^T {\\mathbf{K}_\\rho} (\\mathbf{y} - \\hat{\\boldsymbol{\\pi}}_0)\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "02. Review (2)"
+    ]
+  },
+  {
+    "objectID": "posts/01. SKTA-O/02. Review.html#step5.-커널-행렬-뜯어보기",
+    "href": "posts/01. SKTA-O/02. Review.html#step5.-커널-행렬-뜯어보기",
+    "title": "02. Review (2)",
+    "section": "Step5. 커널 행렬 뜯어보기",
+    "text": "Step5. 커널 행렬 뜯어보기\n커널 행렬 \\(\\mathbf{K}_\\rho\\)에서 \\(\\mathbf{R}_\\rho = (1-\\rho)\\mathbf{I} + \\rho\\mathbf{1}\\mathbf{1}^T\\)를 다시 넣어서 풀면\n\\[\n\\begin{aligned}\n\\mathbf{K}_\\rho &= \\mathbf{G} \\mathbf{W} \\left[ (1 - \\rho)\\mathbf{I} + \\rho \\mathbf{1}\\mathbf{1}^T \\right] \\mathbf{W} \\mathbf{G}^T \\\\ \\\\\n&= (1 - \\rho) \\underbrace{\\mathbf{G} \\mathbf{W} \\mathbf{W} \\mathbf{G}^T}_{\\mathbf{K}_{\\text{SKAT}}} + \\rho \\underbrace{\\mathbf{G} \\mathbf{W} \\mathbf{1}\\mathbf{1}^T \\mathbf{W} \\mathbf{G}^T}_{\\mathbf{K}_{\\text{Burden}}}\n\\end{aligned}\n\\]\n\n즉, 위 행렬 유도를 통해 독립성을 가정하면(\\(\\rho = 0\\)), SKAT처럼,\n즉, 위 행렬 유도를 통해 독립성을 가정을 배제하면 (\\(\\rho \\neq 0\\)), Burden처럼 작동하는 것이다.",
+    "crumbs": [
+      "Posts",
+      "01. SKTA-O",
+      "02. Review (2)"
     ]
   }
 ]
