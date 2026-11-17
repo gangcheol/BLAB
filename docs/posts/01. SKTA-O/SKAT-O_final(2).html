@@ -582,7 +582,7 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 </ul>
 <p><span class="math display">\[Q_\rho = (\mathbf{y} - \hat{\boldsymbol{\pi}})^T \mathbf{K}_\rho (\mathbf{y} - \hat{\boldsymbol{\pi}})= \sum_{i=1}^n \sum_{j=1}^n r_i r_j K_{ij}\]</span></p>
 <ul>
-<li>즉, <code>"1번과 3번 환자가 둘 다 질병에 걸렸을 때(혹은 반대)</code> (<span class="math inline">\(r_1 r_3 &gt; 0\)</span>), 두 사람의 <code>유전적 유사도 점수</code>(<span class="math inline">\(K_{13}\)</span>)도 <code>실제로 높은가?"</code>를 확인하여 질병과 유전자의 연관성을 입증하는 핵심 잣대가 된다.
+<li>즉, <code>"1번과 3번 환자가 둘 다 질병에 걸렸을 때</code> (<span class="math inline">\(r_1 r_3 &gt; 0\)</span>), 두 사람의 <code>유전적 유사도 점수</code>(<span class="math inline">\(K_{13}\)</span>)도 <code>실제로 높은가?"</code>를 확인하여 질병과 유전자의 연관성을 입증하는 핵심 잣대가 된다.
 <ul>
 <li><span class="math inline">\(r_i = 1 - \hat{\pi}_i &gt; 0 \quad (\mathbf{무조건 \; 양수 +})\)</span></li>
 </ul></li>
@@ -703,7 +703,7 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <p><code>6</code> 이게 왜 혼합카이제곱 분포를 따르냐?</p>
 <ul>
 <li><p>정의: 서로 독립인 자유도 1의 카이제곱 확률변수들 <span class="math inline">\(\chi^2_{1, 1}, \chi^2_{1, 2}, \dots, \chi^2_{1, m} \stackrel{i.i.d.}{\sim} \chi^2_1\)</span>과, 0이 아닌 임의의 양의 실수 가중치 계수들 <span class="math inline">\(\lambda_1, \lambda_2, \dots, \lambda_m &gt; 0\)</span>이 주어졌을 때,</p></li>
-<li><p>이들의 선형 결합(<span class="math inline">\(\sum \lambda_k \chi^2_1\)</span>)이 혼합카에지곱 분포라고 정의되어 있음.</p></li>
+<li><p>이들의 선형 결합(<span class="math inline">\(\sum \lambda_k \chi^2_1\)</span>)이 혼합카이제곱 분포라고 정의되어 있음.</p></li>
 <li><p><span class="math inline">\(v_k\)</span>는 서로 독립인 표준정규변수인가? <span class="math inline">\(\to\)</span> Yes. 직교 회전(<span class="math inline">\(U^T U = I\)</span>)으로 <code>공분산이 단위행렬</code>로 보존되므로 <span class="math inline">\(v_k \stackrel{i.i.d.}{\sim} N(0, 1)\)</span></p></li>
 <li><p><span class="math inline">\(v_k^2\)</span>은 자유도 1의 카이제곱변수인가? <span class="math inline">\(\rightarrow\)</span> Yes. <code>표준정규변수의 제곱은 정의상 정확히</code> <span class="math inline">\(\chi^2_1\)</span></p></li>
 <li><p>그 앞에 붙은 계수가 상수인가? <span class="math inline">\(\rightarrow\)</span> Yes. 대각화 과정에서 뽑아낸 불변의 <code>실수 고윳값</code> <span class="math inline">\(\lambda_k\)</span>이다.</p></li>
@@ -760,7 +760,10 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <p><code>7</code> 이 세 가지 적률로 단일 카이제곱분포(<span class="math inline">\(\chi^2_{df}\)</span>)로 <strong>근사시키는 기법</strong>이 바로 <strong>모멘트 매칭</strong>이다.</p>
 <ul>
 <li><p>상수 <span class="math inline">\(\lambda_j\)</span>가 곱해진 <span class="math inline">\(\lambda_j \chi^2_1\)</span> 역시 척도(scale) 모수만 변한 감마분포 <span class="math inline">\(\text{Gamma}(1/2, 2\lambda_j)\)</span></p></li>
-<li><p>흠 그렇다면, 그것들의 선형결합도 어떤 <code>단일 카이제곱 분포로 근사하지 않을까</code>란게 아이디어임.</p></li>
+<li><p>흠 그렇다면, 그것들의 선형결합도 어떤 <code>단일 카이제곱 분포로 근사하지 않을까</code>란게 아이디어임.</p>
+<ul>
+<li>큐뮬런트 생성함수의 전개로 증명된다는데, 그건 다음 기회에 증명해볼게욥</li>
+</ul></li>
 </ul>
 </section>
 <section id="p_rho-moment-매칭-근사법" class="level3">
@@ -819,7 +822,7 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 &amp;= 1 - F\left( \frac{q_\rho^{\text{obs}} - \mu_Q}{\sqrt{v_Q}} \sqrt{2 \cdot df} + df \;\middle|\; \chi^2_{df} \right) &amp;&amp; \text{\small [R의 pchisq로 계산하는 형태]}
 \end{aligned}
 \]</span></p>
-<p><span class="math display">\[\mu_{Q} = \sum_{i=1}^{m}\lambda, \quad v_{Q} = 2\sum_{i=1}^{m} \lambda^{2}_j, \quad \divideontimes \,\, df = \frac{12}{\hat{\gamma}}\]</span></p>
+<p><span class="math display">\[\mu_{Q} = \sum_{i=1}^{m}\lambda_i, \quad v_{Q} = 2\sum_{i=1}^{m} \lambda^{2}_i, \quad \divideontimes \,\, df = \frac{12}{\hat{\gamma}}\]</span></p>
 </section>
 </section>
 </section>
