@@ -1,71 +1,38 @@
 {
   "about.qmd": {
-    "about.html": "827f0ba1"
+    "about.html": "219ea26f"
   },
   "index.qmd": {
-    "index.html": "0d6d23b3"
+    "index.html": "9cb362f4"
   },
   "posts/00. Intro.ipynb": {
-    "00. Intro.html": "1bfb3c3a"
-  },
-  "posts/01. Review.ipynb": {
-    "01. Review.html": "782a36b0"
-  },
-  "posts/01wk/01. Review.ipynb": {
-    "01. Review.html": "47fd5097"
-  },
-  "01. Review.ipynb": {
-    "01. Review.html": "32819378"
-  },
-  "posts/01wk/00. GWAS.ipynb": {
-    "00. GWAS.html": "cac1a029"
-  },
-  "posts/01wk/01. Review (2).ipynb": {
-    "01. Review (2).html": "2811f55b"
-  },
-  "01. Review (2).ipynb": {
-    "01. Review (2).html": "513707f6"
+    "00. Intro.html": "9c66e38f"
   },
   "posts/00. SKAT/00. GWAS.ipynb": {
-    "00. GWAS.html": "b27cbfbd"
+    "00. GWAS.html": "84bca43b"
   },
   "posts/00. SKAT/01. Review.ipynb": {
-    "01. Review.html": "ca14b06d"
-  },
-  "posts/01.SKTA-O/00. Subject.ipynb": {
-    "00. Subject.html": "403f6423"
-  },
-  "posts/01.SKTA-O/01. review.ipynb": {
-    "01. review.html": "6e1eda1d"
-  },
-  "posts/01. SKTA-O/00. Subject.ipynb": {
-    "00. Subject.html": "e24a5c39"
-  },
-  "posts/01. SKTA-O/01. review.ipynb": {
-    "01. review.html": "a86849e5"
-  },
-  "01. review.ipynb": {
-    "01. review.html": "45c2ca14"
-  },
-  "posts/setting.ipynb": {
-    "setting.html": "2e90f693"
-  },
-  "posts/01. SKTA-O/02. Review.ipynb": {
-    "02. Review.html": "801c0594"
+    "01. Review.html": "d5c0af4b"
   },
   "posts/00. SKAT/02. Review.ipynb": {
-    "02. Review.html": "b26f5d4d"
+    "02. Review.html": "6afa41f6"
   },
-  "posts/01. SKTA-O/99. Subject.ipynb": {
-    "99. Subject.html": "2a02403f"
+  "posts/01. SKTA-O/01. review.ipynb": {
+    "01. review.html": "2a7b4029"
   },
-  "posts/02. SKTA-O(v2)/261014/00. review.ipynb": {
-    "00. review.html": "fe41c3be"
-  },
-  "posts/01. SKTA-O/SKAT-O_final.ipynb": {
-    "SKAT-O_final.html": "a3382bb9"
+  "posts/01. SKTA-O/02. Review.ipynb": {
+    "02. Review.html": "15fef559"
   },
   "posts/01. SKTA-O/SKAT-O_final(2).ipynb": {
-    "SKAT-O_final(2).html": "a4911c81"
+    "SKAT-O_final(2).html": "75467dea"
+  },
+  "posts/01. SKTA-O/SKAT-O_final.ipynb": {
+    "SKAT-O_final.html": "65019fde"
+  },
+  "posts/02. SKTA-O(v2)/261014/00. review.ipynb": {
+    "00. review.html": "ae8ab9bf"
+  },
+  "posts/setting.ipynb": {
+    "setting.html": "6c5b03e4"
   }
 }
