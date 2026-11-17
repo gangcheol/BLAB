@@ -275,6 +275,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../posts/01. SKTA-O/02. Review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Review (2)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../posts/01. SKTA-O/SKAT-O_final.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SKAT-O(TEMP)</span></a>
   </div>
@@ -840,7 +846,7 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 <li><p><span class="math inline">\(S_1 = 3.0\)</span>: 질병과 강하게 연관된 소수의 위해 변이</p></li>
 <li><p><span class="math inline">\(S_2 = 0.1, \; S_3 = -0.1, \; S_4 = 0.0\)</span>: 효과가 없는 다수의 중립 변이</p></li>
 </ul>
-<div id="92909bca-d46f-4356-841c-59ff8c59e0db" class="cell" data-execution_count="10">
+<div id="92909bca-d46f-4356-841c-59ff8c59e0db" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.0</span>, <span class="fl">0.1</span>, <span class="sc">-</span><span class="fl">0.1</span>, <span class="fl">0.0</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">length</span>(S) <span class="co"># 변이 개수: 4</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -852,7 +858,7 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 </section>
 <section id="skat-통계량제곱합과-burden-통계량합의-제곱-계산" class="level3">
 <h3 class="anchored" data-anchor-id="skat-통계량제곱합과-burden-통계량합의-제곱-계산">(2) SKAT 통계량(제곱합)과 Burden 통계량(합의 제곱) 계산</h3>
-<div id="8c753838-405b-43d3-962d-12618dad8f02" class="cell" data-execution_count="14">
+<div id="8c753838-405b-43d3-962d-12618dad8f02" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Q_S <span class="ot">&lt;-</span> <span class="fu">sum</span>(S<span class="sc">^</span><span class="dv">2</span>)     </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Q_B <span class="ot">&lt;-</span> (<span class="fu">sum</span>(S))<span class="sc">^</span><span class="dv">2</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -866,7 +872,7 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 </section>
 <section id="탐색-그리드-설정" class="level3">
 <h3 class="anchored" data-anchor-id="탐색-그리드-설정">(3) 탐색 그리드 설정</h3>
-<div id="23c91e36-206a-46f5-8384-aa8dc026f993" class="cell" data-execution_count="16">
+<div id="23c91e36-206a-46f5-8384-aa8dc026f993" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rho_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rho_grid</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -881,7 +887,7 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 </section>
 <section id="결과-저장-데이터-프레임-생성" class="level3">
 <h3 class="anchored" data-anchor-id="결과-저장-데이터-프레임-생성">(4) 결과 저장 데이터 프레임 생성</h3>
-<div id="85352777-c999-4d3b-a39a-1a3caaa13139" class="cell" data-execution_count="22">
+<div id="85352777-c999-4d3b-a39a-1a3caaa13139" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">rho    =</span> rho_grid,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">q_obs  =</span> <span class="cn">NA</span>,</span>
@@ -908,9 +914,9 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 \rho &amp; \rho &amp; \rho &amp; \dots &amp; 1
 \end{pmatrix}_{m \times m}\]</span></p>
-<pre class="{r}"><code>R_rho &lt;- matrix(rho, nrow = m, ncol = m)
-diag(R_rho) &lt;- 1
-lambda &lt;- eigen(R_rho)$values</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>R_rho <span class="ot">&lt;-</span> <span class="fu">matrix</span>(rho, <span class="at">nrow =</span> m, <span class="at">ncol =</span> m)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(R_rho) <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">eigen</span>(R_rho)<span class="sc">$</span>values</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="고윳값-기반-모멘트-및-유효-자유도-추출" class="level3">
 <h3 class="anchored" data-anchor-id="고윳값-기반-모멘트-및-유효-자유도-추출">(7) 고윳값 기반 모멘트 및 유효 자유도 추출</h3>
