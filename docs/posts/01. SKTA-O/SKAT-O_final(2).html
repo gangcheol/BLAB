@@ -73,8 +73,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../posts/02. SKTA-O(v2)/261014/00. review.html" rel="next">
-<link href="../../posts/01. SKTA-O/SKAT-O_final.html" rel="prev">
+<link href="../../posts/01. SKTA-O/SKAT-O_final(temp).html" rel="next">
+<link href="../../posts/01. SKTA-O/02. Review.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -281,44 +281,16 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/01. SKTA-O/SKAT-O_final.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SKAT-O(TEMP)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../posts/01. SKTA-O/SKAT-O_final(2).html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SKAT-O</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">02. SKTA-O(v2)</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">261014</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/02. SKTA-O(v2)/261014/00. review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">00. review</span></a>
+  <a href="../../posts/01. SKTA-O/SKAT-O_final(temp).html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SKAT-O(TEMP)</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
       </ul>
@@ -354,9 +326,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#가설-및-모형-2" id="toc-가설-및-모형-2" class="nav-link" data-scroll-target="#가설-및-모형-2">(1) 가설 및 모형</a></li>
   <li><a href="#mathbfk_rho-mathbfgmathbfwmathbfr_rhomathbfwmathbfgt-직관적-이해" id="toc-mathbfk_rho-mathbfgmathbfwmathbfr_rhomathbfwmathbfgt-직관적-이해" class="nav-link" data-scroll-target="#mathbfk_rho-mathbfgmathbfwmathbfr_rhomathbfwmathbfgt-직관적-이해">(2) <span class="math inline">\(\mathbf{K}_\rho = \mathbf{G}\mathbf{W}\mathbf{R}_\rho\mathbf{W}\mathbf{G}^T\)</span> 직관적 이해</a></li>
-  <li><a href="#통계량-스펙트럼-분해" id="toc-통계량-스펙트럼-분해" class="nav-link" data-scroll-target="#통계량-스펙트럼-분해">(3) 통계량 스펙트럼 분해</a></li>
-  <li><a href="#p_rho" id="toc-p_rho" class="nav-link" data-scroll-target="#p_rho">(4) <span class="math inline">\(p_{\rho}\)</span></a></li>
-  <li><a href="#p_rho-moment-매칭-근사법" id="toc-p_rho-moment-매칭-근사법" class="nav-link" data-scroll-target="#p_rho-moment-매칭-근사법">(5) <span class="math inline">\(p_{\rho}\)</span> (Moment 매칭 근사법)</a></li>
+  <li><a href="#p_rho-moment-매칭-근사법" id="toc-p_rho-moment-매칭-근사법" class="nav-link" data-scroll-target="#p_rho-moment-매칭-근사법">(3) <span class="math inline">\(p_{\rho}\)</span> (Moment 매칭 근사법)</a></li>
   </ul></li>
   <li><a href="#ex-1.-최적의-rho-찾기-skat-유도" id="toc-ex-1.-최적의-rho-찾기-skat-유도" class="nav-link" data-scroll-target="#ex-1.-최적의-rho-찾기-skat-유도">EX 1. 최적의 <span class="math inline">\(\rho\)</span> 찾기 (SKAT 유도)</a>
   <ul class="collapse">
@@ -380,6 +350,14 @@ window.Quarto = {
   <li><a href="#step-4.-이차형식-결합" id="toc-step-4.-이차형식-결합" class="nav-link" data-scroll-target="#step-4.-이차형식-결합">step 4. 이차형식 결합</a></li>
   <li><a href="#step-5.-스펙트럼-정리" id="toc-step-5.-스펙트럼-정리" class="nav-link" data-scroll-target="#step-5.-스펙트럼-정리">step 5. 스펙트럼 정리</a></li>
   <li><a href="#step-6.-카이제곱-변환" id="toc-step-6.-카이제곱-변환" class="nav-link" data-scroll-target="#step-6.-카이제곱-변환">step 6. 카이제곱 변환</a></li>
+  </ul></li>
+  <li><a href="#extra-02.-스펙트럼-분해" id="toc-extra-02.-스펙트럼-분해" class="nav-link" data-scroll-target="#extra-02.-스펙트럼-분해">Extra 02. 스펙트럼 분해</a>
+  <ul class="collapse">
+  <li><a href="#notation-정리-1" id="toc-notation-정리-1" class="nav-link" data-scroll-target="#notation-정리-1">(1) Notation 정리 1</a></li>
+  <li><a href="#왜-쓰는가" id="toc-왜-쓰는가" class="nav-link" data-scroll-target="#왜-쓰는가">(2) 왜 쓰는가?</a></li>
+  <li><a href="#스펙트럼-분해-예시" id="toc-스펙트럼-분해-예시" class="nav-link" data-scroll-target="#스펙트럼-분해-예시">(3) 스펙트럼 분해 예시</a></li>
+  <li><a href="#검정통계량-대입" id="toc-검정통계량-대입" class="nav-link" data-scroll-target="#검정통계량-대입">(4) 검정통계량 대입</a></li>
+  <li><a href="#혼합-카이제곱분포를-따르는-이유" id="toc-혼합-카이제곱분포를-따르는-이유" class="nav-link" data-scroll-target="#혼합-카이제곱분포를-따르는-이유">(5) 혼합 카이제곱분포를 따르는 이유</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -615,140 +593,13 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 </ul>
 <hr>
 </section>
-<section id="통계량-스펙트럼-분해" class="level3">
-<h3 class="anchored" data-anchor-id="통계량-스펙트럼-분해">(3) 통계량 스펙트럼 분해</h3>
-<p><code>1</code> 검정통계량 <span class="math inline">\(Q_{\rho}\)</span>는 정의</p>
-<p><span class="math display">\[Q_\rho = (\mathbf{y} - \hat{\boldsymbol{\pi}})^T \mathbf{K}_\rho (\mathbf{y} - \hat{\boldsymbol{\pi}})= \mathbf{r}^T \mathbf{K}_\rho\mathbf{r}\]</span></p>
-<p><span class="math display">\[\mathbf{K}_\rho = \mathbf{G}\mathbf{W}\mathbf{R}_\rho\mathbf{W}\mathbf{G}^T\]</span></p>
-<ul>
-<li><p><span class="math inline">\(\mathbf{G}\)</span> (<span class="math inline">\(n \times m\)</span>): <span class="math inline">\(n\)</span>명 환자의 <span class="math inline">\(m\)</span>개 희귀 변이 유전자형 행렬</p></li>
-<li><p><span class="math inline">\(\mathbf{W} = \text{diag}(w_1, \dots, w_m)\)</span>: 희귀도(MAF)에 따른 가중치 대각행렬</p></li>
-<li><p><span class="math inline">\(\mathbf{R}_\rho = (1 - \rho)\mathbf{I}_m + \rho \mathbf{1}_m \mathbf{1}_m^T\)</span>: 변이 효과 간의 상관핼렬</p></li>
-</ul>
-<p><code>2</code> 공분산 행렬 <span class="math inline">\(\mathbf{P}_0\)</span>로 얽혀 있는 통계량을 독립인 표준정규분포 벡터로 변환</p>
-<p><span class="math display">\[\mathbf{r} \sim N(0, \mathbf{P}_0= \text{Cov}(\mathbf{r})) \to \mathrm{z} = \mathbf{P}_0^{-1/2} \mathbf{r} \sim N(\mathbf{0}, \mathbf{I})\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
-&amp;= \mathbf{r}^T \Big( \mathbf{I} \cdot \mathbf{K}_\rho \cdot \mathbf{I} \Big) \mathbf{r} \\ \\
-&amp;= \mathbf{r}^T \Big( \mathbf{P}_0^{-1/2} \mathbf{P}_0^{1/2} \cdot \mathbf{K}_\rho \cdot \mathbf{P}_0^{1/2} \mathbf{P}_0^{-1/2} \Big) \mathbf{r} \\ \\
-&amp;= \Big( \mathbf{r}^T \mathbf{P}_0^{-1/2} \Big) \Big( \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2} \Big) \Big( \mathbf{P}_0^{-1/2} \mathbf{r} \Big) \\ \\
-&amp;= (\mathbf{P}_0^{-1/2} \mathbf{r})^T \Big( \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2} \Big) (\mathbf{P}_0^{-1/2} \mathbf{r}) \\ \\
-&amp;= \mathbf{z}^T \mathbf{A}_\rho \mathbf{z} \quad \Big( \text{단, } \mathbf{z} = \mathbf{P}_0^{-1/2} \mathbf{r} \sim N(\mathbf{0}, \mathbf{I}), \;\; \mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2} \Big)
-\end{aligned}
-\]</span></p>
-<p><span class="math display">\[ \mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2}\]</span></p>
-<p><span class="math display">\[
-\divideontimes \,\,Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z} \quad \Big( \mathbf{z} \sim N(\mathbf{0}, \mathbf{I}) \Big)
-\]</span></p>
-<p><code>4</code> 스펙트럼 정리</p>
-<ul>
-<li><p>우리가 관측한 통계량 <span class="math inline">\(Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z}\)</span>는 <span class="math inline">\(n\)</span>명 <strong>환자의 잔차와 공변량, 유전형</strong>이 복잡하게 뒤엉켜 있음.</p></li>
-<li><p>이 상태 그대로는 <span class="math inline">\(Q_\rho\)</span>가 <strong>이론적으로 어떤 확률분포를 따르는지 수식으로 정의하는 것 자체가 불가능</strong></p></li>
-<li><p><span class="math inline">\(\mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\)</span>를 통해 얽힌 상관관계를 완전히 털어내면, 행렬곱이 사라지고 <span class="math inline">\(Q_\rho = \sum \lambda_k v_k^2\)</span>이라는 단순한 ‘제곱합’ 으로바뀜.</p></li>
-<li><p>스펙트럼 분해를 거치고 나면, 논문에 기술된 바와 같이 귀무가설 하에서 통계량 <span class="math inline">\(Q_\rho\)</span>가 점근적으로 <strong>서로 독립인 카이제곱분포들의 가중 선형결합인 혼합 카이제곱분포를 따른다</strong>는 점이 수학적으로 증명됨.</p></li>
-<li><p>행렬 <span class="math inline">\(\mathbf{A}_\rho\)</span>는 실수 대칭행렬이므로 <code>스펙트럼 정리</code>에 의해 고유벡터 직교행렬 <span class="math inline">\(\mathbf{U}\)</span> (<span class="math inline">\(\mathbf{U}^T \mathbf{U} = \mathbf{I}\)</span>)와 고윳값 대각행렬 <span class="math inline">\(\boldsymbol{\Lambda} = \text{diag}(\lambda_1^{(\rho)}, \dots, \lambda_m^{(\rho)})\)</span>로 쪼갤 수 있다.</p></li>
-</ul>
-<p><span class="math display">\[\mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2}\]</span></p>
-<p><span class="math display">\[
-\mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T
-\]</span></p>
-<details>
-<summary>
-<span class="math inline">\(n=2\)</span> 예시
-</summary>
-<p><code>1</code> <span class="math inline">\(\mathbf{K}_\rho\)</span>, <span class="math inline">\(\mathbf{P}_0^{1/2}\)</span> 셋팅</p>
-<p><span class="math display">\[\mathbf{P}_0^{1/2} = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}, \quad \mathbf{K}_\rho = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\]</span></p>
-<p><span class="math display">\[\mathbf{A}_\rho = \mathbf{P}_0^{1/2} (\mathbf{K}_\rho \mathbf{P}_0^{1/2}) = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} \begin{pmatrix} 5 &amp; 4 \\ 4 &amp; 5 \end{pmatrix} = \begin{pmatrix} 2\cdot 5 + 1\cdot 4 &amp; 2\cdot 4 + 1\cdot 5 \\ 1\cdot 5 + 2\cdot 4 &amp; 1\cdot 4 + 2\cdot 5 \end{pmatrix}\]</span><span class="math display">\[\mathbf{A}_\rho = \begin{pmatrix} 14 &amp; 13 \\ 13 &amp; 14 \end{pmatrix}\]</span></p>
-<p><code>2</code> 스펙트럼 분해 (<span class="math inline">\(\mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\)</span>)</p>
-<p><span class="math display">\[\det(\mathbf{A}_\rho - \lambda \mathbf{I}) = \det \begin{pmatrix} 14 - \lambda &amp; 13 \\ 13 &amp; 14 - \lambda \end{pmatrix} = (14 - \lambda)^2 - 13^2 = 0\]</span></p>
-<p><span class="math display">\[(14 - \lambda - 13)(14 - \lambda + 13) = (1 - \lambda)(27 - \lambda) = 0\]</span></p>
-<p><span class="math display">\[\therefore \lambda_1 = \mathbf{27}, \quad \lambda_2 = \mathbf{1}\]</span></p>
-<ul>
-<li>첫 번째 고윳값 <span class="math inline">\(\lambda_1 = 27\)</span>에 대한 고유벡터</li>
-</ul>
-<p><span class="math display">\[\begin{pmatrix} 14 - 27 &amp; 13 \\ 13 &amp; 14 - 27 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -13 &amp; 13 \\ 13 &amp; -13 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\]</span><span class="math display">\[-13x + 13y = 0 \quad \Longrightarrow \quad x = y\]</span></p>
-<p><span class="math display">\[\mathbf{u}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\]</span></p>
-<ul>
-<li>두 번째 고윳값 <span class="math inline">\(\lambda_2 = 1\)</span>에 대한 고유벡터</li>
-</ul>
-<p><span class="math display">\[\begin{pmatrix} 13 &amp; 13 \\ 13 &amp; 13 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \quad \Longrightarrow \quad x = -y\]</span></p>
-<p><span class="math display">\[\mathbf{u}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}\]</span></p>
-<ul>
-<li>고유벡터 정규화</li>
-</ul>
-<p><span class="math display">\[\mathbf{u}_1 = \frac{1}{\mathbf{\sqrt{2}}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}, \quad \mathbf{u}_2 = \frac{1}{\mathbf{\sqrt{2}}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \end{pmatrix}\]</span></p>
-<p><span class="math display">\[\mathbf{U} = \begin{pmatrix} \mathbf{u}_1 &amp; \mathbf{u}_2 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \end{pmatrix}\]</span></p>
-<ul>
-<li>최종</li>
-</ul>
-<p><span class="math display">\[\mathbf{A}_\rho = \mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T =
-\begin{pmatrix} 14 &amp; 13 \\ 13 &amp; 14 \end{pmatrix} =
-\underbrace{ \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \end{pmatrix} }_{\mathbf{U} \text{ (회전 행렬)}}
-\underbrace{ \begin{pmatrix} \mathbf{27} &amp; 0 \\ 0 &amp; \mathbf{1} \end{pmatrix} }_{\boldsymbol{\Lambda} \text{ (고윳값 대각행렬)}}
-\underbrace{ \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \end{pmatrix} }_{\mathbf{U}^T \text{ (전치 행렬)}}
-\]</span></p>
-</details>
-<ul>
-<li><p><span class="math inline">\(\mathbf{\Lambda}\)</span>: 대각선에만 고윳값 <span class="math inline">\(\lambda_1, \lambda_2, \dots, \lambda_n\)</span>이 있고, 나머지 칸은 전부 <span class="math inline">\(0\)</span>인 대각행렬</p></li>
-<li><p><span class="math inline">\(\mathbf{U}\)</span>: 직교행렬이므로, 자기 자신과 전치행렬을 곱하면 단위행렬이 됨 (<span class="math inline">\(\mathbf{U}^T \mathbf{U} = \mathbf{I}\)</span>)</p></li>
-</ul>
-<p><code>5</code> <span class="math inline">\(Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z}\)</span>에 그대로 대입</p>
-<p><span class="math display">\[
-\divideontimes \,\,Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z} \quad \Big( \mathbf{z} \sim N(\mathbf{0}, \mathbf{I}) \Big)
-\]</span></p>
-<p><span class="math display">\[Q_\rho = (\mathbf{z}^T \mathbf{U}) \cdot \mathbf{\Lambda} \cdot (\mathbf{U}^T \mathbf{z})\]</span></p>
-<p><span class="math display">\[Q_\rho = \mathbf{v}^T \mathbf{\Lambda} \mathbf{v}, \quad \mathbf{v} = \mathbf{U}^T \mathbf{z} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}\]</span></p>
-<p><span class="math display">\[Q_\rho = \mathbf{v}^T \boldsymbol{\Lambda} \mathbf{v} = \begin{pmatrix} v_1 &amp; v_2 &amp; \dots &amp; v_n \end{pmatrix} \begin{pmatrix} \lambda_1 &amp; 0 &amp; \dots &amp; 0 \\ 0 &amp; \lambda_2 &amp; \dots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \dots &amp; \lambda_n \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix} = \sum_{k=1}^n \lambda_k v_k^2\]</span></p>
-<p><code>6</code> 이게 왜 혼합카이제곱 분포를 따르냐?</p>
-<ul>
-<li><p>정의: 서로 독립인 자유도 1의 카이제곱 확률변수들 <span class="math inline">\(\chi^2_{1, 1}, \chi^2_{1, 2}, \dots, \chi^2_{1, m} \stackrel{i.i.d.}{\sim} \chi^2_1\)</span>과, 0이 아닌 임의의 양의 실수 가중치 계수들 <span class="math inline">\(\lambda_1, \lambda_2, \dots, \lambda_m &gt; 0\)</span>이 주어졌을 때,</p></li>
-<li><p>이들의 선형 결합(<span class="math inline">\(\sum \lambda_k \chi^2_1\)</span>)이 혼합카이제곱 분포라고 정의되어 있음.</p></li>
-<li><p><span class="math inline">\(v_k\)</span>는 서로 독립인 표준정규변수인가? <span class="math inline">\(\to\)</span> Yes. 직교 회전(<span class="math inline">\(U^T U = I\)</span>)으로 <code>공분산이 단위행렬</code>로 보존되므로 <span class="math inline">\(v_k \stackrel{i.i.d.}{\sim} N(0, 1)\)</span></p></li>
-<li><p><span class="math inline">\(v_k^2\)</span>은 자유도 1의 카이제곱변수인가? <span class="math inline">\(\rightarrow\)</span> Yes. <code>표준정규변수의 제곱은 정의상 정확히</code> <span class="math inline">\(\chi^2_1\)</span></p></li>
-<li><p>그 앞에 붙은 계수가 상수인가? <span class="math inline">\(\rightarrow\)</span> Yes. 대각화 과정에서 뽑아낸 불변의 <code>실수 고윳값</code> <span class="math inline">\(\lambda_k\)</span>이다.</p></li>
-<li><p>따라서 <span class="math inline">\(Q_\rho = \sum_{k=1}^n \lambda_k v_k^2\)</span>는 수학적으로 “자유도 1의 독립 카이제곱변수 <span class="math inline">\(v_k^2\)</span>에 고윳값 가중치 <span class="math inline">\(\lambda_k\)</span>가 곱해진 합”이 되므로, 정확히 혼합 카이제곱분포의 정의 그 자체</p></li>
-</ul>
-<p><code>7</code> 또한, 유효 자유도는 다음과 같이 정의됨.</p>
-<p><span class="math display">\[\nu = \frac{\left( \sum_{j=1}^m \lambda_j \right)^2}{\sum_{j=1}^m \lambda_j^2}\]</span></p>
-<ul>
-<li><p>결과적으로 희귀변이 개수 <span class="math inline">\(m\)</span>이 50개, 100개로 늘어나더라도, 자유도가 폭발하지 않고, 실제 인과성이 존재하는 소수 차원으로 통제되므로.</p></li>
-<li><p>귀무가설 기각 검정통계량 임계치 상승 없이, 높은 검정력을 유지</p></li>
-</ul>
-</section>
-<section id="p_rho" class="level3">
-<h3 class="anchored" data-anchor-id="p_rho">(4) <span class="math inline">\(p_{\rho}\)</span></h3>
-<p><code>1</code> <strong>환자 데이터</strong></p>
-<ul>
-<li><p><span class="math inline">\(\mathbf{y}\)</span>: 환자들의 실제 질병 여부 (<span class="math inline">\(0\)</span> 또는 <span class="math inline">\(1\)</span>)</p></li>
-<li><p><span class="math inline">\(\hat{\boldsymbol{\mu}}\)</span>: 공변량(나이, 성별 등)으로만 예측한 질병 확률</p></li>
-<li><p><span class="math inline">\(\mathbf{r} = \mathbf{y} - \hat{\boldsymbol{\mu}}\)</span>: 환자별 순수 질병 잔차</p></li>
-</ul>
-<p><code>2</code> <strong>유전자 커널 행렬 <span class="math inline">\(\mathbf{K}_\rho\)</span></strong></p>
-<ul>
-<li><p><span class="math inline">\(\mathbf{G}\)</span>: 환자들의 희귀 변이 유전형 행렬</p></li>
-<li><p><span class="math inline">\(\mathbf{W}\)</span>: 변이별 가중치 대각행렬 (<span class="math inline">\(\text{diag}(w_1, \dots, w_m)\)</span>)</p></li>
-<li><p><span class="math inline">\(\mathbf{R}_\rho\)</span>: 변이 간 상관 구조 행렬 <span class="math inline">\((1 - \rho)\mathbf{I} + \rho \mathbf{1}\mathbf{1}^T\)</span></p>
-<p><span class="math display">\[
-\mathbf{K}_\rho = \mathbf{G} \mathbf{W} \mathbf{R}_\rho \mathbf{W} \mathbf{G}^T
-\]</span></p></li>
-</ul>
-<p><code>3</code> 실제 관측 통계량 <span class="math inline">\(q_\rho^{\text{obs}}\)</span></p>
-<p><span class="math display">\[q_\rho^{\text{obs}} = (\mathbf{y} - \hat{\boldsymbol{\mu}})^T \mathbf{K}_\rho (\mathbf{y} - \hat{\boldsymbol{\mu}}) = \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \]</span></p>
-<p><span class="math display">\[q_\rho^{\text{obs}} = \sum_{k=1}^m \lambda_k^{(\rho)} (v_k^{\text{obs}})^2\]</span></p>
-<p><code>4</code> p-value 정의: 귀무가설이 참(<span class="math inline">\(\boldsymbol{\beta} = 0\)</span>)일 때, 이번 실험에서 내가 관측한 값보다 더 극단적인 값이 우연히 나올 확률</p>
-<p><span class="math display">\[p_\rho = P(Q_\rho &gt; q_\rho^{\text{obs}} = 34.5 \mid H_0)\]</span></p>
+<section id="p_rho-moment-매칭-근사법" class="level3">
+<h3 class="anchored" data-anchor-id="p_rho-moment-매칭-근사법">(3) <span class="math inline">\(p_{\rho}\)</span> (Moment 매칭 근사법)</h3>
+<p><code>1</code> 우리가 구하려고 하는 것</p>
 <center>
 <img src="null_distribution_pvalue.png" width="800">
 </center>
-<p><br></p>
-<p><code>1</code> <strong>“유전 변이가 질병과 전혀 상관이 없는데도, 순전히 운이나 우연에 의해 34.5점보다 더 큰 점수가 나올 확률”</strong> 을 의미함.</p>
-<p><code>2</code> if, 이 주황색 면적이 <strong>0.0001처럼 극도로 좁다면</strong>?</p>
-<p><span class="math inline">\(\rightarrow\)</span> “유전 효과가 없는데 순전히 우연으로 <code>34.5점을 넘길 확률은 0.01%</code>도 안 된다. 따라서 <code>유전 효과가 없다는 귀무가설을 기각</code></p>
-<p><code>3</code> 반대로 이 면적이 <strong>0.30처럼 넓다면</strong>?</p>
-<p><span class="math inline">\(\rightarrow\)</span> “유전 효과가 없어도 34.5점 정도는 30% 확률로 흔하게 우연히 나올 수 있으므로, 유전 효과가 있다고 볼 수 없다”가 된다.</p>
-<p><code>4</code> 문제: 가로축의 <span class="math inline">\(34.5\)</span>점부터 오른쪽 끝(<span class="math inline">\(\infty\)</span>)까지 주황색 빗금 친 면적(<span class="math inline">\(p\)</span>-value)을 적분해야 결론을 내릴 수 있음.</p>
-<p><code>5</code> But, 그런데 파란색 곡선(혼합 카이제곱분포)은 <strong>곡선의 방정식(PDF)이 종이 위에 단 하나의 깔끔한 수식으로 떨어지지 않는 난제</strong>가 존재함.</p>
+<p><code>2</code> But, 그런데 파란색 곡선(혼합 카이제곱분포)은 <strong>곡선의 방정식(PDF)이 종이 위에 단 하나의 깔끔한 수식으로 떨어지지 않는 난제</strong>가 존재함.</p>
 <ul>
 <li>고윳값들이 제각각이라, <strong>오차 0%의 완벽한 닫힌 확률밀도함수(PDF) 수식을 적어낼 수 없음.</strong></li>
 </ul>
@@ -756,33 +607,25 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <blockquote class="blockquote">
 <p>…we approximate each marginal distribution of <span class="math inline">\(Q_{\rho_v}\)</span> by modifying the moment-matching method of Liu and others (2009). In particular, instead of matching the first 3 moments, we match the mean, variance and kurtosis to improve the approximation in the tail area.”</p>
 </blockquote>
-<p><code>6</code> 다행히 통계량 <span class="math inline">\(Q_\rho\)</span>의 귀무가설 하 적률(평균 <span class="math inline">\(\mu_Q\)</span>, 분산 <span class="math inline">\(v_Q\)</span>, 첨도 <span class="math inline">\(\gamma_Q\)</span>)은 커널 행렬의 고윳값을 통해 해석적(Closed-form)으로 즉시 산출할 수 있고,</p>
-<p><code>7</code> 이 세 가지 적률로 단일 카이제곱분포(<span class="math inline">\(\chi^2_{df}\)</span>)로 <strong>근사시키는 기법</strong>이 바로 <strong>모멘트 매칭</strong>이다.</p>
-<ul>
-<li><p>상수 <span class="math inline">\(\lambda_j\)</span>가 곱해진 <span class="math inline">\(\lambda_j \chi^2_1\)</span> 역시 척도(scale) 모수만 변한 감마분포 <span class="math inline">\(\text{Gamma}(1/2, 2\lambda_j)\)</span></p></li>
-<li><p>흠 그렇다면, 그것들의 선형결합도 어떤 <code>단일 카이제곱 분포로 근사하지 않을까</code>란게 아이디어임.</p>
-<ul>
-<li>큐뮬런트 생성함수의 전개로 증명된다는데, 그건 다음 기회에 증명해볼게욥</li>
-</ul></li>
-</ul>
-</section>
-<section id="p_rho-moment-매칭-근사법" class="level3">
-<h3 class="anchored" data-anchor-id="p_rho-moment-매칭-근사법">(5) <span class="math inline">\(p_{\rho}\)</span> (Moment 매칭 근사법)</h3>
-<p><code>1</code> 우리가 구하려고 하는 것</p>
-<p><span class="math display">\[p_\rho = P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right)\]</span></p>
-<ul>
-<li>귀무가설(<span class="math inline">\(H_0\)</span>) 하에서 통계량 <span class="math inline">\(Q_\rho\)</span>가 관측값 <span class="math inline">\(q_\rho^{\text{obs}}\)</span>보다 극단적으로 클 상위 꼬리 확률</li>
-</ul>
-<p><code>2</code> 모멘트 매칭을 통한 카이제곱 확률 치환</p>
+<p><code>6</code> 그런데 다행히 통계량 <span class="math inline">\(Q_\rho\)</span>의 ’평균, 분산, 그리고 꼬리 두께(첨도)’는 행렬 연산으로 단 0.001초 만에 뽑아낼 수 있고,</p>
+<p><code>7</code> 평균, 분산, 첨도 3개를 똑같이 맞춰 근사하자는 것이 <code>Moment 매칭 근사</code>에 출발이다.</p>
+<hr>
+<section id="단계-먼저-보고-가자" class="level4">
+<h4 class="anchored" data-anchor-id="단계-먼저-보고-가자">[0단계] 먼저 보고 가자</h4>
+<p><code>3</code> 모멘트 매칭을 통한 카이제곱 확률 치환</p>
 <p><span class="math display">\[\mathbf{p_\rho = 1 - F\left( \frac{q_\rho^{\text{obs}} - \mu_Q}{\sqrt{v_Q}} \sqrt{2 \cdot df} + df \;\middle|\; \chi^2_{df} \right)}\]</span></p>
 <p><span class="math display">\[\mathbf{\underbrace{p_\rho = 1 - F}_{\text{(A) 우측 꼬리 면적 (p-value)}}\left( \underbrace{\frac{q_\rho^{\text{obs}} - \mu_Q}{\sqrt{v_Q}}}_{\text{(B) 표준화 (Z-score)}} \underbrace{\sqrt{2 \cdot df} + df}_{\text{(C) 카이제곱 눈금자 변환}} \;\middle|\; \underbrace{\chi^2_{df}}_{\text{(D) 목표 분포}} \right)}\]</span></p>
+</section>
 <section id="단계-선형변환-가정" class="level4">
 <h4 class="anchored" data-anchor-id="단계-선형변환-가정">[1단계] 선형변환 가정</h4>
 <p><code>1</code> 복잡한 혼합 카이제곱분포인 <span class="math inline">\(Q_\rho\)</span>를 단일 카이제곱 확률변수 <span class="math inline">\(X \sim \chi^2_{df}\)</span>의 1차 선형 변환으로 근사하자고 놓는다.</p>
 <ul>
-<li><p>혼합 카이제곱분포 <span class="math inline">\(Q_\rho\)</span>와 단일 카이제곱분포 <span class="math inline">\(X\)</span>는 둘다, <code>오른쪽 긴 꼬리를 갖는 비대칭 분포</code>라는 공톡적인 특성을 공유하므로,</p></li>
+<li><p>혼합 카이제곱분포 <span class="math inline">\(Q_\rho\)</span>와 단일 카이제곱분포 <span class="math inline">\(X\)</span>는 둘다, <code>오른쪽 긴 꼬리를 갖는 비대칭 분포</code>라는 공통적인 특성을 공유하므로,</p></li>
 <li><p>단일 카이제곱분포 <span class="math inline">\(X\)</span>에 3개의 손잡이(자유도 <span class="math inline">\(df\)</span>, 척도 계수 <span class="math inline">\(a\)</span>, 위치 이동 상수 <span class="math inline">\(c\)</span>)를 부여하여,</p></li>
-<li><p><span class="math inline">\(Q_\rho\)</span>의 모멘트를 완벽하게 모사하는 1차 선형 변환 모형을 제안</p></li>
+<li><p><span class="math inline">\(Q_\rho\)</span>의 모멘트를 완벽하게 모사하는 1차 선형 변환 모형을 제안</p>
+<ul>
+<li>큐뮬런트 생성함수로 증명가능하다고 합니다만….. 실패했습니다.</li>
+</ul></li>
 </ul>
 <p><span class="math display">\[Q_\rho \approx a X + c \quad (단, \; X \sim \chi^2_{df})\]</span></p>
 <p><code>2</code> 여기서 카이제곱분포 <span class="math inline">\(X \sim \chi^2_{df}\)</span>의 고유한 이론적 성질</p>
@@ -1098,6 +941,97 @@ Grid Search 최적 탐색 결과:
 <p><span class="math display">\[Q_S = (\mathbf{z}^*)^T \boldsymbol{\Lambda} \mathbf{z}^* = [z_1^*, \dots, z_n^*] \begin{bmatrix} \lambda_1 &amp; &amp; 0 \\ &amp; \ddots &amp; \\ 0 &amp; &amp; \lambda_n \end{bmatrix} \begin{bmatrix} z_1^* \\ \vdots \\ z_n^* \end{bmatrix} = \sum_{k=1}^n \lambda_k (z_k^*)^2\]</span></p>
 <p><code>3</code> <span class="math inline">\(Q_{S}\)</span>의 유효자유도</p>
 <p><span class="math display">\[\nu = \frac{\left( \sum_{j=1}^m \lambda_j \right)^2}{\sum_{j=1}^m \lambda_j^2}\]</span></p>
+<hr>
+</section>
+</section>
+<section id="extra-02.-스펙트럼-분해" class="level1">
+<h1>Extra 02. 스펙트럼 분해</h1>
+<section id="notation-정리-1" class="level2">
+<h2 class="anchored" data-anchor-id="notation-정리-1">(1) Notation 정리 1</h2>
+<p><span class="math display">\[\mathbf{r} \sim N(0, \mathbf{P}_0= \text{Cov}(\mathbf{r})) \to \mathrm{z} = \mathbf{P}_0^{-1/2} \mathbf{r} \sim N(\mathbf{0}, \mathbf{I})\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
+&amp;= \mathbf{r}^T \Big( \mathbf{I} \cdot \mathbf{K}_\rho \cdot \mathbf{I} \Big) \mathbf{r} \\ \\
+&amp;= \mathbf{r}^T \Big( \mathbf{P}_0^{-1/2} \mathbf{P}_0^{1/2} \cdot \mathbf{K}_\rho \cdot \mathbf{P}_0^{1/2} \mathbf{P}_0^{-1/2} \Big) \mathbf{r} \\ \\
+&amp;= \Big( \mathbf{r}^T \mathbf{P}_0^{-1/2} \Big) \Big( \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2} \Big) \Big( \mathbf{P}_0^{-1/2} \mathbf{r} \Big) \\ \\
+&amp;= (\mathbf{P}_0^{-1/2} \mathbf{r})^T \Big( \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2} \Big) (\mathbf{P}_0^{-1/2} \mathbf{r}) \\ \\
+&amp;= \mathbf{z}^T \mathbf{A}_\rho \mathbf{z} \quad \Big( \text{단, } \mathbf{z} = \mathbf{P}_0^{-1/2} \mathbf{r} \sim N(\mathbf{0}, \mathbf{I}), \;\; \mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2} \Big)
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[ \mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2}\]</span></p>
+<p><span class="math display">\[
+\divideontimes \,\,Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z} \quad \Big( \mathbf{z} \sim N(\mathbf{0}, \mathbf{I}) \Big)
+\]</span></p>
+</section>
+<section id="왜-쓰는가" class="level2">
+<h2 class="anchored" data-anchor-id="왜-쓰는가">(2) 왜 쓰는가?</h2>
+<p><code>1</code> 스펙트럼 정리</p>
+<ul>
+<li><p>우리가 관측한 통계량 <span class="math inline">\(Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z}\)</span>는 <span class="math inline">\(n\)</span>명 환자의 잔차와 공변량, 유전형이 거대한 행렬곱으로 복잡하게 뒤엉켜 있음.</p></li>
+<li><p>이 상태 그대로는 <span class="math inline">\(Q_\rho\)</span>가 이론적으로 어떤 확률분포를 따르는지 수식으로 정의하는 것 자체가 불가능</p></li>
+<li><p><span class="math inline">\(\mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\)</span>를 통해 얽힌 상관관계를 완전히 털어내면, 행렬곱이 사라지고 <span class="math inline">\(Q_\rho = \sum \lambda_k v_k^2\)</span>이라는 단순한 ‘제곱합’ 으로바뀜.</p></li>
+<li><p>스펙트럼 분해를 거치고 나면, 논문에 기술된 바와 같이 ’귀무가설 하에서 통계량 <span class="math inline">\(Q_\rho\)</span>가 점근적으로 독립 카이제곱분포들의 가중 선형결합인 혼합 카이제곱분포를 따른다’는 점이 수학적으로 증명됨. (<strong>즉, 분포를 알게되어서 이제 수천만번의 순열 검정을 하지 않아도 됨.</strong>)</p></li>
+<li><p>행렬 <span class="math inline">\(\mathbf{A}_\rho\)</span>는 실수 대칭행렬이므로 <code>스펙트럼 정리</code>에 의해 고유벡터 직교행렬 <span class="math inline">\(\mathbf{U}\)</span> (<span class="math inline">\(\mathbf{U}^T \mathbf{U} = \mathbf{I}\)</span>)와 고윳값 대각행렬 <span class="math inline">\(\boldsymbol{\Lambda} = \text{diag}(\lambda_1^{(\rho)}, \dots, \lambda_m^{(\rho)})\)</span>로 쪼갤 수 있다.</p></li>
+</ul>
+<p><span class="math display">\[\mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2}= \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\]</span></p>
+</section>
+<section id="스펙트럼-분해-예시" class="level2">
+<h2 class="anchored" data-anchor-id="스펙트럼-분해-예시">(3) 스펙트럼 분해 예시</h2>
+<details>
+<summary>
+<span class="math inline">\(n=2\)</span> 예시
+</summary>
+<p><code>1</code> <span class="math inline">\(\mathbf{K}_\rho\)</span>, <span class="math inline">\(\mathbf{P}_0^{1/2}\)</span> 셋팅</p>
+<p><span class="math display">\[\mathbf{P}_0^{1/2} = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}, \quad \mathbf{K}_\rho = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\]</span></p>
+<p><span class="math display">\[\mathbf{A}_\rho = \mathbf{P}_0^{1/2} (\mathbf{K}_\rho \mathbf{P}_0^{1/2}) = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} \begin{pmatrix} 5 &amp; 4 \\ 4 &amp; 5 \end{pmatrix} = \begin{pmatrix} 2\cdot 5 + 1\cdot 4 &amp; 2\cdot 4 + 1\cdot 5 \\ 1\cdot 5 + 2\cdot 4 &amp; 1\cdot 4 + 2\cdot 5 \end{pmatrix}\]</span><span class="math display">\[\mathbf{A}_\rho = \begin{pmatrix} 14 &amp; 13 \\ 13 &amp; 14 \end{pmatrix}\]</span></p>
+<p><code>2</code> 스펙트럼 분해 (<span class="math inline">\(\mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\)</span>)</p>
+<p><span class="math display">\[\det(\mathbf{A}_\rho - \lambda \mathbf{I}) = \det \begin{pmatrix} 14 - \lambda &amp; 13 \\ 13 &amp; 14 - \lambda \end{pmatrix} = (14 - \lambda)^2 - 13^2 = 0\]</span></p>
+<p><span class="math display">\[(14 - \lambda - 13)(14 - \lambda + 13) = (1 - \lambda)(27 - \lambda) = 0\]</span></p>
+<p><span class="math display">\[\therefore \lambda_1 = \mathbf{27}, \quad \lambda_2 = \mathbf{1}\]</span></p>
+<ul>
+<li>첫 번째 고윳값 <span class="math inline">\(\lambda_1 = 27\)</span>에 대한 고유벡터</li>
+</ul>
+<p><span class="math display">\[\begin{pmatrix} 14 - 27 &amp; 13 \\ 13 &amp; 14 - 27 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -13 &amp; 13 \\ 13 &amp; -13 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\]</span><span class="math display">\[-13x + 13y = 0 \quad \Longrightarrow \quad x = y\]</span></p>
+<p><span class="math display">\[\mathbf{u}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\]</span></p>
+<ul>
+<li>두 번째 고윳값 <span class="math inline">\(\lambda_2 = 1\)</span>에 대한 고유벡터</li>
+</ul>
+<p><span class="math display">\[\begin{pmatrix} 13 &amp; 13 \\ 13 &amp; 13 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \quad \Longrightarrow \quad x = -y\]</span></p>
+<p><span class="math display">\[\mathbf{u}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}\]</span></p>
+<p><code>3</code> 고유벡터 정규화</p>
+<p><span class="math display">\[\mathbf{u}_1 = \frac{1}{\mathbf{\sqrt{2}}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix}, \quad \mathbf{u}_2 = \frac{1}{\mathbf{\sqrt{2}}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \end{pmatrix}\]</span></p>
+<p><span class="math display">\[\mathbf{U} = \begin{pmatrix} \mathbf{u}_1 &amp; \mathbf{u}_2 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \end{pmatrix}\]</span></p>
+<p><code>4</code> 최종 산출본</p>
+<p><span class="math display">\[\mathbf{A}_\rho = \mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T =
+\begin{pmatrix} 14 &amp; 13 \\ 13 &amp; 14 \end{pmatrix} =
+\underbrace{ \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \end{pmatrix} }_{\mathbf{U} \text{ (회전 행렬)}}
+\underbrace{ \begin{pmatrix} \mathbf{27} &amp; 0 \\ 0 &amp; \mathbf{1} \end{pmatrix} }_{\boldsymbol{\Lambda} \text{ (고윳값 대각행렬)}}
+\underbrace{ \begin{pmatrix} \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} &amp; -\frac{1}{\sqrt{2}} \end{pmatrix} }_{\mathbf{U}^T \text{ (전치 행렬)}}
+\]</span></p>
+</details>
+</section>
+<section id="검정통계량-대입" class="level2">
+<h2 class="anchored" data-anchor-id="검정통계량-대입">(4) 검정통계량 대입</h2>
+<p><code>1</code> <span class="math inline">\(Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z},\,\, \boldsymbol{\Lambda} = \text{diag}(\lambda_1^{(\rho)}, \dots, \lambda_m^{(\rho)})\)</span></p>
+<ul>
+<li><span class="math inline">\(\mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2}= \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\)</span></li>
+</ul>
+<p><span class="math display">\[Q_\rho = (\mathbf{z}^T \mathbf{U}) \cdot \mathbf{\Lambda} \cdot (\mathbf{U}^T \mathbf{z})\]</span></p>
+<p><span class="math display">\[Q_\rho = \mathbf{v}^T \mathbf{\Lambda} \mathbf{v}, \quad \mathbf{v} = \mathbf{U}^T \mathbf{z} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}\]</span></p>
+<p><span class="math display">\[Q_\rho = \mathbf{v}^T \boldsymbol{\Lambda} \mathbf{v} = \begin{pmatrix} v_1 &amp; v_2 &amp; \dots &amp; v_n \end{pmatrix} \begin{pmatrix} \lambda_1 &amp; 0 &amp; \dots &amp; 0 \\ 0 &amp; \lambda_2 &amp; \dots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \dots &amp; \lambda_n \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix} = \sum_{k=1}^n \lambda_k v_k^2\]</span></p>
+</section>
+<section id="혼합-카이제곱분포를-따르는-이유" class="level2">
+<h2 class="anchored" data-anchor-id="혼합-카이제곱분포를-따르는-이유">(5) 혼합 카이제곱분포를 따르는 이유</h2>
+<ul>
+<li><p>정의: 서로 독립인 자유도 1의 카이제곱 확률변수들 <span class="math inline">\(\chi^2_{1, 1}, \chi^2_{1, 2}, \dots, \chi^2_{1, m} \stackrel{i.i.d.}{\sim} \chi^2_1\)</span>과, 0이 아닌 임의의 양의 실수 가중치 계수들 <span class="math inline">\(\lambda_1, \lambda_2, \dots, \lambda_m &gt; 0\)</span>이 주어졌을 때,</p></li>
+<li><p>이들의 선형 결합(<span class="math inline">\(\sum \lambda_k \chi^2_1\)</span>)을 의미함.</p></li>
+<li><p><span class="math inline">\(v_k\)</span>는 서로 독립인 표준정규변수인가? <span class="math inline">\(\to\)</span> Yes. 직교 회전(<span class="math inline">\(U^T U = I\)</span>)으로 <code>공분산이 단위행렬</code>로 보존되므로 <span class="math inline">\(v_k \stackrel{i.i.d.}{\sim} N(0, 1)\)</span></p></li>
+<li><p><span class="math inline">\(v_k^2\)</span>은 자유도 1의 카이제곱변수인가? <span class="math inline">\(\rightarrow\)</span> Yes. <code>표준정규변수의 제곱은 정의상 정확히</code> <span class="math inline">\(\chi^2_1\)</span></p></li>
+<li><p>그 앞에 붙은 계수가 상수인가? <span class="math inline">\(\rightarrow\)</span> Yes. 대각화 과정에서 뽑아낸 불변의 <code>실수 고윳값</code> <span class="math inline">\(\lambda_k\)</span>들임.</p></li>
+<li><p>따라서 <span class="math inline">\(Q_\rho = \sum_{k=1}^n \lambda_k v_k^2\)</span>는 수학적으로 “자유도 1의 독립 카이제곱변수 <span class="math inline">\(v_k^2\)</span>에 고윳값 가중치 <span class="math inline">\(\lambda_k\)</span>가 곱해진 합”이 되므로, 정확히 혼합 카이제곱분포를 따른다.</p></li>
+</ul>
+<p><span class="math display">\[Q_\rho \sim \lambda_1 \chi^2_{1, 1} + \lambda_2 \chi^2_{1, 2} + \dots + \lambda_m \chi^2_{1, m}\]</span></p>
 
 
 </section>
@@ -1508,13 +1442,13 @@ Grid Search 최적 탐색 결과:
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../posts/01. SKTA-O/SKAT-O_final.html" class="pagination-link" aria-label="SKAT-O(TEMP)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SKAT-O(TEMP)</span>
+      <a href="../../posts/01. SKTA-O/02. Review.html" class="pagination-link" aria-label="02. Review (2)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">02. Review (2)</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../posts/02. SKTA-O(v2)/261014/00. review.html" class="pagination-link" aria-label="00. review">
-        <span class="nav-page-text">00. review</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../posts/01. SKTA-O/SKAT-O_final(temp).html" class="pagination-link" aria-label="SKAT-O(TEMP)">
+        <span class="nav-page-text">SKAT-O(TEMP)</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
