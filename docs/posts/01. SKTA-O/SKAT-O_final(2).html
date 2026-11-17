@@ -354,11 +354,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#가설-및-모형-2" id="toc-가설-및-모형-2" class="nav-link" data-scroll-target="#가설-및-모형-2">(1) 가설 및 모형</a></li>
   <li><a href="#mathbfk_rho-mathbfgmathbfwmathbfr_rhomathbfwmathbfgt-직관적-이해" id="toc-mathbfk_rho-mathbfgmathbfwmathbfr_rhomathbfwmathbfgt-직관적-이해" class="nav-link" data-scroll-target="#mathbfk_rho-mathbfgmathbfwmathbfr_rhomathbfwmathbfgt-직관적-이해">(2) <span class="math inline">\(\mathbf{K}_\rho = \mathbf{G}\mathbf{W}\mathbf{R}_\rho\mathbf{W}\mathbf{G}^T\)</span> 직관적 이해</a></li>
-  <li><a href="#각-rho에-대한-통계량-스펙트럼-분해" id="toc-각-rho에-대한-통계량-스펙트럼-분해" class="nav-link" data-scroll-target="#각-rho에-대한-통계량-스펙트럼-분해">(3) 각 <span class="math inline">\(\rho\)</span>에 대한 통계량 스펙트럼 분해</a></li>
+  <li><a href="#통계량-스펙트럼-분해" id="toc-통계량-스펙트럼-분해" class="nav-link" data-scroll-target="#통계량-스펙트럼-분해">(3) 통계량 스펙트럼 분해</a></li>
   <li><a href="#p_rho" id="toc-p_rho" class="nav-link" data-scroll-target="#p_rho">(4) <span class="math inline">\(p_{\rho}\)</span></a></li>
   <li><a href="#p_rho-moment-매칭-근사법" id="toc-p_rho-moment-매칭-근사법" class="nav-link" data-scroll-target="#p_rho-moment-매칭-근사법">(5) <span class="math inline">\(p_{\rho}\)</span> (Moment 매칭 근사법)</a></li>
   </ul></li>
-  <li><a href="#ex-1" id="toc-ex-1" class="nav-link" data-scroll-target="#ex-1">EX 1</a>
+  <li><a href="#ex-1.-최적의-rho-찾기-skat-유도" id="toc-ex-1.-최적의-rho-찾기-skat-유도" class="nav-link" data-scroll-target="#ex-1.-최적의-rho-찾기-skat-유도">EX 1. 최적의 <span class="math inline">\(\rho\)</span> 찾기 (SKAT 유도)</a>
   <ul class="collapse">
   <li><a href="#상황-셋팅" id="toc-상황-셋팅" class="nav-link" data-scroll-target="#상황-셋팅">(1) 상황 셋팅</a></li>
   <li><a href="#skat-통계량제곱합과-burden-통계량합의-제곱-계산" id="toc-skat-통계량제곱합과-burden-통계량합의-제곱-계산" class="nav-link" data-scroll-target="#skat-통계량제곱합과-burden-통계량합의-제곱-계산">(2) SKAT 통계량(제곱합)과 Burden 통계량(합의 제곱) 계산</a></li>
@@ -585,11 +585,10 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 <li>즉, <code>"1번과 3번 환자가 둘 다 질병에 걸렸을 때(혹은 반대)</code> (<span class="math inline">\(r_1 r_3 &gt; 0\)</span>), 두 사람의 <code>유전적 유사도 점수</code>(<span class="math inline">\(K_{13}\)</span>)도 <code>실제로 높은가?"</code>를 확인하여 질병과 유전자의 연관성을 입증하는 핵심 잣대가 된다.
 <ul>
 <li><span class="math inline">\(r_i = 1 - \hat{\pi}_i &gt; 0 \quad (\mathbf{무조건 \; 양수 +})\)</span></li>
-<li><span class="math inline">\(r_i = 0 - \hat{\pi}_i &lt; 0 \quad (\mathbf{무조건 \; 음수 -})\)</span></li>
 </ul></li>
 </ul>
 <p><span class="math display">\[K_{13} = (1 - \rho) \underbrace{\sum_{k=1}^m w_k^2 g_{1k} g_{3k}}_{\text{동일 위치 변이 일치 점수 (SKAT)}} \;+\; \rho \underbrace{\left( \sum_{k=1}^m w_k g_{1k} \right) \left( \sum_{l=1}^m w_l g_{3l} \right)}_{\text{총 돌연변이 부담량 곱 (Burden)}}\]</span></p>
-<p><code>9</code> <span class="math inline">\(\rho\)</span>는 유전적 유사도를 측정하는 잣대(개별 변이 중심 vs 누적 총합 중심)를 데이터에 맞게 조절해 주는 핵심 매개변수이다.</p>
+<p><code>9</code> <span class="math inline">\(\rho\)</span>는 유전적 유사도를 측정하는 잣대(SKAT vs Burden)를 데이터에 맞게 조절해 주는 핵심 매개변수이다.</p>
 <ul>
 <li><span class="math inline">\(\rho = 0\)</span> (SKAT): “위치별 정밀 일치” 관점
 <ul>
@@ -616,22 +615,9 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 </ul>
 <hr>
 </section>
-<section id="각-rho에-대한-통계량-스펙트럼-분해" class="level3">
-<h3 class="anchored" data-anchor-id="각-rho에-대한-통계량-스펙트럼-분해">(3) 각 <span class="math inline">\(\rho\)</span>에 대한 통계량 스펙트럼 분해</h3>
-<section id="들어가기-전" class="level4">
-<h4 class="anchored" data-anchor-id="들어가기-전">[들어가기 전]</h4>
-<p><span class="math display">\[Q_\rho = (1 - \rho) Q_{\text{SKAT}} + \rho Q_{\text{Burden}}\]</span></p>
-<p><code>1</code> 그런데 귀무가설(<span class="math inline">\(H_0: \boldsymbol{\beta} = \mathbf{0}\)</span>) 하에서는 변이 효과 자체가 전부 0이므로, 변이 간 상관계수인 <span class="math inline">\(\rho\)</span>라는 모수가 수학적으로 증발해버림.</p>
-<p><code>2</code> 귀무가설 하에서 정의되지 않는 모수를 우도함수로 직접 추정(MLE)할 수는 없기 때문에, SKAT-O 논문은 <code>격자 탐색(Grid Search)</code>을 통해 가장 강력한 유의성을 보이는 최적의 <span class="math inline">\(\rho\)</span>를 찾는 방법을 채택하였음.</p>
-</section>
-<section id="단계-rho-후보-격자grid-설정" class="level4">
-<h4 class="anchored" data-anchor-id="단계-rho-후보-격자grid-설정">[1단계] <span class="math inline">\(\rho\)</span> 후보 격자(Grid) 설정</h4>
-<p><span class="math display">\[\rho \in \{0.0, \; 0.1, \; 0.2, \; 0.3, \; 0.4, \; 0.5, \; 0.6, \; 0.7, \; 0.8, \; 0.9, \; 1.0\}\]</span></p>
-</section>
-<section id="단계-각-rho마다-검정통계량-q_rho-계산" class="level4">
-<h4 class="anchored" data-anchor-id="단계-각-rho마다-검정통계량-q_rho-계산">[2단계] 각 <span class="math inline">\(\rho\)</span>마다 검정통계량 <span class="math inline">\(Q_\rho\)</span> 계산</h4>
-<p><code>1</code> 귀무가설(<span class="math inline">\(H_0: \boldsymbol{\beta} = \mathbf{0}\)</span>) 하에서 잔차 벡터를 <span class="math inline">\(\mathbf{r} = \mathbf{y} - \hat{\boldsymbol{\pi}}\)</span>하면,</p>
-<p><code>2</code> 검정통계량 <span class="math inline">\(Q_{\rho}\)</span>는 다음과 같이 정의될 수 있다.</p>
+<section id="통계량-스펙트럼-분해" class="level3">
+<h3 class="anchored" data-anchor-id="통계량-스펙트럼-분해">(3) 통계량 스펙트럼 분해</h3>
+<p><code>1</code> 검정통계량 <span class="math inline">\(Q_{\rho}\)</span>는 정의</p>
 <p><span class="math display">\[Q_\rho = (\mathbf{y} - \hat{\boldsymbol{\pi}})^T \mathbf{K}_\rho (\mathbf{y} - \hat{\boldsymbol{\pi}})= \mathbf{r}^T \mathbf{K}_\rho\mathbf{r}\]</span></p>
 <p><span class="math display">\[\mathbf{K}_\rho = \mathbf{G}\mathbf{W}\mathbf{R}_\rho\mathbf{W}\mathbf{G}^T\]</span></p>
 <ul>
@@ -639,7 +625,7 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 <li><p><span class="math inline">\(\mathbf{W} = \text{diag}(w_1, \dots, w_m)\)</span>: 희귀도(MAF)에 따른 가중치 대각행렬</p></li>
 <li><p><span class="math inline">\(\mathbf{R}_\rho = (1 - \rho)\mathbf{I}_m + \rho \mathbf{1}_m \mathbf{1}_m^T\)</span>: 변이 효과 간의 상관핼렬</p></li>
 </ul>
-<p><code>3</code> 공분산 행렬 <span class="math inline">\(\mathbf{P}_0\)</span>로 얽혀 있는 통계량을 독립인 표준정규분포 벡터로 변환</p>
+<p><code>2</code> 공분산 행렬 <span class="math inline">\(\mathbf{P}_0\)</span>로 얽혀 있는 통계량을 독립인 표준정규분포 벡터로 변환</p>
 <p><span class="math display">\[\mathbf{r} \sim N(0, \mathbf{P}_0= \text{Cov}(\mathbf{r})) \to \mathrm{z} = \mathbf{P}_0^{-1/2} \mathbf{r} \sim N(\mathbf{0}, \mathbf{I})\]</span></p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -657,10 +643,10 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 \]</span></p>
 <p><code>4</code> 스펙트럼 정리</p>
 <ul>
-<li><p>우리가 관측한 통계량 <span class="math inline">\(Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z}\)</span>는 <span class="math inline">\(n\)</span>명 환자의 잔차와 공변량, 유전형이 거대한 행렬곱으로 복잡하게 뒤엉켜 있음.</p></li>
-<li><p>이 상태 그대로는 <span class="math inline">\(Q_\rho\)</span>가 이론적으로 어떤 확률분포를 따르는지 수식으로 정의하는 것 자체가 불가능</p></li>
+<li><p>우리가 관측한 통계량 <span class="math inline">\(Q_\rho = \mathbf{z}^T \mathbf{A}_\rho \mathbf{z}\)</span>는 <span class="math inline">\(n\)</span>명 <strong>환자의 잔차와 공변량, 유전형</strong>이 복잡하게 뒤엉켜 있음.</p></li>
+<li><p>이 상태 그대로는 <span class="math inline">\(Q_\rho\)</span>가 <strong>이론적으로 어떤 확률분포를 따르는지 수식으로 정의하는 것 자체가 불가능</strong></p></li>
 <li><p><span class="math inline">\(\mathbf{A}_\rho = \mathbf{U} \boldsymbol{\Lambda} \mathbf{U}^T\)</span>를 통해 얽힌 상관관계를 완전히 털어내면, 행렬곱이 사라지고 <span class="math inline">\(Q_\rho = \sum \lambda_k v_k^2\)</span>이라는 단순한 ‘제곱합’ 으로바뀜.</p></li>
-<li><p>스펙트럼 분해를 거치고 나면, 논문에 기술된 바와 같이 ’귀무가설 하에서 통계량 <span class="math inline">\(Q_\rho\)</span>가 점근적으로 독립 카이제곱분포들의 가중 선형결합인 혼합 카이제곱분포를 따른다’는 점이 수학적으로 증명됨.</p></li>
+<li><p>스펙트럼 분해를 거치고 나면, 논문에 기술된 바와 같이 귀무가설 하에서 통계량 <span class="math inline">\(Q_\rho\)</span>가 점근적으로 <strong>서로 독립인 카이제곱분포들의 가중 선형결합인 혼합 카이제곱분포를 따른다</strong>는 점이 수학적으로 증명됨.</p></li>
 <li><p>행렬 <span class="math inline">\(\mathbf{A}_\rho\)</span>는 실수 대칭행렬이므로 <code>스펙트럼 정리</code>에 의해 고유벡터 직교행렬 <span class="math inline">\(\mathbf{U}\)</span> (<span class="math inline">\(\mathbf{U}^T \mathbf{U} = \mathbf{I}\)</span>)와 고윳값 대각행렬 <span class="math inline">\(\boldsymbol{\Lambda} = \text{diag}(\lambda_1^{(\rho)}, \dots, \lambda_m^{(\rho)})\)</span>로 쪼갤 수 있다.</p></li>
 </ul>
 <p><span class="math display">\[\mathbf{A}_\rho = \mathbf{P}_0^{1/2} \mathbf{K}_\rho \mathbf{P}_0^{1/2}\]</span></p>
@@ -717,10 +703,10 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <p><code>6</code> 이게 왜 혼합카이제곱 분포를 따르냐?</p>
 <ul>
 <li><p>정의: 서로 독립인 자유도 1의 카이제곱 확률변수들 <span class="math inline">\(\chi^2_{1, 1}, \chi^2_{1, 2}, \dots, \chi^2_{1, m} \stackrel{i.i.d.}{\sim} \chi^2_1\)</span>과, 0이 아닌 임의의 양의 실수 가중치 계수들 <span class="math inline">\(\lambda_1, \lambda_2, \dots, \lambda_m &gt; 0\)</span>이 주어졌을 때,</p></li>
-<li><p>이들의 선형 결합(<span class="math inline">\(\sum \lambda_k \chi^2_1\)</span>)을 의미함.</p></li>
+<li><p>이들의 선형 결합(<span class="math inline">\(\sum \lambda_k \chi^2_1\)</span>)이 혼합카에지곱 분포라고 정의되어 있음.</p></li>
 <li><p><span class="math inline">\(v_k\)</span>는 서로 독립인 표준정규변수인가? <span class="math inline">\(\to\)</span> Yes. 직교 회전(<span class="math inline">\(U^T U = I\)</span>)으로 <code>공분산이 단위행렬</code>로 보존되므로 <span class="math inline">\(v_k \stackrel{i.i.d.}{\sim} N(0, 1)\)</span></p></li>
 <li><p><span class="math inline">\(v_k^2\)</span>은 자유도 1의 카이제곱변수인가? <span class="math inline">\(\rightarrow\)</span> Yes. <code>표준정규변수의 제곱은 정의상 정확히</code> <span class="math inline">\(\chi^2_1\)</span></p></li>
-<li><p>그 앞에 붙은 계수가 상수인가? <span class="math inline">\(\rightarrow\)</span> Yes. 대각화 과정에서 뽑아낸 불변의 <code>실수 고윳값</code> <span class="math inline">\(\lambda_k\)</span>들입니다</p></li>
+<li><p>그 앞에 붙은 계수가 상수인가? <span class="math inline">\(\rightarrow\)</span> Yes. 대각화 과정에서 뽑아낸 불변의 <code>실수 고윳값</code> <span class="math inline">\(\lambda_k\)</span>이다.</p></li>
 <li><p>따라서 <span class="math inline">\(Q_\rho = \sum_{k=1}^n \lambda_k v_k^2\)</span>는 수학적으로 “자유도 1의 독립 카이제곱변수 <span class="math inline">\(v_k^2\)</span>에 고윳값 가중치 <span class="math inline">\(\lambda_k\)</span>가 곱해진 합”이 되므로, 정확히 혼합 카이제곱분포의 정의 그 자체</p></li>
 </ul>
 <p><code>7</code> 또한, 유효 자유도는 다음과 같이 정의됨.</p>
@@ -729,7 +715,6 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <li><p>결과적으로 희귀변이 개수 <span class="math inline">\(m\)</span>이 50개, 100개로 늘어나더라도, 자유도가 폭발하지 않고, 실제 인과성이 존재하는 소수 차원으로 통제되므로.</p></li>
 <li><p>귀무가설 기각 검정통계량 임계치 상승 없이, 높은 검정력을 유지</p></li>
 </ul>
-</section>
 </section>
 <section id="p_rho" class="level3">
 <h3 class="anchored" data-anchor-id="p_rho">(4) <span class="math inline">\(p_{\rho}\)</span></h3>
@@ -748,7 +733,7 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 \mathbf{K}_\rho = \mathbf{G} \mathbf{W} \mathbf{R}_\rho \mathbf{W} \mathbf{G}^T
 \]</span></p></li>
 </ul>
-<p><code>3</code> 실제 관측 통계량 <span class="math inline">\(q_\rho^{\text{obs}}\)</span> (하나의 스칼라 숫자)</p>
+<p><code>3</code> 실제 관측 통계량 <span class="math inline">\(q_\rho^{\text{obs}}\)</span></p>
 <p><span class="math display">\[q_\rho^{\text{obs}} = (\mathbf{y} - \hat{\boldsymbol{\mu}})^T \mathbf{K}_\rho (\mathbf{y} - \hat{\boldsymbol{\mu}}) = \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \]</span></p>
 <p><span class="math display">\[q_\rho^{\text{obs}} = \sum_{k=1}^m \lambda_k^{(\rho)} (v_k^{\text{obs}})^2\]</span></p>
 <p><code>4</code> p-value 정의: 귀무가설이 참(<span class="math inline">\(\boldsymbol{\beta} = 0\)</span>)일 때, 이번 실험에서 내가 관측한 값보다 더 극단적인 값이 우연히 나올 확률</p>
@@ -759,7 +744,7 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <p><br></p>
 <p><code>1</code> <strong>“유전 변이가 질병과 전혀 상관이 없는데도, 순전히 운이나 우연에 의해 34.5점보다 더 큰 점수가 나올 확률”</strong> 을 의미함.</p>
 <p><code>2</code> if, 이 주황색 면적이 <strong>0.0001처럼 극도로 좁다면</strong>?</p>
-<p><span class="math inline">\(\rightarrow\)</span> “유전 효과가 없는데 순전히 우연으로 34.5점을 넘길 확률은 0.01%도 안 된다. 따라서 ’유전 효과가 없다’는 귀무가설을 기각하고, 이 유전자는 질병의 원인이 맞다고 결론”</p>
+<p><span class="math inline">\(\rightarrow\)</span> “유전 효과가 없는데 순전히 우연으로 <code>34.5점을 넘길 확률은 0.01%</code>도 안 된다. 따라서 <code>유전 효과가 없다는 귀무가설을 기각</code></p>
 <p><code>3</code> 반대로 이 면적이 <strong>0.30처럼 넓다면</strong>?</p>
 <p><span class="math inline">\(\rightarrow\)</span> “유전 효과가 없어도 34.5점 정도는 30% 확률로 흔하게 우연히 나올 수 있으므로, 유전 효과가 있다고 볼 수 없다”가 된다.</p>
 <p><code>4</code> 문제: 가로축의 <span class="math inline">\(34.5\)</span>점부터 오른쪽 끝(<span class="math inline">\(\infty\)</span>)까지 주황색 빗금 친 면적(<span class="math inline">\(p\)</span>-value)을 적분해야 결론을 내릴 수 있음.</p>
@@ -771,8 +756,12 @@ Q_\rho &amp;= \mathbf{r}^T \mathbf{K}_\rho \mathbf{r} \\ \\
 <blockquote class="blockquote">
 <p>…we approximate each marginal distribution of <span class="math inline">\(Q_{\rho_v}\)</span> by modifying the moment-matching method of Liu and others (2009). In particular, instead of matching the first 3 moments, we match the mean, variance and kurtosis to improve the approximation in the tail area.”</p>
 </blockquote>
-<p><code>6</code> 그런데 다행히 통계량 <span class="math inline">\(Q_\rho\)</span>의 ’평균, 분산, 그리고 꼬리 두께(첨도)’는 행렬 연산으로 단 0.001초 만에 뽑아낼 수 있고,</p>
-<p><code>7</code> 평균, 분산, 첨도 3개를 똑같이 맞춰 근사하자는 것이 <code>Moment 매칭 근사</code>에 출발이다.</p>
+<p><code>6</code> 다행히 통계량 <span class="math inline">\(Q_\rho\)</span>의 귀무가설 하 적률(평균 <span class="math inline">\(\mu_Q\)</span>, 분산 <span class="math inline">\(v_Q\)</span>, 첨도 <span class="math inline">\(\gamma_Q\)</span>)은 커널 행렬의 고윳값을 통해 해석적(Closed-form)으로 즉시 산출할 수 있고,</p>
+<p><code>7</code> 이 세 가지 적률로 단일 카이제곱분포(<span class="math inline">\(\chi^2_{df}\)</span>)로 <strong>근사시키는 기법</strong>이 바로 <strong>모멘트 매칭</strong>이다.</p>
+<ul>
+<li><p>상수 <span class="math inline">\(\lambda_j\)</span>가 곱해진 <span class="math inline">\(\lambda_j \chi^2_1\)</span> 역시 척도(scale) 모수만 변한 감마분포 <span class="math inline">\(\text{Gamma}(1/2, 2\lambda_j)\)</span></p></li>
+<li><p>흠 그렇다면, 그것들의 선형결합도 어떤 <code>단일 카이제곱 분포로 근사하지 않을까</code>란게 아이디어임.</p></li>
+</ul>
 </section>
 <section id="p_rho-moment-매칭-근사법" class="level3">
 <h3 class="anchored" data-anchor-id="p_rho-moment-매칭-근사법">(5) <span class="math inline">\(p_{\rho}\)</span> (Moment 매칭 근사법)</h3>
@@ -830,11 +819,12 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 &amp;= 1 - F\left( \frac{q_\rho^{\text{obs}} - \mu_Q}{\sqrt{v_Q}} \sqrt{2 \cdot df} + df \;\middle|\; \chi^2_{df} \right) &amp;&amp; \text{\small [R의 pchisq로 계산하는 형태]}
 \end{aligned}
 \]</span></p>
+<p><span class="math display">\[\mu_{Q} = \sum_{i=1}^{m}\lambda, \quad v_{Q} = 2\sum_{i=1}^{m} \lambda^{2}_j, \quad \divideontimes \,\, df = \frac{12}{\hat{\gamma}}\]</span></p>
 </section>
 </section>
 </section>
-<section id="ex-1" class="level2">
-<h2 class="anchored" data-anchor-id="ex-1">EX 1</h2>
+<section id="ex-1.-최적의-rho-찾기-skat-유도" class="level2">
+<h2 class="anchored" data-anchor-id="ex-1.-최적의-rho-찾기-skat-유도">EX 1. 최적의 <span class="math inline">\(\rho\)</span> 찾기 (SKAT 유도)</h2>
 <section id="상황-셋팅" class="level3">
 <h3 class="anchored" data-anchor-id="상황-셋팅">(1) 상황 셋팅</h3>
 <p>하나의 유전자 내에 총 4개의 변이(<span class="math inline">\(\mathbf{m=4}\)</span>)가 존재하고, 유전자형 가중치 행렬이 단위행렬(<span class="math inline">\(\mathbf{W} = \mathbf{I}\)</span>)인 상황을 가정</p>
