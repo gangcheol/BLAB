@@ -639,10 +639,8 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 <section id="단계-q_rho의-모멘트평균-mu_q-분산-v_q-첨도-hatgamma와-매칭" class="level4">
 <h4 class="anchored" data-anchor-id="단계-q_rho의-모멘트평균-mu_q-분산-v_q-첨도-hatgamma와-매칭">[2단계] <span class="math inline">\(Q_\rho\)</span>의 모멘트(평균 <span class="math inline">\(\mu_Q\)</span>, 분산 <span class="math inline">\(v_Q\)</span>, 첨도 <span class="math inline">\(\hat{\gamma}\)</span>)와 매칭</h4>
 <p><code>1</code> 첨도(Kurtosis) 매칭 <span class="math inline">\(\rightarrow df\)</span> 결정</p>
-<p><span class="math display">\[\gamma = \frac{\mu_4}{\sigma^4} - 3 = \frac{E[(X - \mu)^4]}{\{\operatorname{Var}(X)\}^2} - 3\]</span></p>
-<p><span class="math display">\[\sigma^2 = \operatorname{Var}(X) = 2 \cdot df \implies \sigma^4 = 4 \cdot df^2\]</span></p>
-<p><span class="math display">\[\mu_4 = E[(X - df)^4] = 12 \cdot df + 3(2 \cdot df)^2 = \mathbf{12 \cdot df + 12 \cdot df^2}\]</span></p>
-<p><span class="math display">\[\gamma_{\chi^2_{df}} = \frac{12 \cdot df + 12 \cdot df^2}{4 \cdot df^2} - 3 = \left( \frac{12 \cdot df}{4 \cdot df^2} + \frac{12 \cdot df^2}{4 \cdot df^2} \right) - 3\]</span> <span class="math display">\[= \left( \frac{3}{df} + 3 \right) - 3 = \mathbf{\frac{12}{df}}\]</span></p>
+<p><span class="math display">\[\hat{\gamma} = \frac{\frac{1}{B}\sum (Q^{(b)} - \hat{\mu}_Q)^4}{\hat{v}_Q^2} - 3\]</span></p>
+<p><span class="math display">\[\hat{\mu}_Q = \frac{1}{B} \sum_{b=1}^B Q^{(b)}, \,\,\hat{v}_Q = \frac{1}{B} \sum_{b=1}^B (Q^{(b)} - \hat{\mu}_Q)^2\]</span></p>
 <p><span class="math display">\[\divideontimes \,\, df = \frac{12}{\hat{\gamma}}\]</span></p>
 <p><code>2</code> 분산 매칭 <span class="math inline">\(\to a\)</span> 결정</p>
 <p><span class="math display">\[a^2 (2 \cdot df) = v_Q \implies \mathbf{a = \frac{\sqrt{v_Q}}{\sqrt{2 \cdot df}}}\]</span></p>
@@ -742,7 +740,7 @@ p_\rho &amp;= P_{H_0}\left( Q_\rho &gt; q_\rho^{\text{obs}} \right) &amp;&amp; \
 </section>
 <section id="m-x-m-커널-행렬-생성-및-r의-eigen으로-고윳값-추출" class="level3">
 <h3 class="anchored" data-anchor-id="m-x-m-커널-행렬-생성-및-r의-eigen으로-고윳값-추출">(6) m x m 커널 행렬 생성 및 R의 eigen()으로 고윳값 추출</h3>
-<p>단, 변이 간 독립 및 분산이 1인 이상적 환경(<span class="math inline">\(\operatorname{Cov}(\mathbf{S})=\mathbf{I}\)</span>) 가정</p>
+<p>단, 변이 간 독립 및 개별 분산이 1인 이상적 환경(<span class="math inline">\(\operatorname{Cov}(\mathbf{S})=\mathbf{I}\)</span>) 가정</p>
 <p><span class="math display">\[\mathbf{R}_\rho = \begin{pmatrix}
 1 &amp; \rho &amp; \rho &amp; \dots &amp; \rho \\
 \rho &amp; 1 &amp; \rho &amp; \dots &amp; \rho \\
