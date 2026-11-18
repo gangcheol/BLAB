@@ -614,10 +614,10 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 <h4 class="anchored" data-anchor-id="단계-먼저-보고-가자">[0단계] 먼저 보고 가자</h4>
 <p><code>3</code> 모멘트 매칭을 통한 카이제곱 확률 치환</p>
 <p><span class="math display">\[\mathbf{p_\rho = 1 - F\left( \frac{q_\rho^{\text{obs}} - \mu_Q}{\sqrt{v_Q}} \sqrt{2 \cdot df} + df \;\middle|\; \chi^2_{df} \right)}\]</span></p>
-<p><span class="math display">\[\mathbf{\underbrace{p_\rho = 1 - F}_{\text{(A) 우측 꼬리 면적 (p-value)}}\left( \underbrace{\frac{q_\rho^{\text{obs}} - \mu_Q}{\sqrt{v_Q}}}_{\text{(B) 표준화 (Z-score)}} \underbrace{\sqrt{2 \cdot df} + df}_{\text{(C) 카이제곱 눈금자 변환}} \;\middle|\; \underbrace{\chi^2_{df}}_{\text{(D) 목표 분포}} \right)}\]</span></p>
 </section>
 <section id="단계-선형변환-가정" class="level4">
 <h4 class="anchored" data-anchor-id="단계-선형변환-가정">[1단계] 선형변환 가정</h4>
+<p><span class="math display">\[Q_\rho \approx a X + c \quad (단, \; X \sim \chi^2_{df})\]</span></p>
 <p><code>1</code> 복잡한 혼합 카이제곱분포인 <span class="math inline">\(Q_\rho\)</span>를 단일 카이제곱 확률변수 <span class="math inline">\(X \sim \chi^2_{df}\)</span>의 1차 선형 변환으로 근사하자고 놓는다.</p>
 <ul>
 <li><p>혼합 카이제곱분포 <span class="math inline">\(Q_\rho\)</span>와 단일 카이제곱분포 <span class="math inline">\(X\)</span>는 둘다, <code>오른쪽 긴 꼬리를 갖는 비대칭 분포</code>라는 공통적인 특성을 공유하므로,</p></li>
@@ -627,7 +627,6 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 <li>큐뮬런트 생성함수로 증명가능하다고 합니다만….. 실패했습니다.</li>
 </ul></li>
 </ul>
-<p><span class="math display">\[Q_\rho \approx a X + c \quad (단, \; X \sim \chi^2_{df})\]</span></p>
 <p><code>2</code> 여기서 카이제곱분포 <span class="math inline">\(X \sim \chi^2_{df}\)</span>의 고유한 이론적 성질</p>
 <ul>
 <li><p><span class="math inline">\(E[X] = df\)</span></p></li>
@@ -639,8 +638,9 @@ K_{13} = (1 - \rho) \times 1 \;+\; \rho \times 6
 <section id="단계-q_rho의-모멘트평균-mu_q-분산-v_q-첨도-hatgamma와-매칭" class="level4">
 <h4 class="anchored" data-anchor-id="단계-q_rho의-모멘트평균-mu_q-분산-v_q-첨도-hatgamma와-매칭">[2단계] <span class="math inline">\(Q_\rho\)</span>의 모멘트(평균 <span class="math inline">\(\mu_Q\)</span>, 분산 <span class="math inline">\(v_Q\)</span>, 첨도 <span class="math inline">\(\hat{\gamma}\)</span>)와 매칭</h4>
 <p><code>1</code> 첨도(Kurtosis) 매칭 <span class="math inline">\(\rightarrow df\)</span> 결정</p>
-<p><span class="math display">\[\hat{\gamma} = \frac{\frac{1}{B}\sum (Q^{(b)} - \hat{\mu}_Q)^4}{\hat{v}_Q^2} - 3\]</span></p>
-<p><span class="math display">\[\hat{\mu}_Q = \frac{1}{B} \sum_{b=1}^B Q^{(b)}, \,\,\hat{v}_Q = \frac{1}{B} \sum_{b=1}^B (Q^{(b)} - \hat{\mu}_Q)^2\]</span></p>
+<p><span class="math display">\[\hat{\gamma} = \frac{\text{4차 성분}}{(\text{분산})^2} = \frac{48 \sum \lambda_j^4}{\left( 2 \sum \lambda_j^2 \right)^2} = \frac{48 \sum \lambda_j^4}{4 \left( \sum \lambda_j^2 \right)^2} = \mathbf{12 \cdot \frac{\sum \lambda_j^4}{\left( \sum \lambda_j^2 \right)^2}}\]</span></p>
+<p><span class="math display">\[\text{4차 성분}(Q) = 48 \cdot (\lambda_1^4 + \lambda_2^4 + \dots + \lambda_m^4) = \mathbf{48 \sum \lambda_j^4}\]</span></p>
+<p><span class="math display">\[\text{분산}(Q) = 2 \cdot (\lambda_1^2 + \lambda_2^2 + \dots + \lambda_m^2) = \mathbf{2 \sum \lambda_j^2}\]</span></p>
 <p><span class="math display">\[\divideontimes \,\, df = \frac{12}{\hat{\gamma}}\]</span></p>
 <p><code>2</code> 분산 매칭 <span class="math inline">\(\to a\)</span> 결정</p>
 <p><span class="math display">\[a^2 (2 \cdot df) = v_Q \implies \mathbf{a = \frac{\sqrt{v_Q}}{\sqrt{2 \cdot df}}}\]</span></p>
