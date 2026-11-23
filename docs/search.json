@@ -914,23 +914,11 @@
     ]
   },
   {
-    "objectID": "posts/02. RVE/Review.html#모형-설정",
-    "href": "posts/02. RVE/Review.html#모형-설정",
+    "objectID": "posts/02. RVE/Review.html#fast-lmm",
+    "href": "posts/02. RVE/Review.html#fast-lmm",
     "title": "01. Review",
-    "section": "(1) 모형 설정",
-    "text": "(1) 모형 설정\n1 앞선 step1에서 공변량(\\(X_i\\hat{\\boldsymbol{\\alpha}}\\))효과와 \\(\\hat{b}_i\\) 유전적 개인차 효과를 덜어낸,\n2 잔차 벡터 \\(\\tilde{\\mathbf{y}}\\)를 반응변수로 두고, 특정 유전자 \\(j\\)의 단일 그룹에 대해 다음 모형을 세움.\n\\[\\tilde{\\mathbf{y}} = \\mathbf{G}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\beta} \\sim \\text{MVN}(\\mathbf{0}, \\, \\tau \\boldsymbol{\\Sigma}),\\,\\, \\boldsymbol{\\epsilon} \\sim \\text{MVN}(\\mathbf{0}, \\, \\psi \\mathbf{I}_n)\\]",
-    "crumbs": [
-      "Posts",
-      "02. RVE",
-      "01. Review"
-    ]
-  },
-  {
-    "objectID": "posts/02. RVE/Review.html#변이를-그룹별로-쪼갠다",
-    "href": "posts/02. RVE/Review.html#변이를-그룹별로-쪼갠다",
-    "title": "01. Review",
-    "section": "(2) 변이를 그룹별로 쪼갠다?",
-    "text": "(2) 변이를 그룹별로 쪼갠다?\n1 LoF (Loss-of-Function, 기능 상실 변이)\n\n단백질",
+    "section": "(2) FaST-LMM",
+    "text": "(2) FaST-LMM\n1 \\(n \\times k\\) 유전형 행렬에 특이값 분해(SVD) 를 적용하여, 계산 복잡도를 대폭 줄여주는 method\n2 근데, 위 알고리즘은 단 1개의 분산성분을 추정할 때만 적용 가능함.\n\nAs estimating multiple variance components due to distinct functional groups is not feasible with FaST-LMM, we marginally calculate the variance components for each functional group separately…\n\n3 그래서 위에서 나눈 각 3개 그룹별로, 저 알고리즘을 돌림.\n\n\\(\\tilde{\\mathbf{y}}\\): Step 1에서 공변량을 보정한 잔차 벡터\nLoF 그룹 추정\n\n\\[\\tilde{\\mathbf{y}} = \\mathbf{G}_{\\text{LoF}, j}\\boldsymbol{\\beta}_{\\text{LoF}, j} + \\boldsymbol{\\epsilon} \\implies \\hat{\\tau}_{\\text{MLE}, \\text{mar}, \\text{LoF}, j} \\text{ 추정}\\]\n\nMissense 그룹 추정\n\n\\[\\tilde{\\mathbf{y}} = \\mathbf{G}_{\\text{mis}, j}\\boldsymbol{\\beta}_{\\text{mis}, j} + \\boldsymbol{\\epsilon} \\implies \\hat{\\tau}_{\\text{MLE}, \\text{mar}, \\text{mis}, j} \\text{ 추정}\\]\n\nSynonymous 그룹 추정\n\n\\[\\tilde{\\mathbf{y}} = \\mathbf{G}_{\\text{syn}, j}\\boldsymbol{\\beta}_{\\text{syn}, j} + \\boldsymbol{\\epsilon} \\implies \\hat{\\tau}_{\\text{MLE}, \\text{mar}, \\text{syn}, j} \\text{ 추정}\\]",
     "crumbs": [
       "Posts",
       "02. RVE",

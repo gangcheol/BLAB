@@ -300,8 +300,8 @@ window.Quarto = {
   <li><a href="#step-1.-null-model-fiting" id="toc-step-1.-null-model-fiting" class="nav-link" data-scroll-target="#step-1.-null-model-fiting">Step 1. Null model fiting</a></li>
   <li><a href="#step-2.-estimation-of-gene-level-heritability" id="toc-step-2.-estimation-of-gene-level-heritability" class="nav-link" data-scroll-target="#step-2.-estimation-of-gene-level-heritability">Step 2. Estimation of gene-level heritability</a>
   <ul class="collapse">
-  <li><a href="#모형-설정" id="toc-모형-설정" class="nav-link" data-scroll-target="#모형-설정">(1) 모형 설정</a></li>
-  <li><a href="#변이를-그룹별로-쪼갠다" id="toc-변이를-그룹별로-쪼갠다" class="nav-link" data-scroll-target="#변이를-그룹별로-쪼갠다">(2) 변이를 그룹별로 쪼갠다?</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping">(1) grouping</a></li>
+  <li><a href="#fast-lmm" id="toc-fast-lmm" class="nav-link" data-scroll-target="#fast-lmm">(2) FaST-LMM</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -397,19 +397,41 @@ MAF 문제
 </section>
 <section id="step-2.-estimation-of-gene-level-heritability" class="level1">
 <h1>Step 2. Estimation of gene-level heritability</h1>
-<section id="모형-설정" class="level2">
-<h2 class="anchored" data-anchor-id="모형-설정">(1) 모형 설정</h2>
-<p><code>1</code> 앞선 step1에서 공변량(<span class="math inline">\(X_i\hat{\boldsymbol{\alpha}}\)</span>)효과와 <span class="math inline">\(\hat{b}_i\)</span> 유전적 개인차 효과를 덜어낸,</p>
-<p><code>2</code> 잔차 벡터 <span class="math inline">\(\tilde{\mathbf{y}}\)</span>를 반응변수로 두고, 특정 유전자 <span class="math inline">\(j\)</span>의 단일 그룹에 대해 다음 모형을 세움.</p>
-<p><span class="math display">\[\tilde{\mathbf{y}} = \mathbf{G}\boldsymbol{\beta} + \boldsymbol{\epsilon}, \quad \boldsymbol{\beta} \sim \text{MVN}(\mathbf{0}, \, \tau \boldsymbol{\Sigma}),\,\, \boldsymbol{\epsilon} \sim \text{MVN}(\mathbf{0}, \, \psi \mathbf{I}_n)\]</span></p>
+<section id="grouping" class="level3">
+<h3 class="anchored" data-anchor-id="grouping">(1) grouping</h3>
+<p><code>1</code> we divide variants by gene and its functional annotation (LoF, missense and synonymous).</p>
+<center>
+<img src="[그림 1] 그룹 분류.png" width="500">
+</center>
 
-</section>
-<section id="변이를-그룹별로-쪼갠다" class="level2">
-<h2 class="anchored" data-anchor-id="변이를-그룹별로-쪼갠다">(2) 변이를 그룹별로 쪼갠다?</h2>
-<p><code>1</code> LoF (Loss-of-Function, 기능 상실 변이)</p>
+<p><code>1</code> 오픈소스: LOFTEE (Loss-Of-Function Trancript Effect Estimator)</p>
 <ul>
-<li>단백질</li>
+<li>하버드/MIT 브로드 연구소의 gnomAD 연구팀에서 만듬. (논문 참고문헌 55, Karczewski et al., Nature 2020)</li>
 </ul>
+<p><code>2</code> 저자들은 저 오픈소스 도구를 이용해서 <code>UK Biobank 엑솜 데이터</code>에 직접 적용해 <code>Group file</code>을 생성함.</p>
+<hr>
+</section>
+<section id="fast-lmm" class="level2">
+<h2 class="anchored" data-anchor-id="fast-lmm">(2) FaST-LMM</h2>
+<p><code>1</code> <span class="math inline">\(n \times k\)</span> 유전형 행렬에 <strong>특이값 분해(SVD)</strong> 를 적용하여, 계산 복잡도를 대폭 줄여주는 method</p>
+<p><code>2</code> 근데, 위 알고리즘은 단 1개의 분산성분을 추정할 때만 적용 가능함.</p>
+<blockquote class="blockquote">
+<p>As estimating multiple variance components due to distinct functional groups is not feasible with FaST-LMM, we marginally calculate the variance components for each functional group separately…</p>
+</blockquote>
+<p><code>3</code> 그래서 위에서 나눈 각 3개 그룹별로, 저 알고리즘을 돌림.</p>
+<ul>
+<li><p><span class="math inline">\(\tilde{\mathbf{y}}\)</span>: Step 1에서 공변량을 보정한 잔차 벡터</p></li>
+<li><p>LoF 그룹 추정</p></li>
+</ul>
+<p><span class="math display">\[\tilde{\mathbf{y}} = \mathbf{G}_{\text{LoF}, j}\boldsymbol{\beta}_{\text{LoF}, j} + \boldsymbol{\epsilon} \implies \hat{\tau}_{\text{MLE}, \text{mar}, \text{LoF}, j} \text{ 추정}\]</span></p>
+<ul>
+<li>Missense 그룹 추정</li>
+</ul>
+<p><span class="math display">\[\tilde{\mathbf{y}} = \mathbf{G}_{\text{mis}, j}\boldsymbol{\beta}_{\text{mis}, j} + \boldsymbol{\epsilon} \implies \hat{\tau}_{\text{MLE}, \text{mar}, \text{mis}, j} \text{ 추정}\]</span></p>
+<ul>
+<li>Synonymous 그룹 추정</li>
+</ul>
+<p><span class="math display">\[\tilde{\mathbf{y}} = \mathbf{G}_{\text{syn}, j}\boldsymbol{\beta}_{\text{syn}, j} + \boldsymbol{\epsilon} \implies \hat{\tau}_{\text{MLE}, \text{mar}, \text{syn}, j} \text{ 추정}\]</span></p>
 
 
 </section>
