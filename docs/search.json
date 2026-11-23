@@ -22,6 +22,18 @@
     ]
   },
   {
+    "objectID": "posts/02. RVE/02. method.html",
+    "href": "posts/02. RVE/02. method.html",
+    "title": "02. Method",
+    "section": "",
+    "text": "1. Fitting the null GLMM\n- 목적: 공변량 효과와 개인 유전적 차이를 덜어낸 잔차를 산출\n\\[ y = X_i\\alpha + b_i + \\epsilon_i\\]\n1 개별 변이 효과가 없는 귀무모형 적합\n\nWe used the average information restricted maximum-likelihood algorithm to fit the null GLMM (that is, \\(H_0: \\boldsymbol{\\beta}_j = \\mathbf{0}\\)) as in SAIGE step 1.\n\n2 귀무가설(\\(H_0: \\boldsymbol{\\beta}_j = \\mathbf{0}\\)) 하에서 SAIGE의 AI-REML 알고리즘을 돌려 다음 값들을 추정함\n\n\\(\\hat {\\alpha}\\): 나이, 성별, 유전적 주성분(PC) 등 공변량의 고정 효과 계수\n\\(\\hat{\\sigma}_g^2, \\hat{\\sigma}_e^2\\): 가계 혈연 및 전체 배경 유전체가 차지하는 배경 유전 분산과 잔차 환경 분산\n\n3 즉, 원래 표현형(\\(y_i\\))에서 “나이·성별 때문에 생긴 차이(\\(X_i{\\alpha}\\))” 와 “집안 내력(혈연) 때문에 생긴 차이(\\(\\beta_j\\))” 를 수학적으로 완전히 도려내고 남은 순수 잔차(\\(\\tilde{\\mathbf{y}}\\)) 를 손에 쥐는 것이 목적\n4 “AI-REML”: Average Information Restricted Maximum Likelihood\n\n대충 아래와 같은 사이클….\n\\(\\sigma_g^2\\) 초깃값 가정 \\(\\rightarrow\\) \\(\\boldsymbol{\\alpha}\\) 추정 \\(\\rightarrow\\) 잔차 계산 \\(\\rightarrow\\) \\(\\sigma_g^2\\) 업데이트 \\(\\rightarrow\\) 다시 \\(\\boldsymbol{\\alpha}\\) 재추정…\n\n\nGilmour et al. (1995): Average information REML: an efficient algorithm for variance parameter estimation in linear mixed models (AI-REML의 수학적 유도 원논문)\n\n\n\n기호 의미\n\n- 개별 피험자 기준\n\n\\(g(\\mu_{i})\\): \\(\\mu\\) or \\(\\text{logit}\\)\n\\(X_{i}\\): \\(i\\)번째 사람의 나이, 성별 등\n\\(b_i\\): \\(i\\)번째 개인의 유전적 형질로 인해 발생한 random effect\n\\(\\sigma_g\\): Polygenic Variance component\n\\(\\epsilon\\): error term\n\\(K\\): Genentic Relatedenss Matrix, GRM \\(\\to\\) 피험자들끼리 유전적으로 얼마나 닮았는지 나타냄.\n\n\\(G_{im} \\in \\{0, 1, 2\\}\\): \\(i\\)번째 개인의 \\(m\\)번째 SNP 대립유전자 개수, \\(G_{im} \\sim \\text{Binomial}(2, p_m)\\)\n\\(p_m\\): 코호트 전체에서 \\(m\\)번째 SNP의 대립유전자 빈도(MAF, Minor Allele Frequency)\n\n\n\\[\\mathbf{K} = \\frac{1}{M} \\mathbf{Z}\\mathbf{Z}^T\\]\n\\[\\mathbf{Z} = \\begin{bmatrix} \\frac{G_{11} - 2p_1}{\\sqrt{2p_1(1-p_1)}} & \\frac{G_{12} - 2p_2}{\\sqrt{2p_2(1-p_2)}} & \\cdots & \\frac{G_{1M} - 2p_M}{\\sqrt{2p_M(1-p_M)}} \\\\ \\frac{G_{21} - 2p_1}{\\sqrt{2p_1(1-p_1)}} & \\frac{G_{22} - 2p_2}{\\sqrt{2p_2(1-p_2)}} & \\cdots & \\frac{G_{2M} - 2p_M}{\\sqrt{2p_M(1-p_M)}} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\frac{G_{n1} - 2p_1}{\\sqrt{2p_1(1-p_1)}} & \\frac{G_{n2} - 2p_2}{\\sqrt{2p_2(1-p_2)}} & \\cdots & \\frac{G_{nM} - 2p_M}{\\sqrt{2p_M(1-p_M)}} \\end{bmatrix}_{n \\times M}\\]\n\\[\\begin{bmatrix} b_1 \\\\ b_2 \\\\ b_3 \\\\ \\vdots \\\\ b_n \\end{bmatrix} \\sim \\text{MVN}\\left( \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\\\ \\vdots \\\\ 0 \\end{bmatrix}, \\;\\; \\sigma_g^2 \\begin{bmatrix} K_{11} & K_{12} & K_{13} & \\cdots & K_{1n} \\\\ K_{21} & K_{22} & K_{23} & \\cdots & K_{2n} \\\\ K_{31} & K_{32} & K_{33} & \\cdots & K_{3n} \\\\ \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\ K_{n1} & K_{n2} & K_{n3} & \\cdots & K_{nn} \\end{bmatrix} \\right)\\]\n5 그래서 최종 \\(\\hat y\\) 산출\n\\[\\hat{y}_i = \\hat{\\mu}_i = X_i\\hat{\\boldsymbol{\\alpha}} + \\hat{b}_i\\]\n\n\n\n\n2. estimate of gene-level (region-level) heritability\n1 step1에서 공변량(\\(X_i \\hat{\\alpha}\\)) 효과와 개인의 유전적 형질 차이(\\(\\hat b_i\\))를 덜어난 \\(\\tilde{\\mathbf{y}}\\) 추출\n\\[\\tilde{\\mathbf{y}} = \\mathbf{G}_j \\boldsymbol{\\beta}_j + \\boldsymbol{\\epsilon}\\]\n\n\\(\\mathbf{G}_j\\): Genotype matrix\n\\(\\boldsymbol{\\beta}_j \\sim \\text{MVN}(\\mathbf{0}, \\tau \\boldsymbol{\\Sigma})\\): 희귀변이들의 random effect\n\nSKAT과 똑같이 \\(\\tau\\)만 추정\n\n\\(\\boldsymbol{\\epsilon} \\sim \\text{MVN}(\\mathbf{0}, \\psi \\mathbf{I}_n)\\): noise\n\n2 To mitigate the computational demands, we adopt FaST-LMM.\n\n“Given \\(n \\gg k\\), FaST-LMM reduces the computation cost from \\(O(n^3)\\) of conventional mixed-model algorithm to \\(O(nk^2)\\), where \\(n\\) is the number of samples in the dataset and \\(k\\) is the number of genetic variants in a single group (Methods).”",
+    "crumbs": [
+      "Posts",
+      "02. RVE",
+      "02. Method"
+    ]
+  },
+  {
     "objectID": "posts/01. SKTA-O/SKAT-O_final(temp).html",
     "href": "posts/01. SKTA-O/SKAT-O_final(temp).html",
     "title": "SKAT-O(TEMP)",
@@ -398,7 +410,7 @@
     "href": "index.html",
     "title": "BRIDGE",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nNov 20, 2026\n\n\n01. Abstract\n\n\nLGC \n\n\n\n\n\n\nNov 18, 2026\n\n\nSKAT-O\n\n\nLGC \n\n\n\n\n\n\nNov 18, 2026\n\n\nSKAT-O(TEMP)\n\n\nLGC \n\n\n\n\n\n\nNov 2, 2026\n\n\n02. Review (2)\n\n\nLGC \n\n\n\n\n\n\nNov 2, 2026\n\n\n02. Review (2)\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 14, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nJun 2, 2026\n\n\n기본 단축키 셋팅\n\n\nlgc \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nNov 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nNov 23, 2026\n\n\n02. Method\n\n\nLGC \n\n\n\n\n\n\nNov 20, 2026\n\n\n01. Abstract\n\n\nLGC \n\n\n\n\n\n\nNov 18, 2026\n\n\nSKAT-O\n\n\nLGC \n\n\n\n\n\n\nNov 18, 2026\n\n\nSKAT-O(TEMP)\n\n\nLGC \n\n\n\n\n\n\nNov 2, 2026\n\n\n02. Review (2)\n\n\nLGC \n\n\n\n\n\n\nNov 2, 2026\n\n\n02. Review (2)\n\n\nLGC \n\n\n\n\n\n\nSep 23, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 14, 2026\n\n\n01. Review\n\n\nLGC \n\n\n\n\n\n\nSep 8, 2026\n\n\n00. GWAS\n\n\nLGC \n\n\n\n\n\n\nJun 2, 2026\n\n\n기본 단축키 셋팅\n\n\nlgc \n\n\n\n\n\n\nMar 5, 2026\n\n\n00. Intro\n\n\nLGC \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -863,6 +875,66 @@
       "Posts",
       "02. RVE",
       "01. Abstract"
+    ]
+  },
+  {
+    "objectID": "posts/02. RVE/01. Abstact.html#step1.-귀무모형-적합-및-잔차-추출",
+    "href": "posts/02. RVE/01. Abstact.html#step1.-귀무모형-적합-및-잔차-추출",
+    "title": "01. Abstract",
+    "section": "Step1. 귀무모형 적합 및 잔차 추출",
+    "text": "Step1. 귀무모형 적합 및 잔차 추출\n1 In step 1, we fit a null linear or logistic mixed-effects model without genotypes to estimate covariate effects.\n\\[ y = X_i\\alpha + b_i + \\epsilon_i\\]\n2 This step involves fitting the model using the average information restricted maximum likelihood approach, which is used in the SAIGE and GMMAT framework.\n3 The residuals are then used as covariate-adjusted phenotypes in the subsequent steps.",
+    "crumbs": [
+      "Posts",
+      "02. RVE",
+      "01. Abstract"
+    ]
+  },
+  {
+    "objectID": "posts/02. RVE/01. Abstact.html#step2.",
+    "href": "posts/02. RVE/01. Abstact.html#step2.",
+    "title": "01. Abstract",
+    "section": "Step2.",
+    "text": "Step2.",
+    "crumbs": [
+      "Posts",
+      "02. RVE",
+      "01. Abstract"
+    ]
+  },
+  {
+    "objectID": "posts/02. RVE/Review.html",
+    "href": "posts/02. RVE/Review.html",
+    "title": "01. Review",
+    "section": "",
+    "text": "1 Due to their low frequency, estimating the effects of rare variants is challenging.\n\n특정 변이 \\(k\\)에 대한 개인 \\(i\\)의 Genotype을 \\(G \\in \\left \\{0, 1, 2 \\right \\}\\)\n\n\n\nMAF 문제\n\n\\[y_i = \\mathbf{X}_i \\boldsymbol{\\alpha} + \\mathbf{G}_i \\boldsymbol{\\beta} + \\epsilon_i\\]\n\\[\\text{MAC}_k \\text{ (Minor Allele Count)} = \\sum_{i=1}^N G_{ik}\\]\n\\[\\text{MAF}_k = \\frac{\\text{MAC}_k}{2N} = \\frac{\\sum_{i=1}^N G_{ik}}{2N} \\leq 0.01\\]\n\\[\\text{SE}(\\hat{\\beta}_k) = \\frac{\\sigma_\\epsilon}{\\sqrt{2N \\cdot \\text{MAF}_k(1 - \\text{MAF}_k)}} \\approx \\infty\\]\n\\[T_k = \\frac{\\hat{\\beta}_k}{\\text{SE}(\\hat{\\beta}_k)} \\to 0\\]\n2 To identify associations between rare variants and complex traits, gene-based or region-based tests\\(^{10,11}\\), including the burden test, the sequence kernel association test (SKAT)\\(^{12}\\) and its adaptive optimized version (SKAT-O)\\(^{13}\\), have been commonly used.\n3 To address these challenges, we introduce RareEffect, an empirical Bayes approach designed to estimate the effect sizes of individual rare variants while simultaneously estimating gene-level heritability.",
+    "crumbs": [
+      "Posts",
+      "02. RVE",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/02. RVE/Review.html#모형-설정",
+    "href": "posts/02. RVE/Review.html#모형-설정",
+    "title": "01. Review",
+    "section": "(1) 모형 설정",
+    "text": "(1) 모형 설정\n1 앞선 step1에서 공변량(\\(X_i\\hat{\\boldsymbol{\\alpha}}\\))효과와 \\(\\hat{b}_i\\) 유전적 개인차 효과를 덜어낸,\n2 잔차 벡터 \\(\\tilde{\\mathbf{y}}\\)를 반응변수로 두고, 특정 유전자 \\(j\\)의 단일 그룹에 대해 다음 모형을 세움.\n\\[\\tilde{\\mathbf{y}} = \\mathbf{G}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}, \\quad \\boldsymbol{\\beta} \\sim \\text{MVN}(\\mathbf{0}, \\, \\tau \\boldsymbol{\\Sigma}),\\,\\, \\boldsymbol{\\epsilon} \\sim \\text{MVN}(\\mathbf{0}, \\, \\psi \\mathbf{I}_n)\\]",
+    "crumbs": [
+      "Posts",
+      "02. RVE",
+      "01. Review"
+    ]
+  },
+  {
+    "objectID": "posts/02. RVE/Review.html#변이를-그룹별로-쪼갠다",
+    "href": "posts/02. RVE/Review.html#변이를-그룹별로-쪼갠다",
+    "title": "01. Review",
+    "section": "(2) 변이를 그룹별로 쪼갠다?",
+    "text": "(2) 변이를 그룹별로 쪼갠다?\n1 LoF (Loss-of-Function, 기능 상실 변이)\n\n단백질",
+    "crumbs": [
+      "Posts",
+      "02. RVE",
+      "01. Review"
     ]
   }
 ]

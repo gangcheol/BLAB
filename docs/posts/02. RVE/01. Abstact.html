@@ -38,6 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../posts/02. RVE/02. method.html" rel="next">
 <link href="../../posts/01. SKTA-O/SKAT-O_final(temp).html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -269,6 +270,18 @@ window.Quarto = {
  <span class="menu-text">01. Abstract</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/02. RVE/02. method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02. Method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/02. RVE/Review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01. Review</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -287,12 +300,17 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#abstract-summary" id="toc-abstract-summary" class="nav-link" data-scroll-target="#abstract-summary">Abstract summary</a></li>
   </ul></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">02. Introduction</a>
   <ul class="collapse">
   <li><a href="#이전까지-희귀변이-연구에-대한-배경" id="toc-이전까지-희귀변이-연구에-대한-배경" class="nav-link" data-scroll-target="#이전까지-희귀변이-연구에-대한-배경">(1) 이전까지 희귀변이 연구에 대한 배경</a></li>
   <li><a href="#새로운-방법들도-그닥..." id="toc-새로운-방법들도-그닥..." class="nav-link" data-scroll-target="#새로운-방법들도-그닥...">(2) 새로운 방법들도 그닥..,.</a></li>
   <li><a href="#해결책" id="toc-해결책" class="nav-link" data-scroll-target="#해결책">(3) 해결책</a></li>
   <li><a href="#주요-결과" id="toc-주요-결과" class="nav-link" data-scroll-target="#주요-결과">(4) 주요 결과</a></li>
+  </ul></li>
+  <li><a href="#overview-of-methods" id="toc-overview-of-methods" class="nav-link" data-scroll-target="#overview-of-methods">03. Overview of Methods</a>
+  <ul class="collapse">
+  <li><a href="#step1.-귀무모형-적합-및-잔차-추출" id="toc-step1.-귀무모형-적합-및-잔차-추출" class="nav-link" data-scroll-target="#step1.-귀무모형-적합-및-잔차-추출">Step1. 귀무모형 적합 및 잔차 추출</a></li>
+  <li><a href="#step2." id="toc-step2." class="nav-link" data-scroll-target="#step2.">Step2.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -351,7 +369,7 @@ window.Quarto = {
 </section>
 </section>
 <section id="introduction" class="level1">
-<h1>Introduction</h1>
+<h1>02. Introduction</h1>
 <section id="이전까지-희귀변이-연구에-대한-배경" class="level2">
 <h2 class="anchored" data-anchor-id="이전까지-희귀변이-연구에-대한-배경">(1) 이전까지 희귀변이 연구에 대한 배경</h2>
 <p><code>1</code> 대규모 시퀀싱 데이터를 활용할 수 있게 되어, 희귀변이에 대한 연구를 하는 것이 더 수월해 졌다는 이야기</p>
@@ -423,6 +441,20 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><em>“These findings provide strong evidence for the practical utility of our method in leveraging rare variant data for risk prediction and heritability estimation.”</em></p>
 </blockquote>
+<hr>
+</section>
+</section>
+<section id="overview-of-methods" class="level1">
+<h1>03. Overview of Methods</h1>
+<section id="step1.-귀무모형-적합-및-잔차-추출" class="level2">
+<h2 class="anchored" data-anchor-id="step1.-귀무모형-적합-및-잔차-추출">Step1. 귀무모형 적합 및 잔차 추출</h2>
+<p><code>1</code> In step 1, we fit a null linear or logistic mixed-effects model without genotypes to estimate covariate effects.</p>
+<p><span class="math display">\[ y = X_i\alpha + b_i + \epsilon_i\]</span></p>
+<p><code>2</code> This step involves fitting the model using the <code>average information restricted maximum likelihood approach</code>, which is used in the SAIGE and GMMAT framework.</p>
+<p><code>3</code> The residuals are then used as covariate-adjusted phenotypes in the subsequent steps.</p>
+</section>
+<section id="step2." class="level2">
+<h2 class="anchored" data-anchor-id="step2.">Step2.</h2>
 
 
 </section>
@@ -838,6 +870,9 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../posts/02. RVE/02. method.html" class="pagination-link" aria-label="02. Method">
+        <span class="nav-page-text">02. Method</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
